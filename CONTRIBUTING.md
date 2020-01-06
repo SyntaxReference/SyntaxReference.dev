@@ -1,7 +1,5 @@
 # Contributing
 
-___
-
 First, Thank you for considering helping. I am glad this project means that much to you as it does to me.
 
 ## First Step
