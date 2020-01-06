@@ -81,7 +81,7 @@ ___
 
 ### Comments
 
-___
+---
 
 **C**
 
@@ -175,9 +175,11 @@ Support markdown notation
 
 ### Modules, Package & Headers
 
-___
+---
 
 #### Imports
+
+---
 
 **C**
 
@@ -359,6 +361,8 @@ from ..module_name import relative_module_name
 > More Info: https://docs.python.org/3/tutorial/modules.html
 
 #### Exports
+
+---
 
 **C**
 
@@ -568,7 +572,7 @@ from MyModule import MyClass
 
 #### Manager
 
-___
+---
 
 **C**
 
@@ -666,6 +670,8 @@ Example: TODO
 Example: TODO
 
 ### Main (Entry Point)
+
+---
 
 **C**
 
@@ -865,9 +871,11 @@ if (__name__ == "__main__"):
 
 ### Basic Types
 
-___
+---
 
 #### Integer
+
+---
 
 **C**
 
@@ -1026,6 +1034,8 @@ MY_CONSTANT: int = 10
 
 #### Float & Double
 
+---
+
 **C**
 
 ```C
@@ -1135,6 +1145,8 @@ MY_CONSTANT: float = 10.2
 
 #### Character
 
+---
+
 **C**
 
 ```C
@@ -1232,6 +1244,8 @@ MY_CONSTANT: str = 'a'
 > More Info: https://docs.python.org/3/library/typing.html
 
 #### String
+
+---
 
 **C**
 
@@ -1343,9 +1357,13 @@ MY_CONSTANT: str = 'Some string'
 
 #### Boolean
 
+---
+
 TODO
 
 #### Array, List, Vectors & Tuples
+
+---
 
 **C**
 
@@ -1490,42 +1508,50 @@ variable_name = (1, 2, 3) # A tuple is a collection which is ordered and unchang
 
 ### Compound Types
 
-___
+---
 
 #### ENUM
+
+---
 
 TODO
 
 #### Struct
 
+---
+
 TODO
 
 #### Object, Set & Dictionary
+
+---
 
 TODO
 
 ### Type Aliases
 
-___
+---
 TODO
 
 ### Type Conversion (Casting)
 
-___
+---
 
 TODO
 
 ### Arithmetic Operators
 
-___
+---
 
 TODO
 
 ### Output
 
-___
+---
 
 #### Basic
+
+---
 
 **C**
 
@@ -1711,11 +1737,13 @@ print("Printing a Object: ", {"a":1, "b":2, "c":3})
 
 #### Formatted
 
+---
+
 TODO
 
 #### String Interpolation (Better Output)
 
-___
+---
 
 **C**
 
@@ -1827,112 +1855,142 @@ print(f"Hello, {name}. You are {age}.")
 
 ### Input
 
-___
+---
 
 TODO
 
 ### String Operations
 
-___
+---
 
 TODO
 
 ### Array, List, Vectors &amp; Tuples Operations
 
-___
+---
 
 #### Add Item
+
+---
 
 TODO
 
 #### Update Item
 
+---
+
 TODO
 
 #### Remove Item
+
+---
 
 TODO
 
 #### Copy
 
+---
+
 TODO
 
 #### Extra
+
+---
 
 TODO
 
 ### Pointer & Reference
 
-___
+---
 
 TODO
 
 ### Control Flow
 
-___
+---
 
 TODO
 
 #### Conditional
 
+---
+
 TODO
 
 #### Loop
+
+---
 
 TODO
 
 ### Function
 
-___
+---
 
 TODO
 
 ### Exceptions
 
-___
+---
 
 TODO
 
 ### Files
 
-___
+---
 
 TODO
 
 ### Object Oriented
 
-___
+---
 
 TODO
 
 #### Class
 
+---
+
 TODO
 
 #### Properties
+
+---
 
 TODO
 
 #### Methods
 
+---
+
 TODO
 
 #### Constructor & Destructors
+
+---
 
 TODO
 
 #### Interface
 
+---
+
 TODO
 
 #### Inheritance, Composition & Aggregation
+
+---
 
 TODO
 
 #### Overloading
 
+---
+
 TODO
 
 #### Polymorphism
+
+---
 
 TODO
