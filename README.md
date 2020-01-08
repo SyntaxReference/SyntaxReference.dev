@@ -179,11 +179,13 @@ Support markdown notation
 #include <stdio.h> // input/output to console
 #include <stdlib.h>
 #include <string.h>
-// File names between <angle brackets> are headers from the C standard library.
-// For your own headers, use double quotes instead (Convention)
+// File names between <angle brackets> are headers from
+// the C standard library.
+
 #include "my_module.h"
 #include "path/to/my_module.h"
 #include "../path/to/my_module.h"
+// For your own headers, use double quotes instead (Convention)
 ```
 
 > More Info: https://learnxinyminutes.com/docs/c/
@@ -194,14 +196,17 @@ Support markdown notation
 // C standard headers are available in C++.
 // C headers end in .h, while
 // C++ headers are prefixed with "c" and have no ".h" suffix.
+
 #include <iostream> // input/output to console
 #include <cstdio>
 #include <string>
-// File names between <angle brackets> are headers from the C++ (Cpp) standard library.
-// For your own headers, use double quotes instead (Convention)
+// File names between <angle brackets> are headers from
+// the C++ (Cpp) standard library.
+
 #include "my_module.h"
 #include "path/to/my_module.h"
 #include "../path/to/my_module.h"
+// For your own headers, use double quotes instead (Convention)
 ```
 
 > More Info: https://learnxinyminutes.com/docs/c++/
@@ -219,6 +224,7 @@ using Alias = System.Console;
 
 ```Java
 // No need for output library for the console
+
 import java.util.Scanner; // Input
 import java.util.ArrayList;
 import java.util.*;
@@ -228,6 +234,7 @@ import java.util.*;
 
 ```Rust
 // No need for input/output library for the console
+
 use std::env
 ```
 
@@ -244,6 +251,7 @@ ECMAScript format
 
 ```Javascript
 // No need for output library for the console
+
 import defaultExport from 'module-name';
 import defaultExport from "module-name";
 import * as name from "module-name";
@@ -317,6 +325,7 @@ const { PI } = Math;
 
 ```Typescript
 // No need for input/output library for the console
+
 import defaultExport from "module-name";
 import * as name from "module-name";
 import { export1 } from "module-name";
@@ -336,6 +345,7 @@ var promise = import("module-name");
 
 ```Python
 # No need for input/output library for the console
+
 import module_name
 from module_name import function1 , function2
 from module_name import *
@@ -359,22 +369,29 @@ from ..module_name import relative_module_name
 **C**
 
 ```C
-#ifndef MY_HEADER_FILE_NAME_H // Header Guards. This notation is just a convention, not the actual file name
+// Header Guards.
+// This notation is just a convention, not the actual file name
+#ifndef MY_HEADER_FILE_NAME_H
 #define MY_HEADER_FILE_NAME_H
 
 // Code Declarations Here
 
-// This is a header file (.h) the actual code will be inside a source file (.c)
+// This is a header file (.h) the actual code will be
+// inside a source file (.c)
 
 #endif
 ```
 
 ```C
-#pragma once // Same purpose as header guards. However, is not an official part of the C/C++ language, and not all compilers support it (although most modern compilers do).
+// Same purpose as header guards. However,
+// is not an official part of the C/C++ language,
+// and not all compilers support it (although most modern compilers do).
+#pragma once
 
 // Code Declarations Here
 
-// This is a header file (.h) the actual code will be inside a source file (.c)
+// This is a header file (.h) the actual code will be
+// inside a source file (.c)
 ```
 
 > More Info: https://www.learncpp.com/cpp-tutorial/header-guards/
@@ -382,23 +399,30 @@ from ..module_name import relative_module_name
 **C++ (Cpp)**
 
 ```Cpp
-#ifndef MY_HEADER_FILE_NAME_H // Header Guards. This notation is just a convention, not the actual file name
+// Header Guards.
+// This notation is just a convention, not the actual file name
+#ifndef MY_HEADER_FILE_NAME_H
 #define MY_HEADER_FILE_NAME_H
 
 // Code Declarations Here
 
-// This is a header file (.h) the actual code will be inside a source file (.cpp)
+// This is a header file (.h) the actual code will be
+// inside a source file (.cpp)
 
 #endif
 ```
 
 ```Cpp
-#pragma once // Same purpose as header guards. However, is not an official part of the C/C++ language, and not all compilers support it (although most modern compilers do).
+// Same purpose as header guards. However,
+// is not an official part of the C/C++ language,
+// and not all compilers support it (although most modern compilers do).
+#pragma once
 
 
 // Code Declarations Here
 
-// This is a header file (.h) the actual code will be inside a source file (.cpp)
+// This is a header file (.h) the actual code will be
+// inside a source file (.cpp)
 ```
 
 > More Info: https://www.learncpp.com/cpp-tutorial/header-guards/
@@ -730,7 +754,10 @@ int main(void)
 **C\# (Csharp)**
 
 ```Cs
-namespace MyNamespaceName // Namespaces are created to group and/or distinguish named entities from other ones. This prevents name conflicts.
+// Namespaces are created to group and/or distinguish
+// named entities from other ones.
+// This prevents name conflicts.
+namespace MyNamespaceName
 {
     public class MyClassName
     {
@@ -874,7 +901,9 @@ if (__name__ == "__main__"):
 ```C
 #include <stdint.h> // Since C99
 /*
-To help with cross-platform portability, C99 defined a set of fixed-width integers (in the stdint.h header) that are guaranteed to have the same size on any architecture.
+To help with cross-platform portability, C99 defined a
+set of fixed-width integers (in the stdint.h header)
+that are guaranteed to have the same size on any architecture.
 */
 
 int8_t variable_name_Signed = 10;		// Range: -128 to 127
@@ -887,7 +916,9 @@ int64_t variable_name_Signed = 10;		// Range: -9,223,372,036,854,775,808 to 9,22
 uint64_t variable_name_Unsigned = 10;	// Range: 0 to 18,446,744,073,709,551,615
 
 const int16_t MY_CONSTANT = 30;
+```
 
+```C
 // Old Way
 int variable_name = 10; // Signed by default
 unsigned int variable_name = 10;
@@ -917,14 +948,22 @@ std::uint32_t variable_name_Unsigned = 10;	// Range: 0 to 4,294,967,295
 std::int64_t variable_name_Signed = 10;		// Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 std::uint64_t variable_name_Unsigned = 10;	// Range: 0 to 18,446,744,073,709,551,615
 
-const int16_t MY_CONSTANT = 30;
-constexpr int16_t MY_CONSTANT = 30; // C++11
 /*
-Any variable that should not be modifiable after initialization and whose initializer is known at compile-time should be declared as constexpr.
-
-Any variable that should not be modifiable after initialization and whose initializer is not known at compile-time should be declared as const.
+Any variable that should not be modifiable after initialization
+and whose initializer is not known at compile-time should be
+declared as const.
 */
+const std::int16_t MY_CONSTANT = 30;
 
+/*
+Any variable that should not be modifiable after initialization
+and whose initializer is known at compile-time should be
+declared as constexpr.
+*/
+constexpr std::int16_t MY_CONSTANT = 30; // C++11
+```
+
+```Cpp
 // Old way of declaring integers
 int variable_name = 10; // Signed by default
 unsigned int variable_name = 10;
@@ -934,17 +973,22 @@ long int variable_name = 10;
 long variable_name = 10;
 long long int variable_name = 10;
 long long variable_name = 10;
+```
 
+```Cpp
 // Differents mode of initialization
 
+#include <cstdint> // Since C++11
+
 // Copy
-std::int32_t variable_name = 5; // copy initialization of value 5 into variable
+std::int32_t variable_name = 5;
 
 // Direct
-std::int32_t variable_name( 5 ); // direct initialization of value 5 into variable
+std::int32_t variable_name( 5 );
 
-// Uniform initialization (Also known as brace initialization)
-std::int32_t variable_name{ 5 }; // brace initialization (since C++11) of value 5 into variable (Also known as uniform initialization or list initialization)
+// Uniform Initialization (since C++11)
+// Also known as Brace Initialization or List Initialization
+std::int32_t variable_name{ 5 };
 ```
 
 > More Info:
@@ -986,9 +1030,13 @@ const variableName = 10;
 const MY_CONSTANT = 10;
 var variableName = 10; // Avoid "var"
 
-// A BigInt is created by appending n to the end of an integer or by calling the constructor.
+// A BigInt is created by appending n to the end of an integer
+// or by calling the constructor.
 let variableName = 10n;
-/* The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers.
+/* The BigInt type is a numeric primitive in JavaScript
+ that can represent integers with arbitrary precision.
+ With BigInts, you can safely store and operate on large
+ integers even beyond the safe integer limit for Numbers.
 */
 ```
 
@@ -1002,7 +1050,10 @@ let variableName: any = 10;
 const variableName: number = 10;
 const MY_CONSTANT: number = 10;
 
-/* The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary precision. With BigInts, you can safely store and operate on large integers even beyond the safe integer limit for Numbers.
+/* The BigInt type is a numeric primitive in JavaScript
+ that can represent integers with arbitrary precision.
+ With BigInts, you can safely store and operate on large
+ integers even beyond the safe integer limit for Numbers.
 */
 let variableName: bigint = 10n;
 let variableName: BigInt(10);
@@ -1016,9 +1067,11 @@ let variableName: BigInt(10);
 
 ```Python
 variable_name = 10
-variable_name: int = 10 # Type Annotations (PEP 484 / Python 3.6+)
-variable_name: any = 10
 MY_CONSTANT = 10
+
+# Type Annotations (PEP 484 / Python 3.6+)
+variable_name: int = 10
+variable_name: any = 10
 MY_CONSTANT: int = 10
 ```
 
@@ -1047,29 +1100,35 @@ const double MY_CONSTANT = 12.2;
 float variable_name = 10.5;
 float variable_name = 10.5f;
 float variable_name = 10.5F;
-const float MY_CONSTANT = 12.2;
-const float MY_CONSTANT = 12.2f;
-
 double variable_name = 10.5;
+
+/*
+Any variable that should not be modifiable after initialization
+and whose initializer is not known at compile-time should be
+declared as const.
+*/
 const double MY_CONSTANT = 12.2;
 
-constexpr float MY_CONSTANT = 12.2f; // C++11
 /*
-Any variable that should not be modifiable after initialization and whose initializer is known at compile-time should be declared as constexpr.
-
-Any variable that should not be modifiable after initialization and whose initializer is not known at compile-time should be declared as const.
+Any variable that should not be modifiable after initialization
+and whose initializer is known at compile-time should be
+declared as constexpr.
 */
+constexpr float MY_CONSTANT = 12.2; // C++11
+```
 
+```Cpp
 // Differents mode of initialization
 
 // Copy
-std::int32_t variable_name = 5; // copy initialization of value 5 into variable
+float variable_name = 5.2;
 
 // Direct
-std::int32_t variable_name( 5 ); // direct initialization of value 5 into variable
+float variable_name( 5.2 );
 
-// Uniform initialization (Also known as brace initialization)
-std::int32_t variable_name{ 5 }; // brace initialization (since C++11) of value 5 into variable (Also known as uniform initialization or list initialization)
+// Uniform Initialization (since C++11)
+// Also known as Brace Initialization or List Initialization
+float variable_name{ 5.2 };
 ```
 
 > More Info:
@@ -1127,9 +1186,11 @@ const MY_CONSTANT: number = 10.2;
 
 ```Python
 variable_name = 10.2
-variable_name: float = 10.2 # Type Annotations (PEP 484 / Python 3.6+)
-variable_name: any = 10.2
 MY_CONSTANT = 10.2
+
+# Type Annotations (PEP 484 / Python 3.6+)
+variable_name: float = 10.2
+variable_name: any = 10.2
 MY_CONSTANT: float = 10.2
 ```
 
@@ -1154,24 +1215,31 @@ const char MY_CONSTANT = '\n';
 char variable_name = 'a'; // Single Quotes for characters
 char variable_name = '\n';
 
-const char MY_CONSTANT = '\n';
-constexpr char MY_CONSTANT = '\n'; // C++11
 /*
-Any variable that should not be modifiable after initialization and whose initializer is known at compile-time should be declared as constexpr.
-
-Any variable that should not be modifiable after initialization and whose initializer is not known at compile-time should be declared as const.
+Any variable that should not be modifiable after initialization
+and whose initializer is not known at compile-time should be declared as const.
 */
+const char MY_CONSTANT = '\n';
 
+/*
+Any variable that should not be modifiable after initialization
+and whose initializer is known at compile-time should be declared as constexpr.
+*/
+constexpr char MY_CONSTANT = '\n'; // C++11
+```
+
+```Cpp
 // Differents mode of initialization
 
 // Copy
-std::int32_t variable_name = 5; // copy initialization of value 5 into variable
+char variable_name = 'a';
 
 // Direct
-std::int32_t variable_name( 5 ); // direct initialization of value 5 into variable
+char variable_name( 'a' );
 
-// Uniform initialization (Also known as brace initialization)
-std::int32_t variable_name{ 5 }; // brace initialization (since C++11) of value 5 into variable (Also known as uniform initialization or list initialization)
+// Uniform Initialization (since C++11)
+// Also known as Brace Initialization or List Initialization
+char variable_name{ 'a' };
 ```
 
 > More Info:
@@ -1226,10 +1294,13 @@ const MY_CONSTANT: string = "a";
 **Python**
 
 ```Python
+# You can use either single quotes or double
 variable_name = "a"
-variable_name: str = 'a' # Type Annotations (PEP 484 / Python 3.6+)
-variable_name: any = 'a'
 MY_CONSTANT = 'a'
+
+# Type Annotations (PEP 484 / Python 3.6+)
+variable_name: str = 'a'
+variable_name: any = 'a'
 MY_CONSTANT: str = 'a'
 ```
 
@@ -1246,6 +1317,7 @@ MY_CONSTANT: str = 'a'
 
 // In C, strings are an array of characters
 char variable_name[21]; // This is a string with lenght = 20. In C you have to account for the '\0' character.
+
 char variable_name[] = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
 char *variable_name = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
 
@@ -1258,34 +1330,46 @@ const char *MY_CONSTANT = "Something";
 ```Cpp
 #include <string> // For string type
 
+std::string variable_name = "Another String";
+
+/*
+Any variable that should not be modifiable after initialization
+and whose initializer is not known at compile-time should be
+declared as const.
+*/
+const std::string variable_name = "Another String";
+
+/*
+Any variable that should not be modifiable after initialization
+and whose initializer is known at compile-time should be
+declared as constexpr.
+*/
+constexpr std::string MY_CONSTANT = "Another String"; // C++11
+```
+
+```Cpp
+// Like C
+
 char variable_name[21]; // This is a string with lenght = 20. Dont forget to account for the '\0' character
+
 char variable_name[] = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
 char *variable_name = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
+```
 
-const char MY_CONSTANT[] = "Something";
-const char *MY_CONSTANT= "Something";
-
-// string library
-std::string variable_name = "Another String";
-const std::string variable_name = "Another String";
-constexpr std::string MY_CONSTANT = "Another String"; // C++11
-/*
-Any variable that should not be modifiable after initialization and whose initializer is known at compile-time should be declared as constexpr.
-
-Any variable that should not be modifiable after initialization and whose initializer is not known at compile-time should be declared as const.
-*/
-
-
+```Cpp
 // Differents mode of initialization
 
+#include <string> // For string type
+
 // Copy
-std::int32_t variable_name = 5; // copy initialization of value 5 into variable
+std::string variable_name = "Another String";
 
 // Direct
-std::int32_t variable_name( 5 ); // direct initialization of value 5 into variable
+std::string variable_name( "Another String" );
 
-// Uniform initialization (Also known as brace initialization)
-std::int32_t variable_name{ 5 }; // brace initialization (since C++11) of value 5 into variable (Also known as uniform initialization or list initialization)
+// Uniform Initialization (since C++11)
+// Also known as Brace Initialization or List Initialization
+std::string variable_name{ "Another String" };
 ```
 
 > More Info:
@@ -1339,9 +1423,11 @@ const MY_CONSTANT: string = "Some string";
 
 ```Python
 variable_name = "Some string"
-variable_name: str = 'Some string' # Type Annotations (PEP 484 / Python 3.6+)
-variable_name: any = 'Some string'
 MY_CONSTANT = 'Some string'
+
+# Type Annotations (PEP 484 / Python 3.6+)
+variable_name: str = 'Some string'
+variable_name: any = 'Some string'
 MY_CONSTANT: str = 'Some string'
 ```
 
@@ -1373,44 +1459,77 @@ int32_t multi_dimensional_array[20][30];
 // In C, strings are an array of characters
 char variable_name[21]; // This is a string with lenght = 20. In C you have to account for the '\0' character.
 char variable_name[] = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
+```
 
+```C
 // No Native List
+
+// You can code your own or use a 3rd lib
+```
+
+```C
 // No Native Vectors
+
+// You can code your own or use a 3rd lib
+```
+
+```C
 // No Native Tuples
+
+// You can code your own or use a 3rd lib
 ```
 
 **C++ (Cpp)**
 
 ```Cpp
-
-// Arrays Classic
-std::int32_t integer_array_name[20]; // Arrays must be initialized with a concrete size.
-std::int32_t integer_array_name[] = {0, 1, 2, 3, 4}; // You can skip the size declaration if you initialize the array on the same line.
-char char_array[] = {'a', 'b', 'c'};
-
 // Arrays C++11
 #include <array>
 
-std::array<std::int32_t, 3> myArray; // declare an integer array with length 3
-std::array<std::int32_t, 5> myArray = { 9, 7, 5, 3, 1 }; // initializer list
-std::array<std::int32_t, 5> myArray { 9, 7, 5, 3, 1 }; // uniform initialization
+// declare an integer array with length 3
+std::array<std::int32_t, 3> myArray;
+std::array<std::int32_t, 5> myArray = { 9, 7, 5, 3, 1 };
+std::array<std::int32_t, 5> myArray { 9, 7, 5, 3, 1 };
 
 // Multi Dimensional Array
 std::int32_t multi_dimensional_array[20][30];
+```
 
+```Cpp
+// Arrays Classic
+
+// Arrays must be initialized with a concrete size.
+std::int32_t integer_array_name[20];
+
+// You can skip the size declaration if you initialize
+// the array on the same line.
+std::int32_t integer_array_name[] = {0, 1, 2, 3, 4};
+
+char char_array[] = {'a', 'b', 'c'};
+```
+
+```Cpp
 // List
 #include <list>
+
 // TODO
+```
 
+```Cpp
 // Vectors C++03
-#include <vector>
-// no need to specify length at initialization
-std::vector<std::int32_t> myVector;
-std::vector<std::int32_t> myVector = { 9, 7, 5, 3, 1 }; // use initializer list to initialize array
-std::vector<std::int32_t> myVector { 9, 7, 5, 3, 1 }; // use uniform initialization to initialize array (C++11 onward)
 
+#include <vector>
+
+// No need to specify length at initialization
+std::vector<std::int32_t> myVector;
+std::vector<std::int32_t> myVector = { 9, 7, 5, 3, 1 };
+std::vector<std::int32_t> myVector { 9, 7, 5, 3, 1 };
+```
+
+```Cpp
 // Tuples
+
 #include <tuple>
+
 // TODO
 ```
 
@@ -1450,9 +1569,12 @@ let variableName = [];
 let variableName = [1, 2, 3];
 let variableName = new Array(3); // Size
 const variableName = [1, 2, 3];
-// *Arrays are reference types in JavaScript.
+// Arrays are reference types in JavaScript.
+```
 
+```Javascript
 // No Native Tuple
+
 // But you can workaround with arrays. See More Info bellow
 ```
 
@@ -1470,7 +1592,9 @@ let variableName: number[] = [1, 2, 3];
 let variableName: Array<number> = [1, 2, 3];
 const variableName: number[] = [1, 2, 3];
 const variableName: Array<number> = [1, 2, 3];
+```
 
+```Typescript
 // Tuple
 let x: [string, number];
 x = ["hello", 10];
@@ -1489,9 +1613,13 @@ variable_name = [1, 2, 3]
 variable_name = [1, "Hello", 3.4] # list with mixed datatypes
 variable_name = ["mouse", [8, 4, 6], ['a']] # nested list
 MY_CONSTANT = [1, 2, 3]
+```
 
+```Python
 # Tuples
-variable_name = (1, 2, 3) # A tuple is a collection which is ordered and unchangeable. In Python tuples are written with round brackets.
+variable_name = (1, 2, 3)
+# A tuple is a collection which is ordered and unchangeable.
+# In Python tuples are written with round brackets.
 ```
 
 > More Info:
