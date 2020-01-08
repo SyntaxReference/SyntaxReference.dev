@@ -63,7 +63,7 @@ We often need to maintain or develop projects in specific languages. It is easy 
 
 This reference guide is focused on simplicity rather than deep explaining. This is not a language tutorial. It is expected from the reader experience in at least one language.
 
-If you wanna help, see [Contributing](CONSTIBUTING.md).
+If you wanna help, see [Contributing](CONTRIBUTING.md).
 
 ## Licence
 
