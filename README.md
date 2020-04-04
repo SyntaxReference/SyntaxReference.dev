@@ -1275,7 +1275,7 @@ char variable_name{ 'a' };
 ```Javascript
 let variableName: string = 'a';
 let variableName: string = "a";
-let variableName: string = "\n"; // Avoid 'var'
+let variableName: string = "\n";
 var variableName: string = "\n"; // Avoid 'var'
 const variableName: string = "a";
 const MY_CONSTANT: string = "a";
@@ -1316,10 +1316,12 @@ MY_CONSTANT: str = 'a'
 // No native string type
 
 // In C, strings are an array of characters
-char variable_name[21]; // This is a string with lenght = 20. In C you have to account for the '\0' character.
+// This is a string with lenght = 20. In C you have to account for the '\0' character.
+char variable_name[21];
 
-char variable_name[] = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
-char *variable_name = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
+// No need to include '\0' here. The compiler inserts it at the end of the array for us.
+char variable_name[] = "Some string";
+char *variable_name = "Some string";
 
 const char MY_CONSTANT[] = "Something";
 const char *MY_CONSTANT = "Something";
@@ -1350,10 +1352,12 @@ constexpr std::string MY_CONSTANT = "Another String"; // C++11
 ```Cpp
 // Like C
 
-char variable_name[21]; // This is a string with lenght = 20. Dont forget to account for the '\0' character
+// This is a string with lenght = 20. Dont forget to account for the '\0' character
+char variable_name[21];
 
-char variable_name[] = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
-char *variable_name = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
+// No need to include '\0' here. The compiler inserts it at the end of the array for us.
+char variable_name[] = "Some string";
+char *variable_name = "Some string";
 ```
 
 ```Cpp
@@ -1449,16 +1453,21 @@ TODO
 #include <stdint.h> // Since C99
 
 // Arrays
-int32_t integer_array_name[20]; // Arrays must be initialized with a concrete size.
-int32_t integer_array_name[] = {0, 1, 2, 3, 4}; // You can skip the size declaration if you initialize the array on the same line.
+
+// Arrays must be initialized with a concrete size.
+int32_t integer_array_name[20];
+
+// You can skip the size declaration if you initialize the array on the same line.
+int32_t integer_array_name[] = {0, 1, 2, 3, 4};
 char char_array[] = {'a', 'b', 'c'};
 
 // Multi Dimensional Array
 int32_t multi_dimensional_array[20][30];
 
 // In C, strings are an array of characters
-char variable_name[21]; // This is a string with lenght = 20. In C you have to account for the '\0' character.
-char variable_name[] = "Some string"; // No need to include '\0' here. The compiler inserts it at the end of the array for us.
+// This is a string with lenght = 20. In C you have to account for the '\0' character.
+char variable_name[21];
+char variable_name[] = "Some string";
 ```
 
 ```C
@@ -1723,7 +1732,6 @@ std::cout << "More Printing " << 30 << ", " << 50.2 << '\n';
 > - https://www.learncpp.com/cpp-tutorial/introduction-to-iostream-cout-cin-and-endl/
 > - http://www.cplusplus.com/forum/windows/51591/
 
-using namespace*
 
 ```Cpp
 #include <iostream>
