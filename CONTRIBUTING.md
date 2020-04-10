@@ -39,6 +39,15 @@ At the end of this file, you can find a [Code Block Sample](#code-block-sample)
 - Whenever possible, try to follow the language guidelines (variable naming, function naming and so on)
 - Indent using tabs
 
+## Web Support
+
+For Web Support, we use [VuePress](https://vuepress.vuejs.org/).
+
+Everything is automagically converted from the Github repository.
+
+The sidebar is the only feature that need to be maintained apart. (located at `.vuepress/config.js`)
+
+More info about the sidebar at the [Official Docs | Sidebar](https://vuepress.vuejs.org/theme/default-theme-config.html#sidebar) or you can just check the file.
 
 ## Code of Conduct
 
