@@ -21,6 +21,7 @@ module.exports = {
 					'/content/modules-package-headers/',
 					'/content/main/',
 					'/content/types/',
+					['/content/digit-separator/', 'Digit Separator'],
 					['/content/type-inference/', 'Type Inference'],
 					'/content/type-aliases/',
 					'/content/type-conversion/',
@@ -44,6 +45,7 @@ module.exports = {
 					'/content/exceptions/',
 					'/content/file/',
 					'/content/class/',
+					'/content/attributes-annotations-decorators/',
 				]
 			},
 			{
