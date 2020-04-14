@@ -68,7 +68,7 @@ var variable = "string";
 ## Javascript
 
 ```Javascript
-// TODO
+// Unnecessary. Does not have types
 ```
 
 [Back to top](#top)
@@ -76,16 +76,28 @@ var variable = "string";
 ## Typescript
 
 ```Typescript
-// TODO
+let notSure: any = 4;
 ```
+
+> More Info:
+> - https://www.typescriptlang.org/docs/handbook/basic-types.html#any
 
 [Back to top](#top)
 
 ## Python
 
 ```Python
-variable = True # Must have an Upper Case first letter.
-variable = False # Must have an Upper Case first letter.
+# Unnecessary. Does not have types
+
+# But if the project use Type Hints Annotations (PEP 484 / Python 3.6+)
+# You can specify "Any"
+
+variable_name: Any = 10
 ```
+
+> More Info:
+> - https://docs.python.org/3/library/typing.html
+> - https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+> - https://realpython.com/python-type-checking/
 
 [Back to top](#top)

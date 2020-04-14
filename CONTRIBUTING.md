@@ -26,7 +26,7 @@ Be my guest.
 
 ## Any Language?
 
-Well.. maybe not dead ones? But if you believe thats important, just open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues) to talk about.
+Well.. maybe not dead ones? But if you believe thats important, just open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues) to coordinate its inclusion.
 
 ## Where?
 
@@ -38,6 +38,7 @@ At the end of this file, you can find a [Code Block Sample](#code-block-sample)
 
 - Whenever possible, try to follow the language guidelines (variable naming, function naming and so on)
 - Indent using tabs
+- Be Obvious and redundant (No implicit cast, explicit `this.` operator etc)
 
 ## Web Support
 
@@ -45,9 +46,13 @@ For Web Support, we use [VuePress](https://vuepress.vuejs.org/).
 
 Everything is automagically converted from the Github repository.
 
-The sidebar is the only feature that need to be maintained apart. (located at `.vuepress/config.js`)
+The sidebar is the only feature that needs to be maintained apart. (located at `.vuepress/config.js`)
 
 More info about the sidebar at the [Official Docs | Sidebar](https://vuepress.vuejs.org/theme/default-theme-config.html#sidebar) or you can just check the file.
+
+## Web Support Known Issues
+
+The core VuePress Markdown library responsible for creating the headers anchor links is faulty, non compliance with github nor any other parser or library I know. Avoid special character in headers and duplicated headers in the same page.
 
 ## Code of Conduct
 

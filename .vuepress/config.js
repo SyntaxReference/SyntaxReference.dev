@@ -3,18 +3,11 @@ module.exports = {
 	description: 'A syntax reference guide for multiple programming languages',
 	themeConfig: {
 		repo: 'https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference',
-		editLinks: true,
-		editLinkText: 'Check Contributing and help us improve this page!',
+		repoLabel: 'Help us improve this page! Contribute on Github',
 		sidebar: [
 			{
 				title: 'Welcome',
 				path: '/',
-				collapsable: false,
-				sidebarDepth: 1
-			},
-			{
-				title: 'Contributing',
-				path: '/CONTRIBUTING',
 				collapsable: false,
 				sidebarDepth: 1
 			},
@@ -27,26 +20,13 @@ module.exports = {
 					'/content/comments/',
 					'/content/modules-package-headers/',
 					'/content/main/',
-					{
-						title: 'Types',
-						path: '/content/types/',
-						collapsable: false,
-						sidebarDepth: 2,
-						children: [
-							'/content/types/integer/',
-							'/content/types/float-double/',
-							'/content/types/character/',
-							'/content/types/string/',
-							'/content/types/boolean/',
-							['/content/types/collections/', 'Collections'],
-							'/content/types/enum/',
-							'/content/types/struct/',
-						]
-					},
+					'/content/types/',
 					['/content/type-inference/', 'Type Inference'],
 					'/content/type-aliases/',
 					'/content/type-conversion/',
 					'/content/string/',
+					'/content/enum/',
+					'/content/struct/',
 					'/content/pointer-reference/',
 					{
 						title: 'Control Flow',
@@ -58,14 +38,20 @@ module.exports = {
 							'/content/control-flow/loop/',
 						]
 					},
-					'/content/arithmetic-operators/',
-					['/content/collections/', 'Collections'],
+					'/content/operators/',
+					['/content/collections/', 'Collections & Containers'],
 					'/content/function/',
 					'/content/exceptions/',
 					'/content/file/',
 					'/content/class/',
 				]
-			}
+			},
+			{
+				title: 'Contributing',
+				path: '/CONTRIBUTING',
+				collapsable: false,
+				sidebarDepth: 1
+			},
 		]
 	}
 }

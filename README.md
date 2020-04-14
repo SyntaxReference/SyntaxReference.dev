@@ -1,6 +1,6 @@
 # Programming Languages Syntax Reference
 
-:construction: This project is a working in progress :construction:
+:construction: This project is a working in progress in early stage :construction:
 
 ## Introduction
 

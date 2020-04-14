@@ -174,6 +174,9 @@ function getSomeone() {
 
 ```Python
 # TODO
+
+# In Python if you declare a variable in a block scope (if statement, for statement, ...)
+# the variable is hoisted to the outer function scope.
 ```
 
 [Back to top](#top)

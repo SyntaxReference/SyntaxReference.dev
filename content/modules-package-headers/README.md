@@ -1,41 +1,30 @@
 # Modules, Package & Headers
 
-- [Imports](#imports)
-	- [C](#c)
-	- [C++ (Cpp)](#c-cpp)
-	- [C# (Csharp)](#c-csharp)
-	- [Java](#java)
-	- [Rust](#rust)
-	- [Go](#go)
-	- [Javascript](#javascript)
-	- [Typescript](#typescript)
-	- [Python](#python)
-- [Exports](#exports)
-	- [C](#c-1)
-	- [C++ (Cpp)](#c-cpp-1)
-	- [C# (Csharp)](#c-csharp-1)
-	- [Java](#java-1)
-	- [Rust](#rust-1)
-	- [Go](#go-1)
-	- [Javascript](#javascript-1)
-	- [Typescript](#typescript-1)
-	- [Python](#python-1)
-- [Manager](#manager)
-	- [C](#c-2)
-	- [C++ (Cpp)](#c-cpp-2)
-	- [C# (Csharp)](#c-csharp-2)
-	- [Java](#java-2)
-	- [Rust](#rust-2)
-	- [Go](#go-2)
-	- [Javascript](#javascript-2)
-	- [Typescript](#typescript-2)
-	- [Python](#python-2)
+- [C](#c)
+- [C++ (Cpp)](#c-cpp)
+- [C# (Csharp)](#c-csharp)
+- [Java](#java)
+- [Rust](#rust)
+- [Go](#go)
+- [Javascript](#javascript)
+- [Typescript](#typescript)
+- [Python](#python)
 
-## Imports
+## C
 
-### C
+C has No Official Support for Packages Managers
+Unofficial:
+
+- [conan](https://conan.io/)
+- [spack](https://spack.io)
+- [buckaroo](http://buckaroo.pm)
+- [hunter](https://github.com/cpp-pm/hunter)
+- [vcpkg](https://github.com/Microsoft/vcpkg)
 
 ```C
+// ------------------------------------
+// Imports
+// ------------------------------------
 #include <stdio.h> // input/output to console
 #include <stdlib.h>
 #include <string.h>
@@ -48,13 +37,57 @@
 // For your own headers, use double quotes instead (Convention)
 ```
 
-> More Info: https://learnxinyminutes.com/docs/c/
+```C
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// Option 1 - Header Guards.
+
+// This notation is just a convention, not the actual file name
+#ifndef MY_HEADER_FILE_NAME_H
+#define MY_HEADER_FILE_NAME_H
+
+// Code Declarations Here
+// This is a header file (.h) the actual code will be
+// inside a source file (.c)
+
+#endif
+
+
+// Option 2 - Pragma
+
+// Same purpose as header guards. However,
+// is not an official part of the C/C++ language,
+// and not all compilers support it (although most modern compilers do).
+#pragma once
+
+// Code Declarations Here
+// This is a header file (.h) the actual code will be
+// inside a source file (.c)
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/header-guards/
 
 [Back to top](#top)
 
-### C++ (Cpp)
+## C++ (Cpp)
+
+C++ has No Official Support for Packages Managers
+Unofficial:
+
+- [conan](https://conan.io/)
+- [spack](https://spack.io)
+- [buckaroo](http://buckaroo.pm)
+- [hunter](https://github.com/cpp-pm/hunter)
+- [vcpkg](https://github.com/Microsoft/vcpkg)
 
 ```Cpp
+// ------------------------------------
+// Imports
+// ------------------------------------
+
 // C standard headers are available in C++.
 // C headers end in .h, while
 // C++ headers are prefixed with "c" and have no ".h" suffix.
@@ -71,58 +104,173 @@
 // For your own headers, use double quotes instead (Convention)
 ```
 
-> More Info: https://learnxinyminutes.com/docs/c++/
+```Cpp
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// Option 1 - Header Guards.
+
+// This notation is just a convention, not the actual file name
+#ifndef MY_HEADER_FILE_NAME_H
+#define MY_HEADER_FILE_NAME_H
+
+// Code Declarations Here
+// This is a header file (.h) the actual code will be
+// inside a source file (.cpp)
+
+#endif
+
+// Option 2 - Pragma
+
+// Same purpose as header guards. However,
+// is not an official part of the C/C++ language,
+// and not all compilers support it (although most modern compilers do).
+#pragma once
+
+
+// Code Declarations Here
+// This is a header file (.h) the actual code will be
+// inside a source file (.cpp)
+```
+
+> More Info:
+> - https://learnxinyminutes.com/docs/c++/
 
 [Back to top](#top)
 
-### C# (Csharp)
+## C# (Csharp)
+
+Official Package Manager: [NuGet](https://www.nuget.org/)
 
 ```Cs
+// ------------------------------------
+// Imports
+// ------------------------------------
+
 using System; // input/output to console
 using Alias = System.Console;
 ```
 
-> More Info: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/using-namespaces
+```Cs
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// Option 1 - Just create a class
+public class Calculator
+{
+	public int Sum(int a, int b)
+	{
+		return a + b;
+	}
+}
+
+// Option 2 - You can also have a namespace
+namespace Microsoft.Calculator
+{
+	public class Calculator
+	{
+		public int Sum(int a, int b)
+		{
+			return a + b;
+		}
+	}
+}
+```
+
+> More Info:
+> - https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces
+> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/using-namespaces
 
 [Back to top](#top)
 
-### Java
+## Java
 
 ```Java
-// No need for output library for the console
+// ------------------------------------
+// Imports
+// ------------------------------------
 
 import java.util.Scanner; // Input
 import java.util.ArrayList;
 import java.util.*;
 ```
 
+```Java
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// TODO
+```
+
 [Back to top](#top)
 
-### Rust
+## Rust
+
+Official Package Manager: [Crates.io](https://crates.io/)
 
 ```Rust
+// ------------------------------------
+// Imports
+// ------------------------------------
+
 // No need for input/output library for the console
 
 use std::env
 ```
 
-[Back to top](#top)
+```Rust
+// ------------------------------------
+// Exports
+// ------------------------------------
 
-### Go
-
-```Go
-package main // input/output to console
-import "fmt" // import keyword is used to import packages in your program and fmt package is used to implement formatted Input/Output with functions.
+// TODO
 ```
 
 [Back to top](#top)
 
-### Javascript
+## Go
 
-ECMAScript format
+Package Manager are an experimental opt-in feature in Go 1.11
+
+- [Dep](https://golang.github.io/dep/)
+- [Go pkg](https://golang.org/pkg/)
+- [Package Management Tools](https://github.com/golang/go/wiki/packagemanagementtools)
+- [Download and install packages and dependencies](https://golang.org/cmd/go/#hdr-Download_and_install_packages_and_dependencies)
+
+```Go
+// ------------------------------------
+// Imports
+// ------------------------------------
+
+package main // input/output to console
+import "fmt" // import keyword is used to import packages in your program and fmt package is used to implement formatted Input/Output with functions.
+```
+
+```Go
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// TODO
+```
+
+> More Info:
+> - https://medium.com/@adiach3nko/package-management-with-go-modules-the-pragmatic-guide-c831b4eaaf31
+> - https://github.com/golang/go/wiki/Modules
+
+[Back to top](#top)
+
+## Javascript
+
+Official Package Manager: [NPM](https://www.npmjs.com)
 
 ```Javascript
-// No need for output library for the console
+// ------------------------------------
+// Imports - ECMAScript format
+// ------------------------------------
 
 import defaultExport from 'module-name';
 import defaultExport from "module-name";
@@ -138,12 +286,11 @@ import "module-name";
 var promise = import("module-name");
 ```
 
-[Back to top](#top)
-
-Browser Specific
-
 ```Javascript
-// Need to set the type to "module"
+// ------------------------------------
+// Imports - Browser Specific
+// ------------------------------------
+
 <script type="module">
 	// "Bare" import specifiers aren't currently supported
 	// You also need the file extension
@@ -162,15 +309,14 @@ Browser Specific
 </script>
 ```
 
-[Back to top](#top)
-
-Node.js Specific
-
-Since version 13, node has experimental support (Similar to the Browser)
-
-If you want to use a ECMAScript format now, you can try a loader like https://www.npmjs.com/package/esm
-
 ```Javascript
+// ------------------------------------
+// Imports - Node.js Specific
+// ------------------------------------
+
+// Since version 13, node has experimental support (Similar to the Browser)
+// If you want to use a ECMAScript format now, you can try a loader like https://www.npmjs.com/package/esm
+
 // "Bare" import specifiers aren't currently supported
 // You also need the file extension
 
@@ -183,28 +329,78 @@ import defaultExport from '../module_name.js';
 // Not supported:
 import defaultExport from 'module_name.js';
 import defaultExport from 'folder/module_name.js';
-
-// Code Here
 ```
 
-> More Info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-
-[Back to top](#top)
-
-Legacy CommonJS format
-
 ```Javascript
-// No need for output library for the console
+// ------------------------------------
+// Imports - Legacy CommonJS format
+// ------------------------------------
+
 const package = require('module-name');
 const { PI } = Math;
 ```
 
+```Javascript
+// ------------------------------------
+// Exports - ECMAScript format
+// ------------------------------------
+
+// There are two types of exports:
+// - Named Exports (Zero or more exports per module)
+// - Default Exports (One per module)
+
+// Exporting individual features
+export let name1, name2, nameN; // also var, const
+export let name1 = name2 = nameN; // also var, const
+export function functionName() {}
+export class ClassName {}
+
+// Export list
+export { name1, name2, nameN };
+
+// Renaming exports
+export { variable1 as name1, variable2 as name2, nameN };
+
+// Exporting destructured assignments with renaming
+export const { name1, name2: bar } = o;
+
+// Default exports
+export default expression;
+export default class ClassName {}
+export default function () {} // also class, function*
+export default function name1() {} // also class, function*
+export { name1 as default, … };
+
+// Aggregating modules
+export * from …; // does not set the default export
+export * as name1 from 'module';
+export { name1, name2, …, nameN } from 'module';
+export { import1 as name1, import2 as name2, nameN } from 'module';
+export { default } from  'module';
+```
+
+```Javascript
+// ------------------------------------
+// Exports - Legacy CommonJS format
+// ------------------------------------
+
+// TODO
+```
+
+> More Info:
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+
 [Back to top](#top)
 
-### Typescript
+## Typescript
+
+Official Package Manager: [NPM](https://www.npmjs.com)
 
 ```Typescript
-// No need for input/output library for the console
+// ------------------------------------
+// Imports
+// ------------------------------------
 
 import defaultExport from "module-name";
 import * as name from "module-name";
@@ -216,17 +412,60 @@ import { export1 , export2 as alias2 , [...] } from "module-name";
 import defaultExport, { export1 [ , [...] ] } from "module-name";
 import defaultExport, * as name from "module-name";
 import "module-name";
-var promise = import("module-name");
+let promise = import("module-name");
+```
+
+```Typescript
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// There are two types of exports:
+// - Named Exports (Zero or more exports per module)
+// - Default Exports (One per module)
+
+// Exporting individual features
+export let name1, name2, nameN; // also var, const
+export let name1 = name2 = nameN; // also var, const
+export function functionName() {}
+export class ClassName {}
+
+// Export list
+export { name1, name2, nameN };
+
+// Renaming exports
+export { variable1 as name1, variable2 as name2, nameN };
+
+// Exporting destructured assignments with renaming
+export const { name1, name2: bar } = o;
+
+// Default exports
+export default expression;
+export default class ClassName {}
+export default function () {} // also class, function*
+export default function name1() {} // also class, function*
+export { name1 as default, … };
+
+// Aggregating modules
+export * from …; // does not set the default export
+export * as name1 from 'module';
+export { name1, name2, …, nameN } from 'module';
+export { import1 as name1, import2 as name2, nameN } from 'module';
+export { default } from  'module';
 ```
 
 > More Info: https://www.typescriptlang.org/docs/handbook/modules.html
 
 [Back to top](#top)
 
-### Python
+## Python
+
+Official Package Manager: [pip / Pypi](https://pypi.org/)
 
 ```Python
-# No need for input/output library for the console
+# ------------------------------------
+# Imports
+# ------------------------------------
 
 import module_name
 from module_name import function1 , function2
@@ -242,241 +481,24 @@ from .. import relative_module_name
 from ..module_name import relative_module_name
 ```
 
-> More Info: https://docs.python.org/3/tutorial/modules.html
-
-[Back to top](#top)
-
-## Exports
-
-### C
-
-```C
-// Header Guards.
-// This notation is just a convention, not the actual file name
-#ifndef MY_HEADER_FILE_NAME_H
-#define MY_HEADER_FILE_NAME_H
-
-// Code Declarations Here
-
-// This is a header file (.h) the actual code will be
-// inside a source file (.c)
-
-#endif
-```
-
-```C
-// Same purpose as header guards. However,
-// is not an official part of the C/C++ language,
-// and not all compilers support it (although most modern compilers do).
-#pragma once
-
-// Code Declarations Here
-
-// This is a header file (.h) the actual code will be
-// inside a source file (.c)
-```
-
-> More Info: https://www.learncpp.com/cpp-tutorial/header-guards/
-
-[Back to top](#top)
-
-### C++ (Cpp)
-
-```Cpp
-// Header Guards.
-// This notation is just a convention, not the actual file name
-#ifndef MY_HEADER_FILE_NAME_H
-#define MY_HEADER_FILE_NAME_H
-
-// Code Declarations Here
-
-// This is a header file (.h) the actual code will be
-// inside a source file (.cpp)
-
-#endif
-```
-
-```Cpp
-// Same purpose as header guards. However,
-// is not an official part of the C/C++ language,
-// and not all compilers support it (although most modern compilers do).
-#pragma once
-
-
-// Code Declarations Here
-
-// This is a header file (.h) the actual code will be
-// inside a source file (.cpp)
-```
-
-> More Info: https://www.learncpp.com/cpp-tutorial/header-guards/
-
-[Back to top](#top)
-
-### C# (Csharp)
-
-```Cs
-// Just create a class
-public class Calculator
-{
-	public int Sum(int a, int b)
-	{
-		return a + b;
-	}
-}
-```
-
-```Cs
-// You can also have a namespace
-namespace Microsoft.Calculator
-{
-	public class Calculator
-	{
-		public int Sum(int a, int b)
-		{
-			return a + b;
-		}
-	}
-}
-```
-
-> More Info: https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces
-
-[Back to top](#top)
-
-### Java
-
-```Java
-// TODO
-```
-
-[Back to top](#top)
-
-### Rust
-
-```Rust
-// TODO
-```
-
-[Back to top](#top)
-
-### Go
-
-```Go
-// TODO
-```
-
-[Back to top](#top)
-
-### Javascript
-
-ECMAScript format
-
-There are two types of exports:
-
-- Named Exports (Zero or more exports per module)
-- Default Exports (One per module)
-
-```Javascript
-// Exporting individual features
-export let name1, name2, nameN; // also var, const
-export let name1 = name2 = nameN; // also var, const
-export function functionName() {}
-export class ClassName {}
-
-// Export list
-export { name1, name2, nameN };
-
-// Renaming exports
-export { variable1 as name1, variable2 as name2, nameN };
-
-// Exporting destructured assignments with renaming
-export const { name1, name2: bar } = o;
-
-// Default exports
-export default expression;
-export default class ClassName {}
-export default function () {} // also class, function*
-export default function name1() {} // also class, function*
-export { name1 as default, … };
-
-// Aggregating modules
-export * from …; // does not set the default export
-export * as name1 from 'module';
-export { name1, name2, …, nameN } from 'module';
-export { import1 as name1, import2 as name2, nameN } from 'module';
-export { default } from  'module';
-```
-
-[Back to top](#top)
-
-Legacy CommonJS format
-
-```Javascript
-// TODO
-```
-
-> More Info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
-
-[Back to top](#top)
-
-### Typescript
-
-There are two types of exports:
-
-- Named Exports (Zero or more exports per module)
-- Default Exports (One per module)
-
-```Typescript
-// Exporting individual features
-export let name1, name2, nameN; // also var, const
-export let name1 = name2 = nameN; // also var, const
-export function functionName() {}
-export class ClassName {}
-
-// Export list
-export { name1, name2, nameN };
-
-// Renaming exports
-export { variable1 as name1, variable2 as name2, nameN };
-
-// Exporting destructured assignments with renaming
-export const { name1, name2: bar } = o;
-
-// Default exports
-export default expression;
-export default class ClassName {}
-export default function () {} // also class, function*
-export default function name1() {} // also class, function*
-export { name1 as default, … };
-
-// Aggregating modules
-export * from …; // does not set the default export
-export * as name1 from 'module';
-export { name1, name2, …, nameN } from 'module';
-export { import1 as name1, import2 as name2, nameN } from 'module';
-export { default } from  'module';
-```
-
-> More Info: https://www.typescriptlang.org/docs/handbook/modules.html
-
-[Back to top](#top)
-
-### Python
-
 ```Python
+# ------------------------------------
+# Exports
+# ------------------------------------
+
 # No extra code is needed
-# Just type your code and import
-```
+# Just type your code and import from other files
 
-```Python
-# But you can use the following convention
+
+# BUT you can use the following convention
 
 # Lets say you have the following folder/files
+"""
 MyModule/
 MyModule/__init__.py
 MyModule/MyClass.py
 MyModule/MyUtil.py
+"""
 
 # Import them inside __init__.py
 from MyClass import MyClass
@@ -486,119 +508,6 @@ from MyUtil import MyUtil
 from MyModule import MyClass
 ```
 
-[Back to top](#top)
-
-## Manager
-
-### C
-
-No Official Support
-
-Unofficial Managers:
-
-- [conan](https://conan.io/)
-- [spack](https://spack.io)
-- [buckaroo](http://buckaroo.pm)
-- [hunter](https://github.com/cpp-pm/hunter)
-- [vcpkg](https://github.com/Microsoft/vcpkg)
-
-Build:
-
-- [build2](https://build2.org/)
-- [GENie](https://github.com/bkaradzic/genie)
-- [Premake](https://premake.github.io/)
-- [CMake](https://cmake.org/)
-
-Example: TODO
-
-> More Info: https://medium.com/@julienjorge/an-overview-of-build-systems-mostly-for-c-projects-ac9931494444
-
-[Back to top](#top)
-
-### C++ (Cpp)
-
-No Official Support
-
-Unofficial Managers:
-
-- [conan](https://conan.io/)
-- [spack](https://spack.io)
-- [buckaroo](http://buckaroo.pm)
-- [hunter](https://github.com/cpp-pm/hunter)
-- [vcpkg](https://github.com/Microsoft/vcpkg)
-
-Build:
-
-- [build2](https://build2.org/)
-- [GENie](https://github.com/bkaradzic/genie)
-- [Premake](https://premake.github.io/)
-- [CMake](https://cmake.org/)
-
-Example: TODO
-
-> More Info: https://medium.com/@julienjorge/an-overview-of-build-systems-mostly-for-c-projects-ac9931494444
-
-[Back to top](#top)
-
-### C# (Csharp)
-
-[NuGet](https://www.nuget.org/)
-
-Example: TODO
-
-[Back to top](#top)
-
-### Java
-
-TODO
-
-[Back to top](#top)
-
-### Rust
-
-[Crates.io](https://crates.io/)
-
-Example: TODO
-
-[Back to top](#top)
-
-### Go
-
-Modules are an experimental opt-in feature in Go 1.11
-
-- [Dep](https://golang.github.io/dep/)
-- [Go pkg](https://golang.org/pkg/)
-- [Package Management Tools](https://github.com/golang/go/wiki/packagemanagementtools)
-- [Download and install packages and dependencies](https://golang.org/cmd/go/#hdr-Download_and_install_packages_and_dependencies)
-
-Example: TODO
-
-> More Info:
-> - https://medium.com/@adiach3nko/package-management-with-go-modules-the-pragmatic-guide-c831b4eaaf31
-> - https://github.com/golang/go/wiki/Modules
-
-[Back to top](#top)
-
-### Javascript
-
-[NPM](https://www.npmjs.com)
-
-Example: TODO
-
-[Back to top](#top)
-
-### Typescript
-
-[NPM](https://www.npmjs.com)
-
-Example: TODO
-
-[Back to top](#top)
-
-### Python
-
-[pip / Pypi](https://pypi.org/)
-
-Example: TODO
+> More Info: https://docs.python.org/3/tutorial/modules.html
 
 [Back to top](#top)
