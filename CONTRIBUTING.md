@@ -4,21 +4,26 @@ First, Thank you for considering helping. I am glad this project means that much
 
 ## First Step
 
-If you've noticed something wrong or just want to deep dive or have an idea, just open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues)! Lets talk about it. There are many ways to contribute, from improving the documentation to adding new languages syntax.
+If you've noticed something wrong or just want to deep dive or have an idea, just open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues)! Lets talk about it. There are many ways to contribute, from improving the documentation to adding new syntax.
 
 It's generally best before you do anything to open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues). This way we can avoid multiple people doing the same thing.
 
-## Current Avaliable Languages
+## Current Avaliable Syntax
 
-- C
-- C++ (Cpp)
-- C# (Csharp)
-- Java
-- Rust
-- Go
-- Javascript
-- TypeScript
-- Python
+- Programming Languages
+  - C
+  - C++ (Cpp)
+  - C# (Csharp)
+  - Java
+  - Rust
+  - Go
+  - Javascript
+  - TypeScript
+  - Python
+
+## New Syntax Group
+
+Be my guest.
 
 ## New Languages
 
@@ -32,7 +37,7 @@ Well.. maybe not dead ones? But if you believe thats important, just open an [is
 
 All the "code" is stored on Github in Markdown files.
 
-At the end of this file, you can find a [Code Block Sample](#code-block-sample)
+At the end of this file, you can find a [Code Block Sample](#code-block-sample) for Programming Languages Syntax.
 
 ## Coding Conventions
 
