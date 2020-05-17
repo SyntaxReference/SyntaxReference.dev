@@ -1,4 +1,4 @@
-# Programming Languages Syntax Reference
+# Syntax Reference
 
 :construction: This project is a working in progress in early stage :construction:
 
@@ -24,7 +24,7 @@ If you wanna help, see [Contributing](CONTRIBUTING.md).
 
 ## Getting Started
 
-To get started, check the [Topic List](content/README.md)
+To get started, check the [Topic List](programming-languages/README.md)
 
 ## Licence
 

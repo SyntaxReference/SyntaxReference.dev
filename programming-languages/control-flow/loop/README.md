@@ -96,8 +96,9 @@ for (auto &element : myArray) { /**/ }
 for (const auto &element : myArray) { /**/ }
 for (auto const &element : myArray) { /**/ }
 
-// In for-each loops element declarations, if your elements are non-fundamental types,
-// use references or const references for performance reasons.
+// In for-each loops element declarations, for performance reasons,
+// if your elements are non-fundamental types, use references or const references
+// else (your elements are basic types) use the copy element syntax
 ```
 
 > More Info:

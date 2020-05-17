@@ -37,22 +37,22 @@ At the end of this file, you can find a [Code Block Sample](#code-block-sample)
 ## Coding Conventions
 
 - Whenever possible, try to follow the language guidelines (variable naming, function naming and so on)
-- Indent using tabs
+- Indent using `tabs`
 - Be Obvious and redundant (No implicit cast, explicit `this.` operator etc)
 
 ## Web Support
 
 For Web Support, we use [VuePress](https://vuepress.vuejs.org/).
 
-Everything is automagically converted from the Github repository.
+Everything is _automagically_ converted from the Github repository.
 
-The sidebar is the only feature that needs to be maintained apart. (located at `.vuepress/config.js`)
+The sidebar is the only feature that needs to be maintained apart. (located inside `.vuepress` folder)
 
 More info about the sidebar at the [Official Docs | Sidebar](https://vuepress.vuejs.org/theme/default-theme-config.html#sidebar) or you can just check the file.
 
 ## Web Support Known Issues
 
-The core VuePress Markdown library responsible for creating the headers anchor links is faulty, non compliance with github nor any other parser or library I know. Avoid special character in headers and duplicated headers in the same page.
+The core VuePress Markdown library responsible for creating the headers anchor links is faulty, non compliance with github nor any other parser or library I know. Avoid special character in headers level 2+ and duplicated headers in the same page.
 
 ## Code of Conduct
 
