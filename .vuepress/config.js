@@ -44,7 +44,18 @@ module.exports = {
 					'/content/function/',
 					'/content/exceptions/',
 					'/content/file/',
-					'/content/class/',
+					{
+						title: 'Class',
+						path: '/content/class/',
+						collapsable: false,
+						sidebarDepth: 2,
+						children: [
+							'/content/class/basic-template/',
+							'/content/class/abstract-class/',
+							'/content/class/interface/',
+							'/content/class/namespaces/',
+						]
+					},
 					'/content/attributes-annotations-decorators/',
 				]
 			},
