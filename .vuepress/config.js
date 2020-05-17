@@ -21,6 +21,7 @@ module.exports = {
 					'/content/modules-package-headers/',
 					'/content/main/',
 					'/content/types/',
+					'/content/null/',
 					['/content/digit-separator/', 'Digit Separator'],
 					['/content/type-inference/', 'Type Inference'],
 					'/content/type-aliases/',

@@ -4,6 +4,7 @@
 - [Modules, Package & Headers](/content/modules-package-headers/)
 - [Main (Entry Point)](/content/main/)
 - [Basic Types](/content/types/)
+- [Null](/content/null/)
 - [Digit Separator](/content/digit-separator/)
 - [Type Inference](/content/type-inference/)
 - [Type Conversion](/content/type-conversion/)
