@@ -44,7 +44,10 @@ var variable = "string";
 ## Java
 
 ```Java
-// TODO
+// type inference for local variables since Java 10
+var variable = 12.4;
+var variable = 4;
+var variable = "string";
 ```
 
 [Back to top](#top)

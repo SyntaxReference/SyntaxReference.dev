@@ -31,15 +31,22 @@ int main(int argc, const char *argv[])
 ```
 
 ```C
+#include <stdlib.h> // For exit(), EXIT_SUCCESS, EXIT_FAILURE
+
 int main(void)
 {
 	// Code Here
 
-	return 0;
+	// In some codes, instead of "return 0", you might find One of the following:
+	return exit(0);
+	return EXIT_SUCCESS;
+	return exit(EXIT_SUCCESS);
 }
 ```
 
-> More Info: https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+> More Info:
+> - https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+> - https://stackoverflow.com/questions/13667364/exit-failure-vs-exit1
 
 ## C++ (Cpp)
 
@@ -62,31 +69,32 @@ int main(int argc, const char *argv[])
 ```
 
 ```Cpp
+#include <cstdlib> // For exit(), EXIT_SUCCESS, EXIT_FAILURE
+
 int main(void)
 {
 	// Code Here
 
-	return 0;
+	// In some codes, instead of "return 0", you might find One of the following:
+	return exit(0);
+	return EXIT_SUCCESS;
+	return exit(EXIT_SUCCESS);
 }
 ```
 
-> More Info: https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+> More Info:
+> - https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+> - https://stackoverflow.com/questions/13667364/exit-failure-vs-exit1
 
 ## C# (Csharp)
 
 ```Cs
-// Namespaces are created to group and/or distinguish
-// named entities from other ones.
-// This prevents name conflicts.
-namespace MyNamespaceName
+public class MyClassName
 {
-    public class MyClassName
-    {
-        public static void Main(string[] args)
-        {
-			// Code Here
-        }
-    }
+	public static void Main(string[] args)
+	{
+		// Code Here
+	}
 }
 ```
 
@@ -97,12 +105,9 @@ namespace MyNamespaceName
 ## Java
 
 ```Java
-public class MyClassName
+public static void main(String[] args)
 {
-	public static void main(String[] args)
-	{
-		// Code Here
-	}
+	// Code Here
 }
 ```
 
@@ -142,7 +147,7 @@ Main.Run();
 ```
 
 ```Javascript
-// TODO Args Example
+// TODO Args Example (Node)
 ```
 
 ## Typescript
@@ -178,19 +183,22 @@ Main.Run();
 # You dont need a main function. The Code runs top to bottom
 # But, if you want to be organized:
 
-# There are no "{ }", you need to use ":" and indentation
-# You can have either spaces or tabs but not both mixed
 def main():
 	# Code Here
 
 main()
+
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
 ```
 
 ```Python
 def main():
 	# Code Here
 
-# Conditional to check If you are running the source file as the main program entry point
+# Conditional to check If you are running the source file as
+# the main program entry point (Instead of importing it from another file)
+
 if (__name__ == "__main__"):
 	main()
 ```

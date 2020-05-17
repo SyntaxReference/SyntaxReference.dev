@@ -42,7 +42,7 @@ module.exports = {
 					},
 					'/content/operators/',
 					['/content/collections/', 'Collections & Containers'],
-					'/content/function/',
+					'/content/functions-methods/',
 					'/content/exceptions/',
 					'/content/file/',
 					{

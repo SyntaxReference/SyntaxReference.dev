@@ -12,7 +12,8 @@
 
 ## C
 
-C has No Official Support for Packages Managers
+C has No Official Support for Packages Managers.
+
 Unofficial:
 
 - [conan](https://conan.io/)
@@ -74,7 +75,8 @@ Unofficial:
 
 ## C++ (Cpp)
 
-C++ has No Official Support for Packages Managers
+C++ has No Official Support for Packages Managers.
+
 Unofficial:
 
 - [conan](https://conan.io/)
@@ -90,7 +92,8 @@ Unofficial:
 
 // C standard headers are available in C++.
 // C headers end in .h, while
-// C++ headers are prefixed with "c" and have no ".h" suffix.
+// C++ headers have no ".h" suffix.
+// C headers in C++ are prefixed with "c" and have no ".h" suffix.
 
 #include <iostream> // input/output to console
 #include <cstdio>
@@ -157,7 +160,7 @@ using Alias = System.Console;
 // Exports
 // ------------------------------------
 
-// Option 1 - Just create a class
+// Just create a class And import it from another file
 public class Calculator
 {
 	public int Sum(int a, int b)
@@ -165,23 +168,7 @@ public class Calculator
 		return a + b;
 	}
 }
-
-// Option 2 - You can also have a namespace
-namespace Microsoft.Calculator
-{
-	public class Calculator
-	{
-		public int Sum(int a, int b)
-		{
-			return a + b;
-		}
-	}
-}
 ```
-
-> More Info:
-> - https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-namespaces
-> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/using-namespaces
 
 [Back to top](#top)
 

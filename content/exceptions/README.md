@@ -24,8 +24,11 @@
 ## C++ (Cpp)
 
 ```Cpp
-// C++ Has no "Finally()"
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
 
+// C++ Has no "Finally()"
 try
 {
 	// ...
@@ -46,7 +49,11 @@ catch (...) // catch-all handler (Yes, ellipses)
 ```
 
 ```Cpp
-// TODO: Create Custom Exception
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
 ```
 > More Info:
 > - https://www.learncpp.com/cpp-tutorial/144-uncaught-exceptions-catch-all-handlers-and-exception-specifiers/
@@ -56,17 +63,21 @@ catch (...) // catch-all handler (Yes, ellipses)
 ## C# (Csharp)
 
 ```Cs
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
 try
 {
 	// ...
 }
 catch(your_specific_exception error)
 {
-	Console.WriteLine($"Specific excetion happened: {error}";
+	Console.WriteLine($"Specific excetion happened: {error}");
 }
 catch(your_specific_exception error) when (error.ParamName == "something") // Exception filter
 {
-	Console.WriteLine($"Specific excetion happened: {error}";
+	Console.WriteLine($"Specific excetion happened: {error}");
 }
 catch(Exception error)
 {
@@ -80,7 +91,11 @@ finally // Optional
 ```
 
 ```Cs
-// TODO: Create Custom Exception
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
 ```
 
 > More Info:
@@ -116,6 +131,10 @@ finally // Optional
 ## Javascript
 
 ```Javascript
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
 // Javascript can only have 1 catch, so you need to use conditional inside
 
 try {
@@ -141,7 +160,11 @@ finally {
 ```
 
 ```Javascript
-// TODO: Create Custom Exception
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
 ```
 
 > More Info:
@@ -152,10 +175,12 @@ finally {
 ## Typescript
 
 ```Typescript
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
 // Typescipt does NOT allow type annotation on catch.
 // https://github.com/Microsoft/TypeScript/issues/20024
-
-// You can probably do the same as Javascript
 
 try {
 	// ...
@@ -180,7 +205,11 @@ finally {
 ```
 
 ```Typescript
-// TODO: Create Custom Exception
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
 ```
 > More Info:
 > - https://github.com/Microsoft/TypeScript/issues/20024
@@ -190,21 +219,25 @@ finally {
 ## Python
 
 ```Python
+# ------------------------------------
+# Handling Exceptions
+# ------------------------------------
+
 try:
-    # ...
+	# ...
 except YourSpecificError:
-    # ...
+	# ...
 except YourSecondSpecificError as error:
-    print(f'YourSecondSpecificError: {error}')
+	print(f'YourSecondSpecificError: {error}')
 except (RuntimeError, TypeError, NameError): # Multiple exceptions as a parenthesized tuple
 	pass # you can pass (do nothing)
 except:
-    # The last except clause may omit the exception name(s), to serve as a wildcard.
+	# The last except clause may omit the exception name(s), to serve as a wildcard.
 	# Use this with extreme caution, since it is easy to mask a real programming error in this way!
 else: # Optional
-    # ...
+	# ...
 finally: # Optional
-    # Executed under all circumstances.
+	# Executed under all circumstances.
 ```
 
 ```Python
@@ -224,7 +257,11 @@ def divide(x, y):
 ```
 
 ```Python
-# TODO: Create Custom Exception
+# ------------------------------------
+# Custom Exception
+# ------------------------------------
+
+# TODO
 ```
 
 > More Info:

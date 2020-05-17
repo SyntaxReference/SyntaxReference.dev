@@ -13,23 +13,33 @@
 ## C
 
 ```C
-enum flag {const1, const2, ..., constN}; // By default, const1 is 0, const2 is 1 and so on.
+// ------------------------------------
+// Definition
+// ------------------------------------
+enum myEnum {const1, const2, ..., constN};
+// By default, const1 is 0, const2 is 1 and so on.
 
-// You can change default values of enum elements during declaration (if necessary).
+// Example
+// You can change default values of enum elements during definition (if necessary).
 enum ERROR_CODES {
 	NO_FILE = 314,
 	NO_MOUSE = 675,
 	NO_PC = 999
-};
+}; // Dont forget the ; (semicolon)
 
-// Creating Variables
-enum flag my_variable = enum_constant;
-int any_variable = enum_constant; // direct access
+// ------------------------------------
+// Assignment
+// ------------------------------------
+
+enum myEnum my_variable = ENUM_CONSTANT; // Either use "enum myEnum" or a type alias
+int any_variable = ENUM_CONSTANT; // direct access
 
 // ATTENTION
-// In C, enum constants are NOT scoped to the flag. Use unique names.
+// In C, enum constants are NOT scoped to the flag (enum name). Use unique names.
 
+// Example
 enum day {DAY_SUNDAY, DAY_MONDAY, DAY_TUESDAY, DAY_WEDNESDAY, DAY_THURSDAY, DAY_FRIDAY, DAY_SATURDAY};
+
 enum day d = DAY_THURSDAY;
 ```
 
@@ -42,46 +52,57 @@ enum day d = DAY_THURSDAY;
 ## C++ (Cpp)
 
 ```Cpp
-// enum class (also called a scoped enumeration). Since C++11
+// Prefer
+// enum class (also called a scoped enumeration).
+// Since C++11
 
-enum class Flag {const1, const2, ..., constN}; // By default, const1 is 0, const2 is 1 and so on.
+// ------------------------------------
+// Definition
+// ------------------------------------
+enum class MyEnum {const1, const2, ..., constN};
+// By default, const1 is 0, const2 is 1 and so on.
 
-// You can change default values of enum elements during declaration (if necessary).
+// You can change default values of enum elements during definition (if necessary).
 enum class ERROR_CODES {
 	NO_FILE = 314,
 	NO_MOUSE = 675,
 	NO_PC = 999
-};
+}; // Dont forget the ; (semicolon)
 
+// ------------------------------------
+// Assignment
+// ------------------------------------
 
-// Creating Variables
-Flag variable = Flag::const1;
-Flag variable{Flag::const1}; // Uniform Initialization (Also known as Brace Initialization or List Initialization) (since C++11)
+MyEnum variable = MyEnum::const1;
+MyEnum variable {MyEnum::const1}; // Uniform Initialization (Also known as Brace Initialization or List Initialization) (since C++11)
 
+// Other Example
 enum class Day {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY};
+
 Day day{Day::THURSDAY};
 ```
 
 ```Cpp
 //Legacy Enum
 
-enum flag {const1, const2, ..., constN}; // By default, const1 is 0, const2 is 1 and so on.
+// ------------------------------------
+// Definition
+// ------------------------------------
+enum myEnum {const1, const2, ..., constN}; // Without class keyword
 
-// You can change default values of enum elements during declaration (if necessary).
-enum ERROR_CODES {
-	NO_FILE = 314,
-	NO_MOUSE = 675,
-	NO_PC = 999
-};
+// ------------------------------------
+// Assignment
+// ------------------------------------
 
-// Creating Variables
-enum flag my_variable = enum_constant;
-int any_variable = enum_constant; // direct access
+enum myEnum my_variable = ENUM_CONSTANT;
+int any_variable = ENUM_CONSTANT; // direct access
 
 // ATTENTION
-// Enum constants created this way are NOT scoped to the flag. Use Modern Enum Class.
+// Enum constants created this way are NOT scoped to the flag (enum name). Use Modern Enum Class.
 
+// Example
 enum day {DAY_SUNDAY, DAY_MONDAY, DAY_TUESDAY, DAY_WEDNESDAY, DAY_THURSDAY, DAY_FRIDAY, DAY_SATURDAY};
+
 enum day d = DAY_THURSDAY;
 ```
 
@@ -143,9 +164,6 @@ enum day d = DAY_THURSDAY;
 
 ```Python
 # TODO
-
-# In Python if you declare a variable in a block scope (if statement, for statement, ...)
-# the variable is hoisted to the outer function scope.
 ```
 
 [Back to top](#top)

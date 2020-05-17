@@ -5,17 +5,21 @@
 - [Main (Entry Point)](/content/main/)
 - [Basic Types](/content/types/)
 - [Null](/content/null/)
+- (TODO) [Static]
 - [Digit Separator](/content/digit-separator/)
 - [Type Inference](/content/type-inference/)
 - [Type Conversion](/content/type-conversion/)
-- [Type Aliases](/content/type-aliases/)
+- (TODO) [Type Aliases](/content/type-aliases/)
 - [String](/content/string/)
-- [Pointer & Reference](pointer-reference)
+- (TODO) [Date & Time]
+- (TODO) [Pointer & Reference](pointer-reference)
 - [Control Flow](/content/control-flow/)
 - [Operators](/content/operators/)
-- [Collections](/content/collections/)
-- [Function](/content/function/)
+- [Collections & Containers](/content/collections/)
+- (TODO) [Functions & Methods](/content/functions/)
+- (TODO) [Lambda Functions]
 - [Exceptions](/content/exceptions/)
-- [File](/content/file/)
+- (TODO) [File](/content/file/)
 - [Class](/content/class/)
 - [Attributes, Annotations & Decorators](/content/attributes-annotations-decorators/)
+- (TODO) [Macros & Directives]

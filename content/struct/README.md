@@ -13,6 +13,10 @@
 ## C
 
 ```C
+// ------------------------------------
+// Definition
+// ------------------------------------
+
 struct Struct_name {
    some_type variable_name;
    some_type variable_name;
@@ -20,17 +24,27 @@ struct Struct_name {
    some_type variable_name;
 } struct_alias;
 
-struct Person {
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+struct Person
+{
 	char name[50];
 	int age;
 };
 
-// Main structure omitted
+// ------------------------------------
+// Assignment
+// ------------------------------------
 
-struct Person some_person;
+struct Person some_person; // Either use "struct myStruct" or a type alias
 
 strcpy(some_person.name, "my name"); // strcpy() from <string.h>
 some_person.age = 30;
+
+// ------------------------------------
+// Others
+// ------------------------------------
 
 // You can also return a struct from a function
 struct Person getSomeone(void)
@@ -49,26 +63,41 @@ struct Person getSomeone(void)
 ## C++ (Cpp)
 
 ```Cpp
-struct Struct_name {
+// ------------------------------------
+// Definition
+// ------------------------------------
+
+struct Struct_name
+{
    some_type variable_name;
    some_type variable_name;
    ...
    some_type variable_name;
 } struct_alias;
 
-struct Person {
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+struct Person
+{
 	std::string name;
 	std::uint8_t age;
 };
 
-// Main structure omitted
+// ------------------------------------
+// Assignment
+// ------------------------------------
 
-Person some_person;
+Person some_person; // Just like a Class
 some_person.name = "my name";
 some_person.age = 30;
 
 // Since C++11 you can also do this way
 Person some_person{"my name", 30};
+
+// ------------------------------------
+// Others
+// ------------------------------------
 
 // You can also return a struct from a function
 Person getSomeone()
@@ -117,9 +146,12 @@ Person getSomeone()
 ## Javascript
 
 ```Javascript
+// ------------------------------------
+// Definition
+// ------------------------------------
+
 // Javascript doesnt have Structs, but you can use "Object Literal" notation
 // Remember that in Javascript, objets are reference values
-
 const object_name = {
    key_name: value_name,
    key_name: value_name,
@@ -127,11 +159,20 @@ const object_name = {
    key_name: value_name,
 };
 
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+
 // You can start without any value
 const some_person = {
 	name,
 	age,
 };
+
+// ------------------------------------
+// Assignment
+// ------------------------------------
 
 some_person.name = "my name";
 some_person.age = 30;
@@ -140,6 +181,11 @@ some_person.age = 30;
 some_person["name"] = "my name";
 some_person["age"] = 30;
 
+
+
+// ------------------------------------
+// Others
+// ------------------------------------
 
 // You can also return a object from a function
 // Arrow Function Style
@@ -174,9 +220,6 @@ function getSomeone() {
 
 ```Python
 # TODO
-
-# In Python if you declare a variable in a block scope (if statement, for statement, ...)
-# the variable is hoisted to the outer function scope.
 ```
 
 [Back to top](#top)
