@@ -4,27 +4,34 @@
 
 ## Introduction
 
-We often need to maintain or develop projects in specific languages. It is easy to get the syntax mixed or not remember something specific.
+Programming languages are tools, each with its purpose and objective and we, developers, usually need to maintain or create projects in specific languages, which solve specific problems.
 
-This reference guide is focused on simplicity rather than deep explaining. This is not a language tutorial. It is expected from the reader experience in at least one language.
+It is easy to get the syntax mixed or not remember something specific. Some languages have a really specific syntax for something that is trivial in other languages, and that makes it difficult to remember.
+
+At some point, we all have our notes, code snippets, Github Gists, and others. This Syntax Reference came to be from a struggle to have up-to-date syntax reference notes.
+
+Starting with Programming Languages, topics are organized into "concepts", and is focused on simplicity and code examples. This is not a language tutorial. It is expected from the reader experience in at least one language.
+
+This project is open-source, from developer to developer.
 
 If you wanna help, see [Contributing](CONTRIBUTING.md).
 
-## Current Avaliable Languages
+## Current Avaliable Syntax
 
-- C
-- C++ (Cpp)
-- C# (Csharp)
-- Java
-- Rust
-- Go
-- Javascript
-- TypeScript
-- Python
+- Programming Languages
+  - C
+  - C++ (Cpp)
+  - C# (Csharp)
+  - Java
+  - Rust
+  - Go
+  - Javascript
+  - TypeScript
+  - Python
 
 ## Getting Started
 
-To get started, check the [Topic List](programming-languages/README.md)
+- [Programming Languages](programming-languages/README.md)
 
 ## Licence
 
