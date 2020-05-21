@@ -65,7 +65,7 @@ Please make sure you are welcoming and friendly in all of our spaces.
 
 ## Code Block Sample
 
-Copy in Raw and adapt header level accordingly.
+Copy in Raw Markdown and adapt header level accordingly.
 
 ### C
 

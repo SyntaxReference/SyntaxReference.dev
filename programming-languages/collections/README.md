@@ -946,9 +946,6 @@ myArray.lastIndexOf(element);
 // Copy / Clone
 // ------------------------------------
 
-// Arrays are reference types in JavaScript!!!
-const myFakeCopy = myArray; // Thats like creating a pointer (Be careful) It WONT create a copy
-
 // Real Copy - Using Spread Operator (Since ES6)
 const myRealCopy = [...myArray];
 
@@ -957,10 +954,17 @@ const myRealCopy = myArray.slice();
 const myRealCopy = myArray.splice(0);
 const myRealCopy = myArray.concat();
 
+// WONT WORK
+const myFakeCopy = myArray;
+// Arrays are reference types in JavaScript!!!
+// Thats like creating a pointer (Be careful) It WONT create a copy
+
+
 // ------------------------------------
 // Slice
 // ------------------------------------
 // TODO
+
 
 // ------------------------------------
 // Printing Members
@@ -1252,14 +1256,18 @@ sum(my_list)
 # Copy / Clone
 # ------------------------------------
 
-# Arrays are reference types !!!
-my_fake_copy = my_list # Thats like creating a pointer (Be careful) It WONT create a copy
 
 # Real Copy -  Using copy() method
 my_real_copy = my_list.copy()
 
 # Real Copy -  Using list() constructor
 my_real_copy = list(my_list)
+
+# WONT WORK
+my_fake_copy = my_list
+# Arrays are reference types in Python!!!
+# Thats like creating a pointer (Be careful) It WONT create a copy
+
 
 # ------------------------------------
 # Slice

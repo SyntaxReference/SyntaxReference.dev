@@ -748,6 +748,12 @@ switch ( expression )
 # If-Else
 # ------------------------------------
 
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
+
+# In Python if you declare a variable in a block scope (if statement, for statement, ...)
+# the variable is hoisted to the outer function scope.
+
 if ( my_condition ): # The colon (:) at the end of the line is required.
 	# ...
 elif my_condition: # ( ) Parentheses are optional
@@ -761,8 +767,9 @@ elif ( not my_condition):
 else: # The colon (:) at the end of the line is required.
 	# ...
 
+
 # Good developers strive to write code that is clear and correct.
-# Parentheses in conditionals, even if they are not strictly required, help with both.
+# ( ) Parentheses in conditionals, even if they are not strictly required, help with both.
 ```
 
 ```Python

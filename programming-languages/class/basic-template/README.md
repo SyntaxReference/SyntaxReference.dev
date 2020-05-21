@@ -137,8 +137,9 @@ void MyClass::myPublicMethod (float someVariable)
 ```
 
 ```Cpp
-// Everything Inside a Header File (MyClass.h or MyClass.hpp)
 // In some cases, like building a library, you might have everything inside the header file
+
+// Everything Inside a Header File (MyClass.h or MyClass.hpp)
 
 #pragma once // When using pragma, no need to use anything at the end (like #endif)
 
@@ -195,14 +196,14 @@ void MyClass::myPublicMethod (float someVariable)
 // Instantiating the class
 // ------------------------------------
 
-// Option 1- No need to free the memory
+// Option 1 - No need to free the memory
 MyClass myClassInstanceName;
 MyClass myClassInstanceName{};
 // OBS: Members will be accessible via "." operator
 // Ex.: myClassInstanceName.MyMethod();
 
 
-// Smart Pointer - No need to free the memory
+// Option 2 - Smart Pointer - No need to free the memory
 #include <memory>
 
 // OBS: Using Smart Pointers, Members will be accessible via "->" operator
@@ -238,7 +239,7 @@ myClassInstanceName = std::make_shared<MyClass>();
 // More about Pointers in the "Pointer & Reference" Section
 
 
-// Legacy (Avoid)
+// Option 3 - Legacy (Avoid)
 MyClass* myClassInstanceName = new MyClass();
 // ...
 delete(myClassInstanceName); // You have to delete (free the memory) after you're done

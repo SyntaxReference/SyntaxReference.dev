@@ -94,9 +94,9 @@ free(convertedValue); // You need to free the memory allocated by malloc()
 #include <string> // For std::stoi()
 #include <cstdint> // For std::int32_t  (Since C++11)
 
-std::int32_t convertedValue = std::stoi(45); // 45
-std::int32_t convertedValue = std::stoi(3.14159); // 3
-std::int32_t convertedValue = std::stoi(31337 with words); // 31337
+std::int32_t convertedValue = std::stoi("45"); // 45
+std::int32_t convertedValue = std::stoi("3.14159"); // 3
+std::int32_t convertedValue = std::stoi("31337 with words"); // 31337
 
 // Exceptions
 // std::invalid_argument if no conversion could be performed

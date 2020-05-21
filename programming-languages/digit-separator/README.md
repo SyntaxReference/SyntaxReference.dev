@@ -10,7 +10,7 @@
 - [Typescript](#typescript)
 - [Python](#python)
 
-Digit Separator does NOT change the variable value. Its only a visual separators for digit grouping purposes.
+Digit Separator does NOT change the variable value. Its only a visual separator for digit grouping purposes.
 
 This is a common feature of modern languages, and can aid readability of long literals, or literals whose value should clearly separate into parts.
 

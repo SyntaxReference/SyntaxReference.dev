@@ -357,6 +357,9 @@ myArray.forEach((element) => { /**/ }); // Check Collection Section for more rel
 # There are no "{ }", you need to use ":" and indentation
 # You can have either spaces or tabs but not both mixed
 
+# In Python if you declare a variable in a block scope (if statement, for statement, ...)
+# the variable is hoisted to the outer function scope.
+
 # Example 1 - Classic
 while expression:
 	# ...
@@ -394,11 +397,11 @@ else: # "else" is optional
 for element in sequence_collection_container:
 	# ...
 
-# Example 2 - One-line (Optional)
-for element in range(stop_number): print(i) # will print from 0 to stop_number (not included)
+# Example 2 - From 0 to stop_number (not included)
+for element in range(stop_number): print(i) # One-line (Optional)
 
-# Example 3
-for element in range(starting_number, stop_number):# will print from starting_number to stop_number (not included)
+# Example 3 - From starting_number to stop_number (not included)
+for element in range(starting_number, stop_number):
 	# ...
 # For more range() options, check official documentation
 

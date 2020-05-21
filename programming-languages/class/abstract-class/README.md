@@ -220,8 +220,8 @@ public class MyChildClass extends MyClass
 
 	// @Override annotation
 	// Indicates that the child class method is over-writing its base class method.
-	// It helps to check if:
 	/*
+	It helps to check if:
 	- There is a method with the same name in the parent class.
 	- The method in the parent class has the same signature.
 	- It shows a warning from the compiler if the annotated method doesn't actually override anything.

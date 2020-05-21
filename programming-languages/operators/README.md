@@ -1,4 +1,4 @@
-# Operators (TODO)
+# Operators
 
 - [C](#c)
 - [C++ (Cpp)](#c-cpp)
@@ -344,7 +344,7 @@ a * b
 a / b # Result will be a Float
 
 #Floor Division
-a // b # Result will be a Integer 
+a // b # Result will be a Integer
 
 # Exponent
 a ** b
@@ -353,10 +353,12 @@ a ** b
 a % b # It returns the "remainder" after the division (modulo division)
 
 # Increment
-# Not Available
+# Not Available. You need to use the Addition Operator
+a = a + 1
 
 # Decrement
-# Not Available
+# Not Available. You need to use the Subtraction Operator
+a = a - 1
 ```
 
 ```Python
