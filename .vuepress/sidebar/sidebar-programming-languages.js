@@ -31,6 +31,9 @@ module.exports = [
 			'/programming-languages/operators/',
 			['/programming-languages/collections/', 'Collections & Containers'],
 			'/programming-languages/functions-methods/',
+			'/programming-languages/generic-functions/',
+			'/programming-languages/lambda-functions/',
+			'/programming-languages/static/',
 			'/programming-languages/exceptions/',
 			'/programming-languages/file/',
 			{
@@ -42,6 +45,7 @@ module.exports = [
 					'/programming-languages/class/basic-template/',
 					'/programming-languages/class/abstract-class/',
 					'/programming-languages/class/interface/',
+					'/programming-languages/class/generic-class/',
 					'/programming-languages/class/namespaces/',
 				]
 			},

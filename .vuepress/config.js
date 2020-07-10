@@ -1,11 +1,11 @@
 module.exports = {
 	title: 'Syntax Reference',
-	description: 'A syntax reference guide for multiple programming languages',
+	description: 'A syntax reference guide for multiple programming languages and others',
 	themeConfig: {
 		repo: 'https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference',
 		repoLabel: 'Contribute on Github!',
-		sidebar: require('./sidebar'),
-		nav: require('./nav'),
+		sidebar: require('./sidebar/sidebar'),
+		nav: require('./nav/nav'),
 		searchMaxSuggestions: 20,
 	}
 }
