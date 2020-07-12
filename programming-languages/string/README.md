@@ -62,6 +62,13 @@ int length = strnlen(myString, sizeof myString);
 // ------------------------------------
 // TODO
 
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+
 // ------------------------------------
 // Transform
 // ------------------------------------
@@ -128,8 +135,9 @@ strcat(mainString, addString); // Not Safe
 
 //strncat_s - Since C11
 // TODO
+```
 
-
+```C
 // ------------------------------------
 // String Interpolation
 // ------------------------------------
@@ -154,35 +162,82 @@ printf("Printing Octal: %o\n", 2567);
 printf("Printing Hexadecimal (Letter in small letters): %x\n", 2567);
 printf("Printing Hexadecimal (Letter in capital letters): %X\n", 2567);
 printf("%s: %d %f", "More Printing", 30, 50.2);
+```
 
-
+```C
 // ------------------------------------
-// Advanced Format
+// Advanced Formating
 // ------------------------------------
 
-// Floating point precision
-// TODO
+// The syntax template for easy reference:
+// %[flags][width][.precision][type_character]
+
+// Both "width" and/or "precision" numbers can be replaced by "*" then,
+// an additional integer value argument must be placed preceding the argument that has to be formatted.
 
 
-// Width
-// TODO
+/*
+Flags:
+-		Left justify.
+0		Field is padded with 0's instead of blanks.
++		Sign of number always O/P.
+blank		Positive values begin with a blank.
+#		 	  Various uses:
+	%#o (Octal) 0 prefix inserted.
+	%#x (Hex)   0x prefix added to non-zero values.
+	%#X (Hex)   0X prefix added to non-zero values.
+	%#e         Always show the decimal point.
+	%#E         Always show the decimal point.
+	%#f         Always show the decimal point.
+	%#g         Always show the decimal point trailing zeros not removed.
+	%#G         Always show the decimal point trailing zeros not removed.
+*/
+
+
+// Width & Right Align
+// %[width][type_character]
+printf("%5d", 7); // length of 5 digits Ex.: "    7"
+printf("%20s !\n", "hello World"); //"         hello World !"
+
+
+// Floating Point Precision
+// %[.precision][type_character]
+printf("%.2f\n", 7.0000); // 7.00
+
+// Can also be combined with Width
+// %[width][.precision][type_character]
+printf("%8.2f\n", 7.0); // Ex.: "    7.00"
+printf("%*.*f\n", 8, 2, 7.0); // same
 
 
 // Left-justifying
-// TODO
+// You can use the "-" flag
+printf("%-5d", 7); // length of 5 digits Ex.: "7    "
+printf("%-20s !\n", "hello World"); // "hello World          !"
 
 
-// Integer zero-fill
-// TODO
+// Integer leading zero-fill
+// You can use the "0" flag to force the number to be padded with 0s
+// %[flags][width][type_character]
+printf("%05d", 7); // Ex.: "00007"
+printf("%0*d", 5, 7); // same
 
+
+// Positional Arguments (Re-Ordering the Arguments)
+// Using %[[order]$][type_character]
+printf("%2$s , %1$s\n", "First Argument", "Second  Argument"); // Will print: "Second  Argument , First Argument"
 ```
 
 > More Info:
+> - https://codeforwin.org/2015/05/list-of-all-format-specifiers-in-c-programming.html
 > - https://en.cppreference.com/w/c/string/byte/strlen
 > - https://en.cppreference.com/w/c/string/byte/strncpy
 > - https://stackoverflow.com/questions/30190460/advantages-of-strncmp-over-strcmp
 > - https://en.cppreference.com/w/c/string/byte/strcat
 > - https://en.cppreference.com/w/c/string/byte/strncat
+> - https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/format.html
+> - http://www.cplusplus.com/reference/cstdio/printf/
+> - https://stackoverflow.com/questions/6322540/how-do-positional-arguments-like-1-work-with-printf
 
 [Back to top](#top)
 
@@ -228,10 +283,87 @@ constexpr std::string MY_CONSTANT = "Another String"; // C++11
 
 
 // ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// Not Native
+
+// Code from StackOverflow (Link in More Info)
+#include <string>
+
+const std::string WHITESPACES( " \f\n\r\t\v" );
+
+void trimRight( std::string& str, const std::string& trimChars = WHITESPACES )
+{
+   std::string::size_type pos = str.find_last_not_of( trimChars );
+   str.erase( pos + 1 );
+}
+
+void trimLeft( std::string& str, const std::string& trimChars = WHITESPACES )
+{
+   std::string::size_type pos = str.find_first_not_of( trimChars );
+   str.erase( 0, pos );
+}
+
+void trim( std::string& str, const std::string& trimChars = WHITESPACES )
+{
+   trimRight( str, trimChars );
+   trimLeft( str, trimChars );
+}
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// std::string isn't a pointer, you can't assign null to it
+// If you need to distinguish between a string that has no characters
+// and a string that has no value, you can use a std::string* and set it to nullptr
+
+// Remember to trim before
+myString.size() == 0
+myString.empty()
+
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+```
+
+```Cpp
+// ------------------------------------
 // String Interpolation
 // ------------------------------------
 // Not Yet Available
-
 
 
 // ------------------------------------
@@ -251,21 +383,70 @@ std::cout << "Printing Any Number: " << 20.5 << '\n';
 std::cout << "Printing An Address: " << &variable_name << '\n';
 std::cout << "Printing An Address: " << pointer_to_variable << '\n';
 std::cout << "Printing Octal: "<< std::oct << 2567 << '\n';
-std::cout << "Printing Hexadecimal (Letter in small letters): "<< std::hex << 2567 << '\n';
-std::cout << "Printing Hexadecimal (Letter in capital letters): "<< std::hex << std::uppercase << 2567 << '\n';
+std::cout << "Printing Hexadecimal (Letter in small letters): "<< std::hex << 2567 << '\n'; // a07
+std::cout << "Printing Hexadecimal (Letter in capital letters): "<< std::hex << std::uppercase << 2567 << '\n'; // A07
 
 std::cout << std::nouppercase << std::dec; // Resetting to default
 
 std::cout << "More Printing " << 30 << ", " << 50.2 << '\n';
+```
+
+```Cpp
+// ------------------------------------
+// Advanced Formating
+// ------------------------------------
+
+// Width & Right Align
+// std::cout.width()
+std::cout.width(5); // No need to reset the width
+std::cout << 7 << '\n'; // "    7"
+
+std::cout.fill(' '); // No need to reset the fill
+std::cout.width(20); // No need to reset the width
+std::cout << "Hello World !" << '\n'; // "         Hello World !"
 
 
+// std::setw()
+#include <iomanip> // For std::setw()
 
-// TODO: Advanced format
+std::cout << std::setw(5) << 7 << '\n'; // No need to reset the width
 
 
+// Floating Point Precision
+// std::cout.precision(n);
+std::cout.precision(3); // precision will be set to 3 until you change it
+std::cout << 70.12345 << '\n'; // will print "70.1"
 
-// Legacy (Like C) (Avoid)
-// Check the C section above if you want to know
+// std::setprecision(n);
+#include <iomanip> // For std::setprecision(n)
+
+std::cout << std::setprecision(3) << 70.12345 << '\n';  // will print "70.1"
+// precision will be set to 3 until you change it
+
+
+// In case you and to fill with zeros when the number is
+// smaller than the precision, you need the
+std::cout.precision(13);
+std::cout << std::fixed << 70.12345 << '\n';
+std::cout << std::defaultfloat; // To reset (Remove Fixed)
+
+
+// Left-justifying
+std::cout.fill(' '); // No need to reset the fill
+std::cout.width(20); // No need to reset the width
+std::cout << std::left << "Hello World";
+std::cout << " !" << '\n'; // "Hello World          !"
+
+
+// Integer leading zero-fill
+// std::cout.fill()
+std::cout.fill('0'); // No need to reset the fill
+std::cout.width(5); // No need to reset the width
+std::cout << 7 << '\n';
+
+
+// Positional Arguments (Re-Ordering the Arguments)
+// TODO
 ```
 
 > More Info:
@@ -278,6 +459,8 @@ std::cout << "More Printing " << 30 << ", " << 50.2 << '\n';
 > - https://www.geeksforgeeks.org/using-namespace-std-considered-bad-practice/
 > - https://www.learncpp.com/cpp-tutorial/const-constexpr-and-symbolic-constants/
 > - https://www.learncpp.com/cpp-tutorial/variable-assignment-and-initialization/
+> - https://stackoverflow.com/questions/3903587/how-to-check-if-a-stdstring-is-set-or-not
+> - https://stackoverflow.com/questions/479080/trim-is-not-part-of-the-standard-c-c-library
 
 [Back to top](#top)
 
@@ -296,6 +479,54 @@ std::cout << "More Printing " << 30 << ", " << 50.2 << '\n';
 // TODO
 
 
+// ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+```
+
+```Cs
 // ------------------------------------
 // String Interpolation
 // ------------------------------------
@@ -346,6 +577,56 @@ Console.WriteLine("More Printing " + 20.5 + ", " + "50.2");
 
 
 // ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+```
+
+```Java
+
+// ------------------------------------
 // String Interpolation
 // ------------------------------------
 
@@ -379,6 +660,55 @@ System.out.println("More Printing " + 20.5 + ", " + "50.2");
 // Const Declaration
 // TODO
 
+
+// ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+
+
 // ------------------------------------
 // String Interpolation
 // ------------------------------------
@@ -405,6 +735,55 @@ System.out.println("More Printing " + 20.5 + ", " + "50.2");
 
 // Const Declaration
 // TODO
+
+
+// ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+
 
 // ------------------------------------
 // String Interpolation
@@ -433,6 +812,55 @@ var variableName = "Some string"; // Avoid 'var'
 // Const Declaration
 const variableName = "Some string";
 const MY_CONSTANT = "Some string";
+
+
+// ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+
 
 // ------------------------------------
 // String Interpolation (Prefer)
@@ -490,6 +918,55 @@ let variableName: string = 'Some string';
 // Const Declaration
 const variableName: string = "Some string";
 const MY_CONSTANT: string = "Some string";
+
+
+// ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+// TODO
+
 
 // ------------------------------------
 // String Interpolation (Prefer)
@@ -556,6 +1033,54 @@ MY_CONSTANT: str = 'Some string' # Type Annotations (PEP 484 / Python 3.6+)
 
 # In Python if you declare a variable in a block scope (if statement, for statement, ...)
 # the variable is hoisted to the outer function scope.
+
+
+# ------------------------------------
+# Direct Access (Array-Like)
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Size / Length
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Trim
+# ------------------------------------
+# TODO
+
+
+
+# ------------------------------------
+# Is Null Or Empty
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Transform
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Compare
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Copy / Clone
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Concatenation
+# ------------------------------------
+# TODO
 
 
 # ------------------------------------
