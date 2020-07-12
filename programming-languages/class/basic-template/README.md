@@ -509,6 +509,9 @@ let myClassInstanceName = new MyClass();
 > - https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
 > - https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
 > - https://stackoverflow.com/questions/31362292/how-to-use-arrow-functions-public-class-fields-as-class-methods
+> - https://stackoverflow.com/questions/51400605/javascript-child-class-method-not-overriding-parent-class-method
+> - https://stackoverflow.com/questions/45881670/should-i-write-methods-as-arrow-functions-in-angulars-class/45882417#45882417
+> - https://basarat.gitbook.io/typescript/future-javascript/arrow-functions#tip-arrow-functions-and-inheritance
 
 [Back to top](#top)
 
@@ -563,6 +566,14 @@ class MyClass {
 		set myProperty(value) { ... }
 	*/
 
+	/*
+	TypeScript accessors (getter/setter) require to set the compiler to output
+	ECMAScript 5 or higher.
+
+	Accessor with a get and no set property are automatically assumed to be read-only no
+	need for manual work. This is helpful when we are generating a .d.ts file from our code.
+	*/
+
 	// ------------------------------------
 	// Methods
 	// ------------------------------------
@@ -573,13 +584,9 @@ class MyClass {
 		//...
 	}
 
-	/*
-	*TypeScript accessors (getter/setter) require to set the compiler to output
-	  ECMAScript 5 or higher.
-	*Accessor with a get and no set property are automatically assumed to be read-only no
-	  need for manual work. This is helpful when we are generating a .d.ts file from our
-	  code.
-	*/
+	// IF you can, avoid arrow functions as methods. They won't
+	// be in the prototype and can't be called with super().
+	// There are some workarounds, Check More Info if you need them.
 }
 ```
 
@@ -593,6 +600,12 @@ let myClassInstanceName: MyClass = new MyClass();
 
 > More Info:
 > - https://www.typescriptlang.org/docs/handbook/classes.html
+> - https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
+> - https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
+> - https://stackoverflow.com/questions/31362292/how-to-use-arrow-functions-public-class-fields-as-class-methods
+> - https://stackoverflow.com/questions/51400605/javascript-child-class-method-not-overriding-parent-class-method
+> - https://stackoverflow.com/questions/45881670/should-i-write-methods-as-arrow-functions-in-angulars-class/45882417#45882417
+> - https://basarat.gitbook.io/typescript/future-javascript/arrow-functions#tip-arrow-functions-and-inheritance
 
 [Back to top](#top)
 
