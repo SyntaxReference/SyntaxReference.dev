@@ -137,6 +137,13 @@ main();
 ```
 
 ```Javascript
+// Self Invoking Function
+(function main() {
+	// Code Here
+})();
+```
+
+```Javascript
 class Main {
 	static Run() {
 	// Code Here
