@@ -4,9 +4,9 @@ First, Thank you for considering helping. I am glad this project means that much
 
 ## First Step
 
-If you've noticed something wrong or just want to deep dive or have an idea, just open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues)! Lets talk about it. There are many ways to contribute, from improving the documentation to adding new syntax.
+If you've noticed something wrong or just want to deep dive or have an idea, just open an [issue](https://github.com/SyntaxReference/SyntaxReference.dev/issues)! Lets talk about it. There are many ways to contribute, from improving the documentation to adding new syntax.
 
-It's generally best before you do anything to open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues). This way we can avoid multiple people doing the same thing.
+It's generally best before you do anything to open an [issue](https://github.com/SyntaxReference/SyntaxReference.dev/issues). This way we can avoid multiple people doing the same thing.
 
 ## Current Avaliable Syntax
 
@@ -31,7 +31,7 @@ Be my guest.
 
 ## Any Language?
 
-Well.. maybe not dead ones? But if you believe thats important, just open an [issue](https://github.com/LeonnardoVerol/Programming-Languages-Syntax-Reference/issues) to coordinate its inclusion.
+Well.. maybe not dead ones? But if you believe thats important, just open an [issue](https://github.com/SyntaxReference/SyntaxReference.dev/issues) to coordinate its inclusion.
 
 ## Where?
 
