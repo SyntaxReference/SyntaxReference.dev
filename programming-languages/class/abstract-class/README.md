@@ -50,11 +50,11 @@ public:
 
 ```Cpp
 // Derived Class Example
-// Header File (MyChildClass.h or MyChildClass.hpp)
+// Header File (MyDerivedClass.h or MyDerivedClass.hpp)
 
 #pragma once
 
-class MyChildClass : public MyClass
+class MyDerivedClass : public MyClass
 {
 public:
 	// Both "virtual" and "override" identifiers are optional (But should be used)
@@ -109,7 +109,7 @@ public abstract class MyClass
 
 ```Cs
 // Derived Class Example
-public class MyChildClass : MyClass
+public class MyDerivedClass : MyClass
 {
 	public override int ProtectedVariable // We need the "override" keyword
 	{
@@ -207,7 +207,7 @@ public abstract class MyClass
 
 ```Java
 // Derived Class Example
-public class MyChildClass extends MyClass
+public class MyDerivedClass extends MyClass
 {
 	public int MyMethod() // We dont need any special keyword to override abstract methods
 	{
@@ -261,8 +261,87 @@ public class MyChildClass extends MyClass
 ## Javascript
 
 ```Javascript
-// TODO
+// No Native Support
+
+// Workaround Example 1
+class MyClassName {
+	myPublicField = 10;
+
+	constructor() {
+		this.myAnotherPublicField = "Hello";
+
+		if (new.target === MyClassName) {
+			throw new TypeError("Cannot construct Abstract instances directly");
+		}
+	}
+
+	MyMethod() {
+		throw new TypeError('Method must be overridden');
+	}
+
+	MySecondMethod() {
+		// Some default implementation.
+		// If you dont override it,
+		// default implementation will be used
+	}
+}
 ```
+
+```Javascript
+// Workaround Example 2
+class MyClassName {
+	constructor() {
+		if (new.target === MyClassName) {
+			throw new TypeError("Cannot construct Abstract instances directly");
+		}
+
+		// Abstract Method
+		if (this.MyAbstractMethodName === undefined || typeof(this.MyAbstractMethodName) != 'function') {
+			throw new TypeError(`Method "MyAbstractMethodName" must be overridden`);
+		}
+	}
+}
+```
+
+```Javascript
+// Workaround Example 3
+class MyClassName {
+	abstractMethodsNames = ["MyAbstractMethodName", "MySecondAbstractMethodName"];
+	missingOverride = [];
+	constructor() {
+		if (new.target === MyClassName) {
+			throw new TypeError("Cannot construct Abstract instances directly");
+		}
+
+		const derivedClass = Object.getPrototypeOf(this);
+		const derivedClassMethods = Object.getOwnPropertyNames(derivedClass);
+		for (const method of this.abstractMethodsNames) {
+			if(derivedClassMethods.includes(method) === false) {
+				this.missingOverride.push(method);
+			}
+		}
+		if(this.missingOverride.length != 0) {
+			throw new TypeError(`Methods "${this.missingOverride}" must be overridden`);
+		}
+	}
+}
+```
+
+```Javascript
+// Derived Class Example
+class MyDerivedClass extends MyClassName {
+	constructor() {
+		super();
+	}
+
+	MyMethod() {
+		// new implementation.
+	}
+}
+```
+
+> More Info:
+> - https://stackoverflow.com/a/30560792
 
 [Back to top](#top)
 
@@ -281,6 +360,9 @@ public class MyChildClass extends MyClass
 # which provides the infrastructure for defining Abstract Base Classes (ABCs). This module
 # is called, for obvious reasons, abc.
 from abc import ABC, abstractmethod
+
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
 
 # An abstract class cannot be instantiated.
 class MyClass(ABC):
@@ -309,7 +391,7 @@ class MyClass(ABC):
 
 ```Python
 # Derived Class Example
-class MyChildClass(MyClass):
+class MyDerivedClass(MyClass):
 
 	@property
 	def my_protected_property(self):

@@ -86,6 +86,15 @@ public interface IMyInterface // In C#, Its a convention to start the name with 
 }
 ```
 
+```Cs
+// Implementation Class Example
+
+class ImplementationClass : IMyInterface
+{
+	// ...
+}
+```
+
 > More Info:
 > - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/interface-properties
 > - https://jeremybytes.blogspot.com/2019/09/a-closer-look-at-c-8-interfaces.html
@@ -162,6 +171,15 @@ public interface MyInterface
 }
 ```
 
+```Java
+// Implementation Class Example
+
+class ImplementationClass implements MyInterface
+{
+	// ...
+}
+```
+
 > More Info:
 > - https://howtodoinjava.com/java9/java9-private-interface-methods/
 > - https://blog.joda.org/2016/09/private-methods-in-interfaces-in-java-9.html
@@ -201,6 +219,9 @@ public interface MyInterface
 //
 // In duck typing, an object's suitability is determined by the presence of certain methods
 // and properties, rather than the type of the object itself.
+
+// But there is a workaround for Abstract Class that could be useful. Check that
+// section for more information.
 ```
 
 > More Info:
@@ -226,6 +247,15 @@ interface MyInterface
 	MySecondMethod(someParameter: number); // names of the parameters do not need to match
 
 	// "private" access modifier not possible in Typescript Intarfaces
+}
+```
+
+```Typescript
+// Implementation Class Example
+
+class ImplementationClass implements MyInterface
+{
+	// ...
 }
 ```
 
@@ -260,6 +290,9 @@ interface MyInterface
 
 from interface import Interface
 
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
+
 class MyInterface(Interface):
 
 	@property
@@ -275,6 +308,23 @@ class MyInterface(Interface):
 	@interface.default # Not mandatory to override
 	def my_default_method(self):
 		print("Default Implementation")
+```
+
+```Python
+# Implementation Class Example
+
+# "python-interface" Example
+
+from interface import implements
+
+
+class MyClass(implements(MyInterface)):
+	# ...
+
+
+ # Multiple interface allowed
+class MyClass(implements(MyInterface, MySecondInterface)):
+	# ...
 ```
 
 > More Info:

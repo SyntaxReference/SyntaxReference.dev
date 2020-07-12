@@ -484,10 +484,13 @@ class MyClass {
 	// ------------------------------------
 
 	// Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
-	myMethod (someVariable)
+	myMethod(someVariable)
 	{
 		//...
 	}
+	// IF you can, avoid arrow functions as methods. They won't
+	// be in the prototype and can't be called with super().
+	// There are some workarounds, Check More Info if you need them.
 }
 ```
 
@@ -503,6 +506,9 @@ let myClassInstanceName = new MyClass();
 > - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields
 > - https://github.com/tc39/proposal-class-fields
 > - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+> - https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
+> - https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
+> - https://stackoverflow.com/questions/31362292/how-to-use-arrow-functions-public-class-fields-as-class-methods
 
 [Back to top](#top)
 

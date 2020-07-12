@@ -163,6 +163,8 @@ public void MyMethod()
 
 ```Javascript
 // Decorators are still an experimental feature
+
+// There is a workaround package: https://www.npmjs.com/package/depd
 ```
 
 [Back to top](#top)
@@ -171,6 +173,8 @@ public void MyMethod()
 
 ```Typescript
 // Decorators are still an experimental feature
+
+// There is a workaround package: https://www.npmjs.com/package/depd
 ```
 
 [Back to top](#top)
