@@ -1,6 +1,6 @@
 
 <div align="center" class="hero">
-  <img src="/assets/img/logo.png">
+  <img src="/assets/img/Logo.png">
 </div>
 
 # Syntax Reference
