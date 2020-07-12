@@ -1,4 +1,4 @@
-# Topics
+# Programming Languages Topics
 
 - [Comments](/programming-languages/comments/)
 - [Modules, Package & Headers](/programming-languages/modules-package-headers/)
@@ -16,8 +16,10 @@
 - [Control Flow](/programming-languages/control-flow/)
 - [Operators](/programming-languages/operators/)
 - [Collections & Containers](/programming-languages/collections/)
-- (TODO) [Functions & Methods](/programming-languages/functions/)
-- (TODO) [Lambda Functions]
+- [Functions & Methods](/programming-languages/functions-methods/)
+- (TODO) [Generic Functions](/programming-languages/generic-functions/)
+- (TODO) [Lambda Functions](/programming-languages/lambda-functions/)
+- [Static](/programming-languages/static/)
 - [Exceptions](/programming-languages/exceptions/)
 - (TODO) [File](/programming-languages/file/)
 - [Class](/programming-languages/class/)
