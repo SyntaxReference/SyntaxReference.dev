@@ -1,5 +1,14 @@
 # Lambda Functions (TODO)
 
+- [C](#c)
+- [C++ (Cpp)](#c-cpp)
+- [C# (Csharp)](#c-csharp)
+- [Java](#java)
+- [Rust](#rust)
+- [Go](#go)
+- [Javascript](#javascript)
+- [Typescript](#typescript)
+- [Python](#python)
 
 ## C
 
