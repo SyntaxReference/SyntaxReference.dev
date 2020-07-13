@@ -5,23 +5,23 @@
 - [Main (Entry Point)](/programming-languages/main/)
 - [Basic Types](/programming-languages/basic-types/)
 - [Null](/programming-languages/null/)
-- (TODO) [Static]
+- [Static](/programming-languages/static/)
 - [Digit Separator](/programming-languages/digit-separator/)
 - [Type Inference](/programming-languages/type-inference/)
 - [Type Conversion](/programming-languages/type-conversion/)
-- (TODO) [Type Aliases](/programming-languages/type-aliases/)
+- [Type Aliases](/programming-languages/type-aliases/)
 - [String](/programming-languages/string/)
-- (TODO) [Date & Time]
-- (TODO) [Pointer & Reference](pointer-reference)
+- [Date & Time]
+- [Pointer & Reference](pointer-reference)
 - [Control Flow](/programming-languages/control-flow/)
 - [Operators](/programming-languages/operators/)
 - [Collections & Containers](/programming-languages/collections/)
 - [Functions & Methods](/programming-languages/functions-methods/)
-- (TODO) [Generic Functions](/programming-languages/generic-functions/)
-- (TODO) [Lambda Functions](/programming-languages/lambda-functions/)
+- [Generic Functions](/programming-languages/generic-functions/)
+- [Lambda Functions](/programming-languages/lambda-functions/)
 - [Static](/programming-languages/static/)
 - [Exceptions](/programming-languages/exceptions/)
-- (TODO) [File](/programming-languages/file/)
+- [File](/programming-languages/file/)
 - [Class](/programming-languages/class/)
 - [Attributes, Annotations & Decorators](/programming-languages/attributes-annotations-decorators/)
-- (TODO) [Macros & Directives]
+- [Macros & Directives]

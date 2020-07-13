@@ -204,7 +204,7 @@ myFunction(20, 30);
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// Fold Expressions (Since C++ 17)
+// Option 1 - Fold Expressions (Since C++ 17)
 template<typename ...Args>
 auto add_all(Args ...args)
 {
@@ -217,7 +217,7 @@ add_all({2,4});
 add_all({2,4,7});
 
 
-// Variadic Templates (Since C++ 11)
+// Option 2 - Variadic Templates (Since C++ 11)
 #include <initializer_list>
 
 template <typename T>
@@ -538,13 +538,25 @@ add_all_int(3 ,2,4,7);
 // Definition
 // ------------------------------------
 
-// TODO
+function functionName( [parameters] ) {
+	// ...
+}
+
+// Self Invoking Function
+(function functionName( [parameters] ) {
+	// ...
+})();
+
+// For "Arrow Functions" Check Lambda Section
 
 // ------------------------------------
 // Declaration Example
 // ------------------------------------
 
-// TODO
+function functionName(x, y) {
+	// ...
+}
+
 // Self Invoking Function
 (function main() {
 	// Code Here
@@ -554,28 +566,86 @@ add_all_int(3 ,2,4,7);
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+// Not available natively as some might expect BUT
+// Javascript can use Object Destructuring to simulate this
+
+function functionName( { parameter1, parameter2, parameter3 } ) {
+	// ...
+}
+
+// Using Keyword Arguments, order doesnt matter
+// The passed keyword name should match with the actual keyword name.
+functionName( { parameter3: '!', parameter1: 'Hello', parameter2: 'World' } );
+
+// Since we're using a javascript object, you can also do like this:
+const myParameters = { parameter3: '!', parameter1: 'Hello', parameter2: 'World' };
+functionName(myParameters);
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+// All Parameters with default values are optional
+// All Optional Parameters must be at the end.
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+// Option 1
+function functionName(parameter1, parameter2, parameter3='Default String') {
+	// ...
+}
+
+functionName('Hello', 'World');
+functionName('Hello', 'World', '!');
+
+
+// Option 2 - Object Destructuring
+function functionName( { parameter1='Hello', parameter2='World', parameter3='Default String' } = {}) {
+	// ...
+}
+
+functionName({ parameter1: 'Hello', parameter2: 'World'});
+functionName({ parameter1: 'Hello', parameter2: 'World', parameter3: '!'});
 
 
 // ------------------------------------
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// TODO
+// Option 1 - rest parameters syntax (Also Known as Spread Operator)
+function addAll(...args) {
+	let result = 0;
+
+	for (element of args) {
+		result += element
+	}
+
+	return result
+}
+
+console.log(addAll(1, 2, 3))
+
+// Option 2 - Arguments Object
+// No need to add a Parameter
+function addAll() {
+	let result = 0;
+
+	// Special keyword "arguments"
+	for (element of arguments) {
+		result += element
+	}
+
+	return result
+}
+
+// The arguments object is not an Array. It is similar, but
+// lacks all Array properties except length.
+
+console.log(addAll(1,2,3));
 ```
 
 ```Javascript
@@ -598,6 +668,8 @@ add_all_int(3 ,2,4,7);
 > - https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
 > - https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
 > - https://stackoverflow.com/questions/31362292/how-to-use-arrow-functions-public-class-fields-as-class-methods
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 
 [Back to top](#top)
 
