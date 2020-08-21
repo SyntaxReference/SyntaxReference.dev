@@ -15,7 +15,7 @@ Programming languages are tools, each with its purpose and objective and we, dev
 
 It is easy to get the syntax mixed or not remember something specific. Some languages have a really specific syntax for something that is trivial in other languages, and that makes it difficult to remember.
 
-Although there are other websites that address similar topics, I was not happy with content organization and outdated content.
+Although other websites address similar topics, I was not happy with its content organization and outdated content.
 
 Starting with Programming Languages, topics are organized into "concepts", and is focused on simplicity and code examples. This is not a language tutorial. It is expected from the reader experience in at least one language.
 
