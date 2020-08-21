@@ -9,7 +9,7 @@
 
 ## Introduction
 
-At some point, we all have our notes, code snippets, Github Gists, and others. This Syntax Reference came to be from a struggle to have up-to-date syntax reference notes, from programming languages to linux terminal commands, queries and so on.
+At some point, we all have our notes, code snippets, Github Gists, and others. This Syntax Reference came to be from a struggle to have up-to-date syntax reference notes, from programming languages to terminal commands, queries, and so on.
 
 Programming languages are tools, each with its purpose and objective and we, developers, usually need to maintain or create projects in specific languages, which solve specific problems.
 
