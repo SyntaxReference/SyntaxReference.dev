@@ -22,8 +22,38 @@
 
 ```Cpp
 // C++ has no native interfaces.
-// You can implement it using abstract classes
-// Check "Abstract Class" Section for more Information
+// But you can implement it using abstract classes with "Pure Virtual" Methods
+```
+
+```Cpp
+// An abstract class cannot be instantiated.
+// Any class with one or more "pure virtual" functions becomes an abstract class
+
+// Header File (MyInterface.h or MyInterface.hpp)
+#pragma once
+
+class MyInterface
+{
+public:
+	// "Pure Virtual" (Abstract) Method (To create a pure virtual function, we simply assign the function the value 0)
+	virtual float MyMethod() = 0;  // You must override "Pure Virtual" (Abstract) methods in the derived class.
+};
+```
+
+```Cpp
+// If you want to use the "interface" keyword for a more organized workflow,
+// you can use the Macro "define". (Still gonna be a class behind the curtain)
+
+#define interface class
+
+// Header File (MyInterface.h or MyInterface.hpp)
+#pragma once
+
+interface MyInterface
+{
+public:
+	virtual float MyMethod() = 0;
+};
 ```
 
 [Back to top](#top)

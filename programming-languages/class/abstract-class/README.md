@@ -45,7 +45,7 @@ public:
 		// If you dont override it,
 		// default implementation will be used
 	}
-}
+};
 ```
 
 ```Cpp

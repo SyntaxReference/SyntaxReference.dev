@@ -15,6 +15,7 @@
 ```C
 // Not Available
 // C does not have Classes
+// But there are some advanced workarounds with structs
 ```
 
 [Back to top](#top)
@@ -134,6 +135,11 @@ void MyClass::myPublicMethod (float someVariable)
 {
 	//...
 }
+```
+
+```Cpp
+// TODO (Better Way)
+// const & Ref example
 ```
 
 ```Cpp
