@@ -28,7 +28,17 @@ module.exports = [
 					'/programming-languages/control-flow/loop/',
 				]
 			},
-			'/programming-languages/operators/',
+			{
+				title: 'Operators',
+				path: '/programming-languages/operators/',
+				collapsable: false,
+				sidebarDepth: 2,
+				children: [
+					'/programming-languages/operators/basic-operators/',
+					'/programming-languages/operators/math-operators/',
+					'/programming-languages/operators/operators-overloading/',
+				]
+			},
 			['/programming-languages/collections/', 'Collections & Containers'],
 			'/programming-languages/functions-methods/',
 			'/programming-languages/generic-functions/',
