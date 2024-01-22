@@ -57,6 +57,7 @@ module.exports = [
 					'/programming-languages/class/interface/',
 					'/programming-languages/class/generic-class/',
 					'/programming-languages/class/namespaces/',
+					'/programming-languages/class/constructors-destructors/',
 				]
 			},
 			'/programming-languages/attributes-annotations-decorators/',

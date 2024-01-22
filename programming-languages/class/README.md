@@ -4,5 +4,6 @@
 - [Absctract Class](/programming-languages/class/abstract-class/)
 - [Interface](/programming-languages/class/interface/)
 - [Namespaces](/programming-languages/class/namespaces/)
-- (TODO) [Constructors & Destructors]
+- [Constructors & Destructors](/programming-languages/class/constructors-destructors/)
 - (TODO) [Inheritance]
+- (TODO) [Generic Class]
