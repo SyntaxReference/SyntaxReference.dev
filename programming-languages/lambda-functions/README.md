@@ -1,4 +1,4 @@
-# Lambda Functions (TODO)
+# Lambda Functions
 
 - [C](#c)
 - [C++ (Cpp)](#c-cpp)
@@ -77,7 +77,7 @@ const functionName = ( [parameters] ) => {
 
 const functionName = (x, y) => { /*...*/ } // Default
 const functionName = (x, y) => { return x * y; }
-const functionName = (x, y) => { x * y } // Same as above. (Return can be omitted)
+const functionName = (x, y) => x * y;  // Same as above. (Return and {} can be omitted for simple/small code)
 const functionName = (x) => { /*...*/ } // one parameter
 const functionName = x => { /*...*/ } // one parameter (the parentheses can be omitted)
 const functionName = () => { /*...*/ } // no parameter
