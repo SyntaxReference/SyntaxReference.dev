@@ -1,3 +1,0 @@
-# Type Aliases (TODO)
-
-TODO

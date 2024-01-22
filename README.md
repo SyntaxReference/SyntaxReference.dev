@@ -1,47 +1,41 @@
+# Website
 
-<div align="center" class="hero">
-  <img src="/assets/img/Logo.png">
-</div>
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-# Syntax Reference
+### Installation
 
-:construction: This project is a working in progress in early stage :construction:
+```
+$ yarn
+```
 
-## Introduction
+### Local Development
 
-At some point, we all have our notes, code snippets, Github Gists, and others. This Syntax Reference came to be from a struggle to have up-to-date syntax reference notes, from programming languages to terminal commands, queries, and so on.
+```
+$ yarn start
+```
 
-Programming languages are tools, each with its purpose and objective and we, developers, usually need to maintain or create projects in specific languages, which solve specific problems.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-It is easy to get the syntax mixed or not remember something specific. Some languages have a really specific syntax for something that is trivial in other languages, and that makes it difficult to remember.
+### Build
 
-Although other websites address similar topics, I was not happy with its content organization and outdated content.
+```
+$ yarn build
+```
 
-Starting with Programming Languages, topics are organized into "concepts", and is focused on simplicity and code examples. This is not a language tutorial. It is expected from the reader experience in at least one language.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-There are a LOT of room for Improvement.
+### Deployment
 
-This project is open-source, from developer to developer.
+Using SSH:
 
-If you wanna help, see [Contributing](CONTRIBUTING.md).
+```
+$ USE_SSH=true yarn deploy
+```
 
-## Current Avaliable Syntax
+Not using SSH:
 
-- Programming Languages
-  - C
-  - C++ (Cpp)
-  - C# (Csharp)
-  - Java
-  - Rust
-  - Go
-  - Javascript
-  - TypeScript
-  - Python
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
 
-## Getting Started
-
-- [Programming Languages](programming-languages/README.md)
-
-## License
-
-[CC0 - Creative Commons Zero v1.0 Universal](https://choosealicense.com/licenses/cc0-1.0/)
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
