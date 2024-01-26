@@ -29,7 +29,7 @@ const config: Config = {
 				docs: {
 					sidebarPath: './sidebars.ts',
 					routeBasePath: '/', // Removes '/doc/' from url
-					editUrl: 'https://github.com/SyntaxReference/SyntaxReference.dev',
+					editUrl: 'https://github.com/SyntaxReference/SyntaxReference.dev/tree/main',
 				},
 				blog: false,
 				theme: {
