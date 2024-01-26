@@ -5,39 +5,55 @@ const sidebars: SidebarsConfig = {
 		'programming-languages/comments/README',
 		'programming-languages/modules-package-headers/README',
 		'programming-languages/main/README',
-		'programming-languages/basic-types/README',
-		'programming-languages/null/README',
+		{
+			type: 'category',
+			label: 'Types',
+			collapsed: false,
+			collapsible: false,
+			items: [
+				'programming-languages/basic-types/README',
+				'programming-languages/string/README',
+				{
+					type: 'doc',
+					label: 'Null Type',
+					id: 'programming-languages/null/README',
+				},
+				{
+					type: 'doc',
+					label: 'Type Inference',
+					id: 'programming-languages/type-inference/README'
+				},
+				'programming-languages/type-aliases/README',
+				'programming-languages/type-conversion/README',
+			]
+		},
+		{
+			type: 'category',
+			label: 'Operators',
+			collapsed: false,
+			collapsible: false,
+			items: [
+				'programming-languages/operators/basic-operators/README',
+				'programming-languages/operators/math-operators/README',
+				'programming-languages/operators/operators-overloading/README',
+			]
+		},
 		{
 			type: 'doc',
 			label: 'Digit Separator',
 			id: 'programming-languages/digit-separator/README'
 		},
-		{
-			type: 'doc',
-			label: 'Type Inference',
-			id: 'programming-languages/type-inference/README'
-		},
-		'programming-languages/type-aliases/README',
-		'programming-languages/type-conversion/README',
-		'programming-languages/string/README',
 		'programming-languages/enum/README',
 		'programming-languages/struct/README',
 		'programming-languages/pointer-reference/README',
 		{
 			type: 'category',
 			label: 'Control Flow',
+			collapsed: false,
+			collapsible: false,
 			items: [
 				'programming-languages/control-flow/conditional/README',
 				'programming-languages/control-flow/loop/README',
-			]
-		},
-		{
-			type: 'category',
-			label: 'Operators',
-			items: [
-				'programming-languages/operators/basic-operators/README',
-				'programming-languages/operators/math-operators/README',
-				'programming-languages/operators/operators-overloading/README',
 			]
 		},
 		{
@@ -54,6 +70,8 @@ const sidebars: SidebarsConfig = {
 		{
 			type: 'category',
 			label: 'Class',
+			collapsed: false,
+			collapsible: false,
 			items: [
 				'programming-languages/class/basic-template/README',
 				'programming-languages/class/abstract-class/README',

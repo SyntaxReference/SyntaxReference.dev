@@ -7,23 +7,16 @@ const config: Config = {
 	tagline: 'A syntax reference guide for multiple programming languages and others',
 	favicon: 'img/favicon.ico',
 
-	// Set the production url of your site here
 	url: 'https://syntaxreference.dev/',
-	// Set the /<baseUrl>/ pathname under which your site is served
-	// For GitHub pages deployment, it is often '/<projectName>/'
-	baseUrl: '/',
 
-	// GitHub pages deployment config.
-	// If you aren't using GitHub pages, you don't need these.
-	organizationName: 'SyntaxReference', // Usually your GitHub org/user name.
-	projectName: 'SyntaxReference.dev', // Usually your repo name.
+	baseUrl: '/',
+	organizationName: 'SyntaxReference',
+	projectName: 'SyntaxReference.dev',
 
 	onBrokenLinks: 'throw',
-	onBrokenMarkdownLinks: 'warn',
+	onBrokenAnchors: 'throw',
+	onBrokenMarkdownLinks: 'throw',
 
-	// Even if you don't use internationalization, you can use this field to set
-	// useful metadata like html lang. For example, if your site is Chinese, you
-	// may want to replace "en" with "zh-Hans".
 	i18n: {
 		defaultLocale: 'en-US',
 		locales: ['en-US'],
@@ -35,8 +28,7 @@ const config: Config = {
 			{
 				docs: {
 					sidebarPath: './sidebars.ts',
-					// Please change this to your repo.
-					// Remove this to remove the "edit this page" links.
+					routeBasePath: '/', // Removes '/doc/' from url
 					editUrl: 'https://github.com/SyntaxReference/SyntaxReference.dev',
 				},
 				blog: false,
@@ -49,7 +41,7 @@ const config: Config = {
 
 	themeConfig: {
 		// Replace with your project's social card
-		image: 'img/docusaurus-social-card.jpg',
+		image: 'img/docusaurus-social-card.jpg', // TODO
 		navbar: {
 			title: 'Syntax Reference',
 			logo: {
@@ -63,7 +55,6 @@ const config: Config = {
 					position: 'left',
 					label: 'Programming Languages',
 				},
-				// {to: '/blog', label: 'Blog', position: 'left'},
 				{
 					href: 'https://github.com/SyntaxReference/SyntaxReference.dev',
 					label: 'GitHub',
@@ -73,47 +64,7 @@ const config: Config = {
 		},
 		footer: {
 			style: 'dark',
-			links: [
-				{
-					title: 'Docs',
-					items: [
-						{
-							label: 'Programming Languages',
-							to: '/docs/programming-languages',
-						},
-					],
-				},
-				// {
-				//   title: 'Community',
-				//   items: [
-				//     {
-				//       label: 'Stack Overflow',
-				//       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-				//     },
-				//     {
-				//       label: 'Discord',
-				//       href: 'https://discordapp.com/invite/docusaurus',
-				//     },
-				//     {
-				//       label: 'Twitter',
-				//       href: 'https://twitter.com/docusaurus',
-				//     },
-				//   ],
-				// },
-				// {
-				//   title: 'More',
-				//   items: [
-				//     {
-				//       label: 'Blog',
-				//       to: '/blog',
-				//     },
-				//     {
-				//       label: 'GitHub',
-				//       href: 'https://github.com/facebook/docusaurus',
-				//     },
-				//   ],
-				// },
-			],
+			links: [],
 			copyright: `Copyright © ${new Date().getFullYear()} Syntax Reference. Built with Docusaurus.`,
 		},
 		prism: {
