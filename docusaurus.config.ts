@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
 	title: 'Syntax Reference',
 	tagline: 'A syntax reference guide for multiple programming languages and others',
-	favicon: 'img/favicon.ico',
+	favicon: 'img/logo.png',
 
 	url: 'https://syntaxreference.dev/',
 
@@ -40,8 +40,7 @@ const config: Config = {
 	],
 
 	themeConfig: {
-		// Replace with your project's social card
-		image: 'img/docusaurus-social-card.jpg', // TODO
+		image: 'img/SocialCard.png',
 		colorMode: {
 			defaultMode: 'dark',
 			disableSwitch: false,
