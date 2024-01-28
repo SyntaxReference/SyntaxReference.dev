@@ -72,6 +72,7 @@ const config: Config = {
 			copyright: `Copyright © ${new Date().getFullYear()} Syntax Reference. Built with Docusaurus.`,
 		},
 		prism: {
+			additionalLanguages: ['c', 'cpp', 'csharp', 'java', 'rust', 'go', 'javascript', 'typescript', 'python'],
 			theme: prismThemes.github,
 			darkTheme: prismThemes.dracula,
 		},
