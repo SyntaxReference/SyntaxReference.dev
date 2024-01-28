@@ -2,7 +2,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
 	programmingLanguagesSidebar: [
-		'programming-languages/comments/README',
+		'programming-languages/comments/index',
 		'programming-languages/modules-package-headers/README',
 		'programming-languages/main/README',
 		{
