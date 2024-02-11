@@ -61,7 +61,7 @@ const config: Config = {
 				},
 				{
 					href: 'https://github.com/SyntaxReference/SyntaxReference.dev',
-					label: 'GitHub',
+					label: 'Contribute on GitHub',
 					position: 'right',
 				},
 			],
@@ -77,6 +77,8 @@ const config: Config = {
 			darkTheme: prismThemes.dracula,
 		},
 	} satisfies Preset.ThemeConfig,
+
+	plugins: [require.resolve('docusaurus-lunr-search')],
 };
 
 export default config;
