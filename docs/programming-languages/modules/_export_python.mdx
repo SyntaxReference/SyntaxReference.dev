@@ -1,0 +1,29 @@
+
+```Python
+# ------------------------------------
+# Exports
+# ------------------------------------
+
+# No extra code is needed
+# Just type your code and import from other files
+
+
+# BUT you can use the following convention
+
+# Lets say you have the following folder/files
+"""
+MyModule/
+MyModule/__init__.py
+MyModule/MyClass.py
+MyModule/MyUtil.py
+"""
+
+# Import them inside __init__.py
+from MyClass import MyClass
+from MyUtil import MyUtil
+
+# You can now import them directly from your Module.
+from MyModule import MyClass
+```
+
+> More Info: https://docs.python.org/3/tutorial/modules.html

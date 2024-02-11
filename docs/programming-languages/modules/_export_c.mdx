@@ -1,0 +1,34 @@
+
+
+```C
+// ------------------------------------
+// Exports
+// ------------------------------------
+
+// Option 1 - Header Guards.
+
+// This notation is just a convention, not the actual file name
+#ifndef MY_HEADER_FILE_NAME_H
+#define MY_HEADER_FILE_NAME_H
+
+// Code Declarations Here
+// This is a header file (.h) the actual code will be
+// inside a source file (.c)
+
+#endif
+
+
+// Option 2 - Pragma
+
+// Same purpose as header guards. However,
+// is not an official part of the C/C++ language,
+// and not all compilers support it (although most modern compilers do).
+#pragma once
+
+// Code Declarations Here
+// This is a header file (.h) the actual code will be
+// inside a source file (.c)
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/header-guards/

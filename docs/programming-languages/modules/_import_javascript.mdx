@@ -1,0 +1,76 @@
+
+```Javascript
+// ------------------------------------
+// Imports - ECMAScript format
+// ------------------------------------
+
+import defaultExport from 'module-name';
+import defaultExport from "module-name";
+import * as name from "module-name";
+import { export1 } from "module-name";
+import { export1 as alias1 } from "module-name";
+import { export1 , export2 } from "module-name";
+import { foo , bar } from "module-name/path/to/specific/un-exported/file";
+import { export1 , export2 as alias2 , [...] } from "module-name";
+import defaultExport, { export1 [ , [...] ] } from "module-name";
+import defaultExport, * as name from "module-name";
+import "module-name";
+var promise = import("module-name");
+```
+
+```Javascript
+// ------------------------------------
+// Imports - Browser Specific
+// ------------------------------------
+
+<script type="module">
+	// "Bare" import specifiers aren't currently supported
+	// You also need the file extension
+
+	// Supported:
+	import defaultExport from 'https://website/module_name.js';
+	import defaultExport from '/folder/module_name.js';
+	import defaultExport from './module_name.js';
+	import defaultExport from '../module_name.js';
+
+	// Not supported:
+	import defaultExport from 'module_name.js';
+	import defaultExport from 'folder/module_name.js';
+
+	// Code Here
+</script>
+```
+
+```Javascript
+// ------------------------------------
+// Imports - Node.js Specific
+// ------------------------------------
+
+// Since version 13, node has experimental support (Similar to the Browser)
+// If you want to use a ECMAScript format now, you can try a loader like https://www.npmjs.com/package/esm
+
+// "Bare" import specifiers aren't currently supported
+// You also need the file extension
+
+// Supported:
+import defaultExport from 'https://website/module_name.js';
+import defaultExport from '/folder/module_name.js';
+import defaultExport from './module_name.js';
+import defaultExport from '../module_name.js';
+
+// Not supported:
+import defaultExport from 'module_name.js';
+import defaultExport from 'folder/module_name.js';
+```
+
+```Javascript
+// ------------------------------------
+// Imports - Legacy CommonJS format
+// ------------------------------------
+
+const package = require('module-name');
+const { PI } = Math;
+```
+
+> More Info:
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
