@@ -54,6 +54,11 @@ const config: Config = {
 			},
 			items: [
 				{
+					href: '/',
+					position: 'left',
+					label: 'Home',
+				},
+				{
 					type: 'docSidebar',
 					sidebarId: 'programmingLanguagesSidebar',
 					position: 'left',
