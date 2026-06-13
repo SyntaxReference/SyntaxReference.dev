@@ -3,60 +3,78 @@
 // Declaration & Initialization
 // ------------------------------------
 
-// TODO
+String variableName = "Some string";
+String variableName = new String("Some string");
+String variableName = """
+Some string
+with multiple lines
+"""; // Text Blocks (Since Java 15)
 
 
 
 // Const Declaration
-// TODO
+final String MY_CONSTANT = "Some string";
 
 
 // ------------------------------------
 // Direct Access (Array-Like)
 // ------------------------------------
-// TODO
+char character = variableName.charAt(0);
 
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+int length = variableName.length();
 
 
 // ------------------------------------
 // Trim
 // ------------------------------------
-// TODO
+String trimmed = variableName.trim();
+String stripped = variableName.strip(); // Since Java 11, Unicode-aware
 
 
 // ------------------------------------
 // Is Null Or Empty
 // ------------------------------------
-// TODO
+boolean isNullOrEmpty = variableName == null || variableName.isEmpty();
+boolean isNullOrBlank = variableName == null || variableName.isBlank(); // Since Java 11
 
 
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+String upper = variableName.toUpperCase();
+String lower = variableName.toLowerCase();
 
 
 // ------------------------------------
 // Compare
 // ------------------------------------
-// TODO
+boolean isEqual = variableName.equals(otherString);
+boolean isEqualIgnoreCase = variableName.equalsIgnoreCase(otherString);
+int result = variableName.compareTo(otherString);
 
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+// Strings are immutable.
+String copy = variableName;
+String copy = new String(variableName);
 
 
 // ------------------------------------
 // Concatenation
 // ------------------------------------
-// TODO
+String result = firstString + secondString;
+String result = firstString.concat(secondString);
+String result = String.join(", ", values);
+StringBuilder builder = new StringBuilder();
+builder.append(firstString);
+builder.append(secondString);
+String result = builder.toString();
 ```
 
 ```Java
@@ -65,6 +83,10 @@
 // String Interpolation
 // ------------------------------------
 
+// No Native Support.
+// Use String.format(), formatted() (Since Java 15), or concatenation.
+String result = String.format("Hello %s", name);
+String result = "Hello %s".formatted(name);
 
 
 // ------------------------------------

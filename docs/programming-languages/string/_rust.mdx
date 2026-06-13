@@ -3,69 +3,90 @@
 // Declaration & Initialization
 // ------------------------------------
 
-// TODO
+let variable_name = "Some string"; // &str
+let variable_name = String::from("Some string");
+let variable_name = "Some string".to_string();
 
 
 
 // Const Declaration
-// TODO
+const MY_CONSTANT: &str = "Some string";
 
 
 // ------------------------------------
 // Direct Access (Array-Like)
 // ------------------------------------
-// TODO
+// Direct indexing is not available for String because UTF-8 characters are variable width.
+let first_byte = variable_name.as_bytes()[0];
+let first_character = variable_name.chars().next();
 
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+let byte_length = variable_name.len();
+let character_count = variable_name.chars().count();
 
 
 // ------------------------------------
 // Trim
 // ------------------------------------
-// TODO
+let trimmed = variable_name.trim();
+let trimmed_start = variable_name.trim_start();
+let trimmed_end = variable_name.trim_end();
 
 
 
 // ------------------------------------
 // Is Null Or Empty
 // ------------------------------------
-// TODO
+// Rust strings cannot be null.
+let is_empty = variable_name.is_empty();
 
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+let upper = variable_name.to_uppercase();
+let lower = variable_name.to_lowercase();
 
 
 // ------------------------------------
 // Compare
 // ------------------------------------
-// TODO
+let is_equal = variable_name == other_string;
+let result = variable_name.cmp(&other_string);
 
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+let copy = variable_name.clone();
+let copy = variable_name.to_string();
 
 
 // ------------------------------------
 // Concatenation
 // ------------------------------------
-// TODO
+let result = first_string + &second_string;
+let result = format!("{}{}", first_string, second_string);
+let mut result = String::new();
+result.push_str(first_string);
+result.push_str(second_string);
 
 
 // ------------------------------------
 // String Interpolation
 // ------------------------------------
+let result = format!("Hello {}", name);
+let result = format!("{name}");
 
 
 
 // ------------------------------------
 // Print / Output (Old Format)
 // ------------------------------------
+println!("Hello World");
+println!("Printing Integer: {}", 10);
+println!("Printing Any Number: {}", 20.5);
+println!("More Printing {}, {}", 20.5, 50.2);
 ```

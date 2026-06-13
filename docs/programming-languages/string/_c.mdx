@@ -46,19 +46,40 @@ int length = strnlen(myString, sizeof myString);
 // ------------------------------------
 // Trim
 // ------------------------------------
-// TODO
+// No Native Support.
+// Create a helper function or use a library.
+// Example trimming leading spaces in-place:
+#include <ctype.h> // For isspace()
+#include <string.h> // For memmove()
+
+void trim_left(char *value)
+{
+	char *start = value;
+
+	while (isspace((unsigned char)*start))
+	{
+		start++;
+	}
+
+	memmove(value, start, strlen(start) + 1);
+}
 
 
 // ------------------------------------
 // Is Null Or Empty
 // ------------------------------------
-// TODO
+bool isNullOrEmpty = myString == NULL || myString[0] == '\0';
 
 
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+#include <ctype.h> // For toupper(), tolower()
+
+for (int i = 0; myString[i] != '\0'; i++)
+{
+	myString[i] = (char)toupper((unsigned char)myString[i]);
+}
 
 // ------------------------------------
 // Compare
@@ -116,11 +137,11 @@ strcat(mainString, addString); // Not Safe
 
 
 // strcat_s - Since C11
-// TODO
+strcat_s(mainString, sizeof mainString, addString);
 
 
 //strncat_s - Since C11
-// TODO
+strncat_s(mainString, sizeof mainString, addString, count);
 ```
 
 ```C

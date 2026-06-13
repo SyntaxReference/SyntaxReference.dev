@@ -19,49 +19,57 @@ MY_CONSTANT: str = 'Some string' # Type Annotations (PEP 484 / Python 3.6+)
 # ------------------------------------
 # Direct Access (Array-Like)
 # ------------------------------------
-# TODO
+character = variable_name[0]
 
 
 # ------------------------------------
 # Size / Length
 # ------------------------------------
-# TODO
+length = len(variable_name)
 
 
 # ------------------------------------
 # Trim
 # ------------------------------------
-# TODO
+trimmed = variable_name.strip()
+trimmed_start = variable_name.lstrip()
+trimmed_end = variable_name.rstrip()
 
 
 
 # ------------------------------------
 # Is Null Or Empty
 # ------------------------------------
-# TODO
+is_none_or_empty = variable_name is None or len(variable_name) == 0
 
 # ------------------------------------
 # Transform
 # ------------------------------------
-# TODO
+upper = variable_name.upper()
+lower = variable_name.lower()
+title = variable_name.title()
 
 
 # ------------------------------------
 # Compare
 # ------------------------------------
-# TODO
+is_equal = variable_name == other_string
+is_not_equal = variable_name != other_string
 
 
 # ------------------------------------
 # Copy / Clone
 # ------------------------------------
-# TODO
+# Strings are immutable.
+copy = variable_name
 
 
 # ------------------------------------
 # Concatenation
 # ------------------------------------
-# TODO
+result = first_string + second_string
+result = "".join(values)
+result = f"{first_string}{second_string}"
 
 
 # ------------------------------------
@@ -75,7 +83,10 @@ age = 74
 print(f"Hello, {name}. You are {age}.")
 
 # Example 2
-# TODO: Examples
+value = 10
+print(f"{value=}")
+print(f"{value:.2f}")
+print(f"{value:08d}")
 
 
 # ------------------------------------

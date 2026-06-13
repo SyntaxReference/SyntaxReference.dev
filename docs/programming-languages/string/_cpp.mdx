@@ -40,13 +40,15 @@ constexpr std::string MY_CONSTANT = "Another String"; // C++11
 // ------------------------------------
 // Direct Access (Array-Like)
 // ------------------------------------
-// TODO
+char character = myString[0]; // No bounds-checking
+char character = myString.at(0); // with bounds-checking
 
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+std::size_t length = myString.size();
+std::size_t length = myString.length();
 
 
 // ------------------------------------
@@ -93,25 +95,36 @@ myString.empty()
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+#include <algorithm> // For std::transform
+#include <cctype> // For std::toupper, std::tolower
+
+std::transform(myString.begin(), myString.end(), myString.begin(),
+	[](unsigned char character) { return std::toupper(character); });
+
+std::transform(myString.begin(), myString.end(), myString.begin(),
+	[](unsigned char character) { return std::tolower(character); });
 
 
 // ------------------------------------
 // Compare
 // ------------------------------------
-// TODO
+bool isEqual = myString == otherString;
+int result = myString.compare(otherString);
 
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+std::string copy = myString;
+std::string copy {myString};
 
 
 // ------------------------------------
 // Concatenation
 // ------------------------------------
-// TODO
+std::string result = firstString + secondString;
+firstString += secondString;
+firstString.append(secondString);
 ```
 
 ```Cpp
@@ -201,7 +214,9 @@ std::cout << 7 << '\n';
 
 
 // Positional Arguments (Re-Ordering the Arguments)
-// TODO
+// No Native Support with iostreams.
+// Use std::format with explicit argument order if supported by the implementation. (Since C++20)
+std::string result = std::format("{1} , {0}", "First Argument", "Second Argument");
 ```
 
 > More Info:

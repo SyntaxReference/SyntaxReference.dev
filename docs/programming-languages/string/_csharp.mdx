@@ -3,59 +3,75 @@
 // Declaration & Initialization
 // ------------------------------------
 
-// TODO
+string variableName = "Some string";
+string variableName = @"C:\Some\Path";
+string variableName = """
+Some string
+with multiple lines
+"""; // Raw string literals (Since C# 11)
 
 
 
 // Const Declaration
-// TODO
+const string MY_CONSTANT = "Some string";
+readonly string myReadonlyString = "Some string";
 
 
 // ------------------------------------
 // Direct Access (Array-Like)
 // ------------------------------------
-// TODO
+char character = variableName[0];
 
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+int length = variableName.Length;
 
 
 // ------------------------------------
 // Trim
 // ------------------------------------
-// TODO
+string trimmed = variableName.Trim();
+string trimmedStart = variableName.TrimStart();
+string trimmedEnd = variableName.TrimEnd();
 
 
 // ------------------------------------
 // Is Null Or Empty
 // ------------------------------------
-// TODO
+bool isNullOrEmpty = string.IsNullOrEmpty(variableName);
+bool isNullOrWhiteSpace = string.IsNullOrWhiteSpace(variableName);
 
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+string upper = variableName.ToUpper();
+string lower = variableName.ToLower();
 
 
 // ------------------------------------
 // Compare
 // ------------------------------------
-// TODO
+bool isEqual = variableName == otherString;
+bool isEqual = string.Equals(variableName, otherString, StringComparison.Ordinal);
+int result = string.Compare(variableName, otherString, StringComparison.Ordinal);
 
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+// Strings are immutable.
+string copy = variableName;
+string copy = string.Copy(variableName); // Obsolete in .NET Core 3.0+
 
 
 // ------------------------------------
 // Concatenation
 // ------------------------------------
-// TODO
+string result = firstString + secondString;
+string result = string.Concat(firstString, secondString);
+string result = string.Join(", ", values);
 ```
 
 ```Cs

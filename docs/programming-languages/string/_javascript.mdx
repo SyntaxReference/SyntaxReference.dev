@@ -15,49 +15,57 @@ const MY_CONSTANT = "Some string";
 // ------------------------------------
 // Direct Access (Array-Like)
 // ------------------------------------
-// TODO
+let character = variableName[0];
+let character = variableName.charAt(0);
 
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+let length = variableName.length;
 
 
 // ------------------------------------
 // Trim
 // ------------------------------------
-// TODO
+let trimmed = variableName.trim();
+let trimmedStart = variableName.trimStart();
+let trimmedEnd = variableName.trimEnd();
 
 
 
 // ------------------------------------
 // Is Null Or Empty
 // ------------------------------------
-// TODO
+let isNullOrEmpty = variableName == null || variableName.length === 0;
 
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+let upper = variableName.toUpperCase();
+let lower = variableName.toLowerCase();
 
 
 // ------------------------------------
 // Compare
 // ------------------------------------
-// TODO
+let isEqual = variableName === otherString;
+let result = variableName.localeCompare(otherString);
 
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+// Strings are immutable.
+let copy = variableName;
 
 
 // ------------------------------------
 // Concatenation
 // ------------------------------------
-// TODO
+let result = firstString + secondString;
+let result = `${firstString}${secondString}`;
+let result = values.join(", ");
 
 
 // ------------------------------------

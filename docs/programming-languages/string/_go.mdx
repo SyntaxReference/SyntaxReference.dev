@@ -3,69 +3,91 @@
 // Declaration & Initialization
 // ------------------------------------
 
-// TODO
+var variableName string = "Some string"
+variableName := "Some string"
+variableName := `Some string
+with multiple lines`
 
 
 
 // Const Declaration
-// TODO
+const MY_CONSTANT string = "Some string"
 
 
 // ------------------------------------
 // Direct Access (Array-Like)
 // ------------------------------------
-// TODO
+// Indexing a string returns a byte.
+firstByte := variableName[0]
+
+// Use range or []rune for Unicode code points.
+firstRune := []rune(variableName)[0]
 
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+byteLength := len(variableName)
+runeCount := utf8.RuneCountInString(variableName)
 
 
 // ------------------------------------
 // Trim
 // ------------------------------------
-// TODO
+trimmed := strings.TrimSpace(variableName)
+trimmed := strings.Trim(variableName, " ")
+trimmedStart := strings.TrimLeft(variableName, " ")
+trimmedEnd := strings.TrimRight(variableName, " ")
 
 
 
 // ------------------------------------
 // Is Null Or Empty
 // ------------------------------------
-// TODO
+// Strings cannot be nil.
+isEmpty := variableName == ""
 
 // ------------------------------------
 // Transform
 // ------------------------------------
-// TODO
+upper := strings.ToUpper(variableName)
+lower := strings.ToLower(variableName)
 
 
 // ------------------------------------
 // Compare
 // ------------------------------------
-// TODO
+isEqual := variableName == otherString
+result := strings.Compare(variableName, otherString)
 
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+// Strings are immutable.
+copyString := variableName
 
 
 // ------------------------------------
 // Concatenation
 // ------------------------------------
-// TODO
+result := firstString + secondString
+result := strings.Join(values, ", ")
+result := fmt.Sprintf("%s%s", firstString, secondString)
 
 
 // ------------------------------------
 // String Interpolation
 // ------------------------------------
+result := fmt.Sprintf("Hello %s", name)
 
 
 
 // ------------------------------------
 // Print / Output (Old Format)
 // ------------------------------------
+fmt.Println("Hello World")
+fmt.Printf("Printing Integer: %d\n", 10)
+fmt.Printf("Printing Any Number: %f\n", 20.5)
+fmt.Printf("More Printing %f, %f\n", 20.5, 50.2)
 ```
