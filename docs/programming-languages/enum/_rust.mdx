@@ -1,3 +1,21 @@
 ```Rust
-// TODO
+enum Color {
+	Red,
+	Green,
+	Blue,
+}
+
+enum Message {
+	Quit,
+	Move { x: i32, y: i32 },
+	Write(String),
+}
+
+let color = Color::Red;
+
+match color {
+	Color::Red => println!("red"),
+	Color::Green => println!("green"),
+	Color::Blue => println!("blue"),
+}
 ```

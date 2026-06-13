@@ -1,3 +1,19 @@
 ```Cs
-// TODO
+enum Color
+{
+	Red,
+	Green,
+	Blue
+}
+
+enum FileAccess
+{
+	Read = 1,
+	Write = 2,
+	Execute = 4
+}
+
+Color color = Color.Red;
+int value = (int)Color.Red;
+Color parsed = Enum.Parse<Color>("Red");
 ```

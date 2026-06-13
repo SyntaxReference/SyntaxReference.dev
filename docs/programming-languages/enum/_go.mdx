@@ -1,3 +1,14 @@
 ```Go
-// TODO
+// Go has no enum keyword.
+// Use constants with iota.
+
+type Color int
+
+const (
+	Red Color = iota
+	Green
+	Blue
+)
+
+color := Red
 ```

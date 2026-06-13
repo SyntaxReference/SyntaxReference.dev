@@ -1,3 +1,12 @@
 ```Javascript
-// TODO
+// No Native Enum Support.
+// Use frozen objects or TypeScript enums when static typing is needed.
+
+const Color = Object.freeze({
+	Red: "red",
+	Green: "green",
+	Blue: "blue",
+});
+
+const color = Color.Red;
 ```
