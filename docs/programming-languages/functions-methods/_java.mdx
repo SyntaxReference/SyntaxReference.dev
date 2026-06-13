@@ -3,40 +3,75 @@
 // Definition
 // ------------------------------------
 
-// TODO
+[access_modifier] [return_type] functionName([parameters]) {
+	// ...
+}
 
 // ------------------------------------
 // Declaration Example
 // ------------------------------------
 
-// TODO
+void myFunction(float x) {
+	// ...
+}
+
+float myFunction() {
+	return 10.5f;
+}
+
+User myFunction(int id) {
+	return new User();
+}
 
 // ------------------------------------
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use an object, builder, or clear method names when argument meaning is not obvious.
+
+createUser(new CreateUserRequest("Ada", 36));
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use method overloading.
+
+void connect(String host) {
+	connect(host, 443);
+}
+
+void connect(String host, int port) {
+	// ...
+}
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use method overloading or assign defaults inside the method.
 
 
 // ------------------------------------
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// TODO
+int addAll(int... numbers) {
+	int result = 0;
+
+	for (int number : numbers) {
+		result += number;
+	}
+
+	return result;
+}
+
+addAll(1, 2, 3);
 ```
 
 ```Java
@@ -44,7 +79,13 @@
 // Generic/Template
 // ------------------------------------
 
-// TODO
+public static <T> T identity(T value) {
+	return value;
+}
+
+public static <T extends Comparable<T>> T max(T first, T second) {
+	return first.compareTo(second) >= 0 ? first : second;
+}
 ```
 
 ```Java

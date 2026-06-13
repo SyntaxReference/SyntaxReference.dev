@@ -135,7 +135,19 @@ add_all_int(3 ,2,4,7);
 // Generic/Template
 // ------------------------------------
 
-// TODO
+template <typename T>
+T identity(T value)
+{
+	return value;
+}
+
+template <typename T>
+T max(T first, T second)
+{
+	return first > second ? first : second;
+}
+
+auto result = max(10, 20);
 ```
 
 ```Cpp

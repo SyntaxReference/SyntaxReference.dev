@@ -3,40 +3,67 @@
 // Definition
 // ------------------------------------
 
-// TODO
+function functionName([parameters]): returnType {
+	// ...
+}
 
 // ------------------------------------
 // Declaration Example
 // ------------------------------------
 
-// TODO
+function myFunction(x: number): void {
+	// ...
+}
+
+function getNumber(): number {
+	return 10.5;
+}
+
+function add(first: number, second: number): number {
+	return first + second;
+}
 
 // ------------------------------------
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use object parameters.
+
+function printUser({ name, age }: { name: string; age: number }): void {
+	// ...
+}
+
+printUser({ name: "Ada", age: 36 });
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+function printUser(name: string, age?: number): void {
+	// ...
+}
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+function connect(host: string, port: number = 443): void {
+	// ...
+}
 
 
 // ------------------------------------
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// TODO
+function addAll(...numbers: number[]): number {
+	return numbers.reduce((result, number) => result + number, 0);
+}
+
+addAll(1, 2, 3);
 ```
 
 ```Typescript
@@ -44,7 +71,13 @@
 // Generic/Template
 // ------------------------------------
 
-// TODO
+function identity<T>(value: T): T {
+	return value;
+}
+
+function first<T>(values: T[]): T | undefined {
+	return values[0];
+}
 ```
 
 ```Typescript

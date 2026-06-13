@@ -3,40 +3,84 @@
 // Definition
 // ------------------------------------
 
-// TODO
+[access_modifier] [return_type] FunctionName([parameters])
+{
+	// ...
+}
 
 // ------------------------------------
 // Declaration Example
 // ------------------------------------
 
-// TODO
+void MyFunction(float x)
+{
+	// ...
+}
+
+float MyFunction()
+{
+	return 10.5f;
+}
+
+User MyFunction(int id)
+{
+	return new User();
+}
 
 // ------------------------------------
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+void PrintUser(string name, int age)
+{
+	// ...
+}
+
+PrintUser(name: "Ada", age: 36);
+PrintUser(age: 36, name: "Ada");
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+// Optional parameters must appear after required parameters.
+void PrintUser(string name, int age = 0)
+{
+	// ...
+}
+
+PrintUser("Ada");
+PrintUser("Ada", 36);
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+void Connect(string host, int port = 443, bool useSsl = true)
+{
+	// ...
+}
 
 
 // ------------------------------------
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// TODO
+int AddAll(params int[] numbers)
+{
+	int result = 0;
+
+	foreach (int number in numbers)
+	{
+		result += number;
+	}
+
+	return result;
+}
+
+AddAll(1, 2, 3);
 ```
 
 ```Cs
@@ -44,7 +88,15 @@
 // Generic/Template
 // ------------------------------------
 
-// TODO
+T Identity<T>(T value)
+{
+	return value;
+}
+
+T Max<T>(T first, T second) where T : IComparable<T>
+{
+	return first.CompareTo(second) >= 0 ? first : second;
+}
 ```
 
 ```Cs

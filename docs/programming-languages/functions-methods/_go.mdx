@@ -3,40 +3,78 @@
 // Definition
 // ------------------------------------
 
-// TODO
+func functionName([parameters]) [returnType] {
+	// ...
+}
 
 // ------------------------------------
 // Declaration Example
 // ------------------------------------
 
-// TODO
+func myFunction(x float32) {
+	// ...
+}
+
+func getNumber() float32 {
+	return 10.5
+}
+
+func add(first int, second int) int {
+	return first + second
+}
+
+func swap(first string, second string) (string, string) {
+	return second, first
+}
 
 // ------------------------------------
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use structs when argument names matter.
+
+type CreateUserOptions struct {
+	Name string
+	Age  int
+}
+
+func CreateUser(options CreateUserOptions) {
+	// ...
+}
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use zero values, structs, or separate functions.
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Assign defaults inside the function when needed.
 
 
 // ------------------------------------
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// TODO
+func addAll(numbers ...int) int {
+	result := 0
+
+	for _, number := range numbers {
+		result += number
+	}
+
+	return result
+}
+
+addAll(1, 2, 3)
 ```
 
 ```Go
@@ -44,7 +82,20 @@
 // Generic/Template
 // ------------------------------------
 
-// TODO
+// Since Go 1.18
+func Identity[T any](value T) T {
+	return value
+}
+
+func Contains[T comparable](values []T, target T) bool {
+	for _, value := range values {
+		if value == target {
+			return true
+		}
+	}
+
+	return false
+}
 ```
 
 ```Go

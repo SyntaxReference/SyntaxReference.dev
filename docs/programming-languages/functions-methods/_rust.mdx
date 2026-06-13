@@ -3,40 +3,75 @@
 // Definition
 // ------------------------------------
 
-// TODO
+fn function_name([parameters]) -> return_type {
+	// ...
+}
 
 // ------------------------------------
 // Declaration Example
 // ------------------------------------
 
-// TODO
+fn my_function(x: f32) {
+	// ...
+}
+
+fn get_number() -> f32 {
+	10.5
+}
+
+fn add(first: i32, second: i32) -> i32 {
+	first + second
+}
 
 // ------------------------------------
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use structs when argument names matter.
+
+struct CreateUserOptions {
+	name: String,
+	age: u8,
+}
+
+fn create_user(options: CreateUserOptions) {
+	// ...
+}
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use Option<T> or separate functions.
+
+fn print_user(name: &str, age: Option<u8>) {
+	// ...
+}
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use Option<T>, builder-style structs, or wrapper functions.
 
 
 // ------------------------------------
 // Variable Number of Arguments to a Function Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support for variadic Rust functions.
+// Pass a slice or vector.
+
+fn add_all(numbers: &[i32]) -> i32 {
+	numbers.iter().sum()
+}
+
+add_all(&[1, 2, 3]);
 ```
 
 ```Rust
@@ -44,7 +79,17 @@
 // Generic/Template
 // ------------------------------------
 
-// TODO
+fn identity<T>(value: T) -> T {
+	value
+}
+
+fn max<T: Ord>(first: T, second: T) -> T {
+	if first >= second {
+		first
+	} else {
+		second
+	}
+}
 ```
 
 ```Rust

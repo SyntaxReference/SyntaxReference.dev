@@ -95,7 +95,12 @@ add_all_int(3 ,2,4,7);
 // Generic/Template
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Common options are macros, void pointers, or separate functions per type.
+
+#define max(a, b) ((a) > (b) ? (a) : (b))
+
+int result = max(10, 20);
 ```
 
 ```C
