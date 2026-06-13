@@ -1,7 +1,5 @@
 # Syntax Reference
 
-:construction: This project is a work in progress in early stages :construction:
-
 ## Introduction
 
 At some point, we all have our notes, code snippets, Github Gists, and others. This Syntax Reference came to be from a struggle to have up-to-date syntax reference notes, from programming languages to terminal commands, queries, and so on.
