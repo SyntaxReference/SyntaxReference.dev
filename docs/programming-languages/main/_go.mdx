@@ -1,3 +1,26 @@
 ```Go
-// TODO
+package main
+
+import "fmt"
+
+func main() {
+	// Code Here
+	fmt.Println("Hello World")
+}
+```
+
+```Go
+// Args Example
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	for _, arg := range os.Args {
+		fmt.Println(arg)
+	}
+}
 ```
