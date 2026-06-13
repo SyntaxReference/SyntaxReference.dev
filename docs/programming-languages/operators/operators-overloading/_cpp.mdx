@@ -1,3 +1,20 @@
 ```Cpp
-// TODO
+class Vector2
+{
+public:
+	float x;
+	float y;
+
+	Vector2 operator+(Vector2 const& other) const
+	{
+		return Vector2 { x + other.x, y + other.y };
+	}
+
+	bool operator==(Vector2 const& other) const
+	{
+		return x == other.x && y == other.y;
+	}
+};
+
+Vector2 result = first + second;
 ```

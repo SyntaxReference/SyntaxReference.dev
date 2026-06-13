@@ -1,3 +1,18 @@
 ```Go
-// TODO
+// No Native Support.
+// Use named methods or functions instead.
+
+type Vector2 struct {
+	X float64
+	Y float64
+}
+
+func (first Vector2) Add(second Vector2) Vector2 {
+	return Vector2{
+		X: first.X + second.X,
+		Y: first.Y + second.Y,
+	}
+}
+
+result := first.Add(second)
 ```

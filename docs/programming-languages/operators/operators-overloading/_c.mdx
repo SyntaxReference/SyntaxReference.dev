@@ -1,3 +1,18 @@
 ```C
-// TODO
+// No Native Support.
+// Use named functions instead.
+
+typedef struct Vector2
+{
+	float x;
+	float y;
+} Vector2;
+
+Vector2 add(Vector2 first, Vector2 second)
+{
+	return (Vector2) {
+		.x = first.x + second.x,
+		.y = first.y + second.y
+	};
+}
 ```

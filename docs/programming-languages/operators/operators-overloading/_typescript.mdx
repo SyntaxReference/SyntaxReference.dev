@@ -1,3 +1,17 @@
 ```Typescript
-// TODO
+// No Native Support for custom operator overloading.
+// Use named methods instead.
+
+class Vector2 {
+	public constructor(
+		public readonly x: number,
+		public readonly y: number,
+	) {}
+
+	public add(other: Vector2): Vector2 {
+		return new Vector2(this.x + other.x, this.y + other.y);
+	}
+}
+
+const result = first.add(second);
 ```
