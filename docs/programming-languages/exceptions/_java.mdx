@@ -1,3 +1,28 @@
 ```Java
-// TODO
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+try {
+	// ...
+}
+catch (YourSpecificException error) {
+	// ...
+}
+catch (Exception error) {
+	// ...
+}
+finally {
+	// This block will run for success or catch
+}
+
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+class MyException extends Exception {
+	public MyException(String message) {
+		super(message);
+	}
+}
+
+throw new MyException("Something went wrong");
 ```

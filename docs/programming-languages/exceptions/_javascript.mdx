@@ -32,7 +32,14 @@ finally {
 // Custom Exception
 // ------------------------------------
 
-// TODO
+class MyError extends Error {
+	constructor(message) {
+		super(message);
+		this.name = "MyError";
+	}
+}
+
+throw new MyError("Something went wrong");
 ```
 
 > More Info:

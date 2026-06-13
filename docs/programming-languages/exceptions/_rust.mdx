@@ -1,3 +1,20 @@
 ```Rust
-// TODO
+// Rust does not use exceptions for recoverable errors.
+// Use Result<T, E>.
+
+fn divide(first: i32, second: i32) -> Result<i32, String> {
+	if second == 0 {
+		return Err(String::from("division by zero"));
+	}
+
+	Ok(first / second)
+}
+
+match divide(10, 2) {
+	Ok(value) => println!("{}", value),
+	Err(error) => println!("{}", error),
+}
+
+// Panic is available for unrecoverable errors.
+panic!("Something went wrong");
 ```

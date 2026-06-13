@@ -33,7 +33,14 @@ finally {
 // Custom Exception
 // ------------------------------------
 
-// TODO
+class MyError extends Error {
+	public constructor(message: string) {
+		super(message);
+		this.name = "MyError";
+	}
+}
+
+throw new MyError("Something went wrong");
 ```
 > More Info:
 > - https://github.com/Microsoft/TypeScript/issues/20024

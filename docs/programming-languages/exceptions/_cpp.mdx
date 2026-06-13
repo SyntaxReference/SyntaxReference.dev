@@ -28,7 +28,16 @@ catch (...) // catch-all handler (Yes, ellipses)
 // Custom Exception
 // ------------------------------------
 
-// TODO
+class MyException : public std::exception
+{
+public:
+	const char* what() const noexcept override
+	{
+		return "Something went wrong";
+	}
+};
+
+throw MyException();
 ```
 > More Info:
 > - https://www.learncpp.com/cpp-tutorial/144-uncaught-exceptions-catch-all-handlers-and-exception-specifiers/

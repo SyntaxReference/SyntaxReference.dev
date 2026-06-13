@@ -1,3 +1,19 @@
 ```Go
-// TODO
+// Go does not use exceptions.
+// Return errors as values.
+
+func divide(first int, second int) (int, error) {
+	if second == 0 {
+		return 0, errors.New("division by zero")
+	}
+
+	return first / second, nil
+}
+
+value, err := divide(10, 2)
+if err != nil {
+	return err
+}
+
+// panic/recover exists, but is usually reserved for unrecoverable errors.
 ```
