@@ -3,34 +3,51 @@
 // Static Variable Inside Functions
 // ------------------------------------
 
-// TODO
-
+// Not Available.
+// Use package-level variables when persistent state is required.
 
 // ------------------------------------
 // Static Member Variable Inside Class
 // ------------------------------------
 
-// TODO
-
+// Go has no classes and no static members.
+// Use package-level variables or constants.
+var myVariable int = 0
+const MY_CONSTANT int = 10
 
 // ------------------------------------
 // Static Global Variable in a File
 // ------------------------------------
 
-// TODO
+// Package-level names are shared inside the package.
+// Lower-case names are package-private.
+var myVariable int = 0
 
+// Upper-case names are exported from the package.
+var MyVariable int = 0
 
 // ------------------------------------
 // Static Functions & Methods
 // ------------------------------------
 
-// TODO
+// Use package-level functions.
+func Add(first int, second int) int {
+	return first + second
+}
 
+result := Add(10, 20)
 
 // ------------------------------------
 // Static Class Objects
 // ------------------------------------
 
-// TODO
+// Not Available.
+// Use package-level variables, structs, and functions.
+type Settings struct {
+	ApplicationName string
+}
 
+var DefaultSettings = Settings{
+	ApplicationName: "Syntax Reference",
+}
 ```

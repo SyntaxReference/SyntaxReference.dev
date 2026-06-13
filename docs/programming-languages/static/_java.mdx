@@ -3,34 +3,49 @@
 // Static Variable Inside Functions
 // ------------------------------------
 
-// TODO
-
+// Not Available.
+// Use a static field on a class instead.
 
 // ------------------------------------
 // Static Member Variable Inside Class
 // ------------------------------------
 
-// TODO
-
+class MyClass {
+	public static int myVariable = 0;
+	public static final int MY_CONSTANT = 10;
+}
 
 // ------------------------------------
 // Static Global Variable in a File
 // ------------------------------------
 
-// TODO
+// No Native Global Variables.
+// Use static fields on a class.
 
+class Globals {
+	public static int myVariable = 0;
+}
 
 // ------------------------------------
 // Static Functions & Methods
 // ------------------------------------
 
-// TODO
+class Calculator {
+	public static int add(int first, int second) {
+		return first + second;
+	}
+}
 
+int result = Calculator.add(10, 20);
 
 // ------------------------------------
 // Static Class Objects
 // ------------------------------------
 
-// TODO
-
+// Java has static nested classes, but no top-level static classes.
+class Outer {
+	static class Nested {
+		// ...
+	}
+}
 ```

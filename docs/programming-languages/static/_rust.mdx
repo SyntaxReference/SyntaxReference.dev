@@ -3,34 +3,52 @@
 // Static Variable Inside Functions
 // ------------------------------------
 
-// TODO
-
+// No Native Function-Local Static Syntax.
+// Use a module-level static or a lazy initialization helper when needed.
 
 // ------------------------------------
 // Static Member Variable Inside Class
 // ------------------------------------
 
-// TODO
+// Rust has no classes.
+// Use associated constants on structs, enums, or traits.
+struct MyStruct;
 
+impl MyStruct {
+	const MY_CONSTANT: i32 = 10;
+}
 
 // ------------------------------------
 // Static Global Variable in a File
 // ------------------------------------
 
-// TODO
-
+static MY_VARIABLE: i32 = 10;
+static mut MY_MUTABLE_VARIABLE: i32 = 10; // Access requires unsafe.
+const MY_CONSTANT: i32 = 10;
 
 // ------------------------------------
 // Static Functions & Methods
 // ------------------------------------
 
-// TODO
+struct Calculator;
 
+impl Calculator {
+	fn add(first: i32, second: i32) -> i32 {
+		first + second
+	}
+}
+
+let result = Calculator::add(10, 20);
 
 // ------------------------------------
 // Static Class Objects
 // ------------------------------------
 
-// TODO
+// Rust has no classes.
+// Use unit structs, associated functions, modules, or static values.
+struct Settings;
 
+impl Settings {
+	const APPLICATION_NAME: &'static str = "Syntax Reference";
+}
 ```

@@ -3,34 +3,53 @@
 // Static Variable Inside Functions
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use a closure when you need a function-local persistent value.
+const myFunction = (() => {
+	let myVariable = 0;
 
+	return () => {
+		myVariable++;
+		return myVariable;
+	};
+})();
 
 // ------------------------------------
 // Static Member Variable Inside Class
 // ------------------------------------
 
-// TODO
-
+class MyClass {
+	static myVariable = 0; // Public static field
+}
 
 // ------------------------------------
 // Static Global Variable in a File
 // ------------------------------------
 
-// TODO
+// Use module scope.
+let myVariable = 0;
 
+export { myVariable };
 
 // ------------------------------------
 // Static Functions & Methods
 // ------------------------------------
 
-// TODO
+class Calculator {
+	static add(first, second) {
+		return first + second;
+	}
+}
 
+const result = Calculator.add(10, 20);
 
 // ------------------------------------
 // Static Class Objects
 // ------------------------------------
 
-// TODO
-
+// No Native Static Classes.
+// Use a class with static members or a plain module/object.
+const Settings = {
+	applicationName: "Syntax Reference",
+};
 ```

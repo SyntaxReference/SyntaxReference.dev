@@ -3,22 +3,29 @@
 # Static Variable Inside Functions
 # ------------------------------------
 
-# TODO
+# No Native Support.
+# Use a function attribute if you need persistent function-local state.
+def my_function():
+	if not hasattr(my_function, "counter"):
+		my_function.counter = 0
 
+	my_function.counter += 1
+	return my_function.counter
 
 # ------------------------------------
 # Static Member Variable Inside Class
 # ------------------------------------
 
-# TODO
-
+class MyClass:
+	my_variable = 0
 
 # ------------------------------------
 # Static Global Variable in a File
 # ------------------------------------
 
-# TODO
-
+# Use module-level variables.
+my_variable = 0
+MY_CONSTANT = 10
 
 # ------------------------------------
 # Static Functions & Methods
@@ -27,9 +34,9 @@
 # Decorator that defines a static method
 
 class Calculator:
-    @staticmethod
-    def add(x, y):
-        return x + y
+	@staticmethod
+	def add(x, y):
+		return x + y
 
 # Calling Ex.:
 print('Product:', Calculator.add(15, 110))
@@ -38,9 +45,9 @@ print('Product:', Calculator.add(15, 110))
 # Static Class Objects
 # ------------------------------------
 
-# TODO
+# Python has no static class syntax.
+# Use a class with class attributes, a module, or an object instance.
+class Settings:
+	application_name = "Syntax Reference"
 
 ```
-
-> More Info:
-> - https://realpython.com/instance-class-and-static-methods-demystified/
