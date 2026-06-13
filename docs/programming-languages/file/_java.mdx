@@ -1,0 +1,7 @@
+```Java
+// Since Java 11 for Files.readString/writeString
+String text = Files.readString(Path.of("example.txt"));
+Files.writeString(Path.of("output.txt"), text);
+
+List<String> lines = Files.readAllLines(Path.of("example.txt"));
+```

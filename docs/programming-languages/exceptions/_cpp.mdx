@@ -1,0 +1,34 @@
+```Cpp
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
+// C++ Has no "Finally()"
+try
+{
+	// ...
+}
+catch(your_specific_exception& error) // Needs to be a Reference ( & ) so you dont break the Polymorphism
+{
+	std::cout << "Specific excetion happened: " << error.what() << std::endl;
+}
+catch(exception& error)
+{
+	std::cout << "An Excetion happened: " << error.what() << std::endl;
+}
+catch (...) // catch-all handler (Yes, ellipses)
+{
+	// Often, the catch-all handler block is left empty
+	std::cout << "We caught an exception of an undetermined type\n";
+}
+```
+
+```Cpp
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
+```
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/144-uncaught-exceptions-catch-all-handlers-and-exception-specifiers/

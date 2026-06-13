@@ -1,0 +1,58 @@
+```Cpp
+// ------------------------------------
+// While
+// ------------------------------------
+while (expression)
+{
+	// ...
+	// Dont forget the Increment or Decrement operation
+}
+
+// ------------------------------------
+// do while
+// ------------------------------------
+do
+{
+	// ...
+	// Dont forget the Increment or Decrement operation
+}
+while (expression); // Dont forget ; (semicolon)
+
+// ------------------------------------
+// For
+// ------------------------------------
+for ( element_declaration_initialization; condition; increment_or_decrement )
+{
+	// ...
+}
+
+// ------------------------------------
+// For-each (Ranged For)
+// ------------------------------------
+for (element_declaration_initialization : collection_container)
+{
+	// ...
+}
+
+// ------------------------------------
+// For-each Examples from Learncpp
+// ------------------------------------
+
+// element will be a copy of the current array element
+for (auto element : myArray) { /**/ }
+
+// The ampersand makes element a reference to the actual array element,
+// preventing a copy from being made
+for (auto &element : myArray) { /**/ }
+
+// element is a const reference to the currently iterated array element
+for (const auto &element : myArray) { /**/ }
+for (auto const &element : myArray) { /**/ }
+
+// In for-each loops element declarations, for performance reasons,
+// if your elements are non-fundamental types, use references or const references
+// else (your elements are basic types) use the copy element syntax
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/6-12a-for-each-loops/

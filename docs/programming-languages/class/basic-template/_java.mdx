@@ -1,0 +1,56 @@
+```Java
+public class MyClass
+{
+	// ------------------------------------
+	// Properties / Fields
+	// ------------------------------------
+	public int myPublicProperty; // Public by default
+	private int myPrivateProperty;
+	protected int myProtectedProperty;
+
+	// ------------------------------------
+	// Constructor
+	// ------------------------------------
+
+	// The constructor has the same name as the class
+	// Can be omited if you have no code to put here.
+	public MyClass() // Public by default
+	{
+		// ...
+	}
+
+	// ------------------------------------
+	// Accessors (getter/setter)
+	// ------------------------------------
+
+	// Calling "getMyProperty" Ex.: myClassInstance.getMyProperty();
+	public int getMyProperty()
+	{
+		return this.myPrivateProperty;
+	}
+
+	// Calling "setMyProperty" Ex.: myClassInstance.setMyProperty(10);
+	public void setMyProperty(int value)
+	{
+		this.myPrivateProperty = value;
+	}
+
+	// ------------------------------------
+	// Methods
+	// ------------------------------------
+
+	// Calling "myMethod" Ex.: myClassInstance.myMethod(20);
+	public void myMethod (int someVariable)
+	{
+		//...
+	}
+}
+```
+
+```Java
+// ------------------------------------
+// Instantiating the class
+// ------------------------------------
+
+MyClass myClassInstanceName = new MyClass();
+```

@@ -1,0 +1,82 @@
+```Javascript
+// No Native Support
+
+// Workaround Example 1
+class MyClassName {
+	myPublicField = 10;
+
+	constructor() {
+		this.myAnotherPublicField = "Hello";
+
+		if (new.target === MyClassName) {
+			throw new TypeError("Cannot construct Abstract instances directly");
+		}
+	}
+
+	MyMethod() {
+		throw new TypeError('Method must be overridden');
+	}
+
+	MySecondMethod() {
+		// Some default implementation.
+		// If you dont override it,
+		// default implementation will be used
+	}
+}
+```
+
+```Javascript
+// Workaround Example 2
+class MyClassName {
+	constructor() {
+		if (new.target === MyClassName) {
+			throw new TypeError("Cannot construct Abstract instances directly");
+		}
+
+		// Abstract Method
+		if (this.MyAbstractMethodName === undefined || typeof(this.MyAbstractMethodName) != 'function') {
+			throw new TypeError(`Method "MyAbstractMethodName" must be overridden`);
+		}
+	}
+}
+```
+
+```Javascript
+// Workaround Example 3
+class MyClassName {
+	abstractMethodsNames = ["MyAbstractMethodName", "MySecondAbstractMethodName"];
+	missingOverride = [];
+	constructor() {
+		if (new.target === MyClassName) {
+			throw new TypeError("Cannot construct Abstract instances directly");
+		}
+
+		const derivedClass = Object.getPrototypeOf(this);
+		const derivedClassMethods = Object.getOwnPropertyNames(derivedClass);
+		for (const method of this.abstractMethodsNames) {
+			if(derivedClassMethods.includes(method) === false) {
+				this.missingOverride.push(method);
+			}
+		}
+		if(this.missingOverride.length != 0) {
+			throw new TypeError(`Methods "${this.missingOverride}" must be overridden`);
+		}
+	}
+}
+```
+
+```Javascript
+// Derived Class Example
+class MyDerivedClass extends MyClassName {
+	constructor() {
+		super();
+	}
+
+	MyMethod() {
+		// new implementation.
+	}
+}
+```
+
+> More Info:
+> - https://stackoverflow.com/a/30560792

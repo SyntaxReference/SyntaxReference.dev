@@ -4,5 +4,14 @@
 // Exports
 // ------------------------------------
 
-// TODO
+// Rust items are private by default.
+// Use pub to export from a module.
+
+pub fn public_function() {}
+fn private_function() {}
+
+pub struct PublicStruct {
+	pub value: i32,
+	private_value: i32,
+}
 ```

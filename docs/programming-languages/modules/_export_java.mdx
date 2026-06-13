@@ -4,5 +4,10 @@
 // Exports
 // ------------------------------------
 
-// TODO
+// Use public classes, interfaces, methods, and fields to expose API from a package.
+// Since Java 9, module-info.java can explicitly export packages.
+
+module com.example.app {
+	exports com.example.app.api;
+}
 ```

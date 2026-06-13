@@ -1,0 +1,63 @@
+```Python
+# Python doesnt have native Interface
+# Python uses what's called duck typing.
+
+# Duck typing is an application of the duck test: "If it walks like a duck and it quacks
+# like a duck, then it must be a duck".
+#
+# To determine if an object can be used for a particular purpose. With normal typing,
+# suitability is determined by an object's type.
+#
+# In duck typing, an object's suitability is determined by the presence of certain methods
+# and properties, rather than the type of the object itself.
+
+# Python also allow multiple inheritance
+
+# But still, Python has some libraries that helps defining an Interface
+```
+
+```Python
+# "python-interface" Example
+
+from interface import Interface
+
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
+
+class MyInterface(Interface):
+
+	@property
+	def my_property(self):
+		pass
+
+	def my_method(self):
+		pass
+
+	def my_second_method(self, some_value):
+		pass
+
+	@interface.default # Not mandatory to override
+	def my_default_method(self):
+		print("Default Implementation")
+```
+
+```Python
+# Implementation Class Example
+
+# "python-interface" Example
+
+from interface import implements
+
+
+class MyClass(implements(MyInterface)):
+	# ...
+
+
+ # Multiple interface allowed
+class MyClass(implements(MyInterface, MySecondInterface)):
+	# ...
+```
+
+> More Info:
+> - https://interface.readthedocs.io/en/latest/
+> - https://en.wikipedia.org/wiki/Duck_typing

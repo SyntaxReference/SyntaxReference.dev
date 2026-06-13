@@ -1,0 +1,11 @@
+```Typescript
+type UserId = number;
+type Point = {
+	x: number;
+	y: number;
+};
+
+type Result<T> = { ok: true; value: T } | { ok: false; error: Error };
+
+const id: UserId = 10;
+```

@@ -1,0 +1,48 @@
+```Python
+# ------------------------------------
+# Handling Exceptions
+# ------------------------------------
+
+try:
+	# ...
+except YourSpecificError:
+	# ...
+except YourSecondSpecificError as error:
+	print(f'YourSecondSpecificError: {error}')
+except (RuntimeError, TypeError, NameError): # Multiple exceptions as a parenthesized tuple
+	pass # you can pass (do nothing)
+except:
+	# The last except clause may omit the exception name(s), to serve as a wildcard.
+	# Use this with extreme caution, since it is easy to mask a real programming error in this way!
+else: # Optional
+	# ...
+finally: # Optional
+	# Executed under all circumstances.
+```
+
+```Python
+# Example from the documentation
+def divide(x, y):
+	try:
+		result = x / y # Variable Hoisted (See below)
+	except ZeroDivisionError:
+		print("division by zero!")
+	else:
+		print("result is", result)
+	finally:
+		print("executing finally clause")
+
+# In Python if you declare a variable in a block scope (if statement, for statement, ...)
+# the variable is hoisted to the outer function scope.
+```
+
+```Python
+# ------------------------------------
+# Custom Exception
+# ------------------------------------
+
+# TODO
+```
+
+> More Info:
+> - https://docs.python.org/3/tutorial/errors.html

@@ -1,3 +1,0 @@
-# Pointer & Reference (TODO)
-
-TODO

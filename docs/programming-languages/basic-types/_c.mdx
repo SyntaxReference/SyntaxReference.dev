@@ -1,0 +1,102 @@
+```C
+// ------------------------------------
+// Integer
+// ------------------------------------
+
+#include <stdint.h> // Since C99
+/*
+To help with cross-platform portability, C99 defined a
+set of fixed-width integers (in the stdint.h header)
+that are guaranteed to have the same size on any architecture.
+*/
+
+int8_t variable_name_Signed = 10;		// Range: -128 to 127
+uint8_t variable_name_Unsigned = 10;	// Range: 0 to 255
+int16_t variable_name_Signed = 10;		// Range: -32,768 to 32,767
+uint16_t variable_name_Unsigned = 10;	// Range: 0 to 65,535
+int32_t variable_name_Signed = 10;		// Range: -2,147,483,648 to 2,147,483,647
+uint32_t variable_name_Unsigned = 10;	// Range: 0 to 4,294,967,295
+int64_t variable_name_Signed = 10;		// Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+uint64_t variable_name_Unsigned = 10;	// Range: 0 to 18,446,744,073,709,551,615
+
+// Const Declaration
+const int16_t MY_CONSTANT = 30;
+
+// Alternative (Classic)
+int variable_name = 10; // Signed by default
+unsigned int variable_name = 10;
+short int variable_name = 10;
+short variable_name = 10;
+long int variable_name = 10;
+long variable_name = 10;
+long long int variable_name = 10;
+long long variable_name = 10;
+```
+
+```C
+// ------------------------------------
+// Float & Double
+// ------------------------------------
+
+float variable_name = 10.5;
+float variable_name = 10.5f;
+float variable_name = 10.5F;
+
+double variable_name = 10.5;
+
+// Const Declaration
+const float MY_CONSTANT = 12.2;
+const float MY_CONSTANT = 12.2f;
+
+const double MY_CONSTANT = 12.2;
+```
+
+```C
+// ------------------------------------
+// Character
+// ------------------------------------
+
+char variable_name = 'a'; // Single Quotes for characters
+char variable_name = '\n';
+
+// Const Declaration
+const char MY_CONSTANT = '\n';
+```
+
+```C
+// ------------------------------------
+// Boolean
+// ------------------------------------
+#include <stdbool.h> // Since C99
+
+bool variable = true; // true expands to 1
+bool variable = false; // false expands to 0
+
+
+// Old Way #1
+#define TRUE 1
+#define FALSE 0
+
+// Main structure omitted
+int variable = TRUE;
+int variable = FALSE;
+
+// Old Way #2
+typedef enum {FALSE, TRUE} boolean;
+
+// Main structure omitted
+boolean variable = TRUE;
+boolean variable = FALSE;
+```
+
+```C
+// ------------------------------------
+// Strings
+// ------------------------------------
+
+// For Strings, check the dedicated section
+```
+
+> More Info:
+> - https://en.wikipedia.org/wiki/C_data_types
+> - https://pubs.opengroup.org/onlinepubs/009695399/basedefs/stdint.h.html

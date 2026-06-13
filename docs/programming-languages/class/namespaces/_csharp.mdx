@@ -1,0 +1,56 @@
+```Cs
+namespace MyNamespace
+{
+	class MyClass
+	{
+		// ...
+	};
+
+	// ...
+}
+
+// Calling from namespace Ex.:
+// We use . as a separator
+
+MyNamespace.MyClass();
+```
+
+```Cs
+// Nested namespaces
+
+// Example 1
+namespace MyFirstNamespace.MySecondNamespace
+{
+	class MyClass
+	{
+		// ...
+	}
+
+	// ...
+}
+
+// Example 2
+namespace MyFirstNamespace
+{
+	namespace MySecondNamespace
+	{
+		class MyClass
+		{
+			// ...
+		}
+
+		// ...
+	}
+
+	// ...
+}
+
+// Calling from namespace Ex.:
+// We use . as a separator
+
+MyFirstNamespace.MySecondNamespace.MyClass();
+```
+
+> More Info:
+> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/
+> - https://www.programiz.com/csharp-programming/namespaces

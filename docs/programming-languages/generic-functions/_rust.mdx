@@ -1,0 +1,9 @@
+```Rust
+fn identity<T>(value: T) -> T {
+	value
+}
+
+fn max_value<T: Ord>(left: T, right: T) -> T {
+	if left >= right { left } else { right }
+}
+```

@@ -5,27 +5,27 @@ const sidebars: SidebarsConfig = {
 		'programming-languages/comments/index',
 		'programming-languages/package-manager/index',
 		'programming-languages/modules/index',
-		'programming-languages/main/README',
+		'programming-languages/main/index',
 		{
 			type: 'category',
 			label: 'Types',
 			collapsed: false,
 			collapsible: false,
 			items: [
-				'programming-languages/basic-types/README',
-				'programming-languages/string/README',
+				'programming-languages/basic-types/index',
+				'programming-languages/string/index',
 				{
 					type: 'doc',
 					label: 'Null Type',
-					id: 'programming-languages/null/README',
+					id: 'programming-languages/null/index',
 				},
 				{
 					type: 'doc',
 					label: 'Type Inference',
-					id: 'programming-languages/type-inference/README'
+					id: 'programming-languages/type-inference/index'
 				},
-				'programming-languages/type-aliases/README',
-				'programming-languages/type-conversion/README',
+				'programming-languages/type-aliases/index',
+				'programming-languages/type-conversion/index',
 			]
 		},
 		{
@@ -34,55 +34,55 @@ const sidebars: SidebarsConfig = {
 			collapsed: false,
 			collapsible: false,
 			items: [
-				'programming-languages/operators/basic-operators/README',
-				'programming-languages/operators/math-operators/README',
-				'programming-languages/operators/operators-overloading/README',
+				'programming-languages/operators/basic-operators/index',
+				'programming-languages/operators/math-operators/index',
+				'programming-languages/operators/operators-overloading/index',
 			]
 		},
 		{
 			type: 'doc',
 			label: 'Digit Separator',
-			id: 'programming-languages/digit-separator/README'
+			id: 'programming-languages/digit-separator/index'
 		},
-		'programming-languages/enum/README',
-		'programming-languages/struct/README',
-		'programming-languages/pointer-reference/README',
+		'programming-languages/enum/index',
+		'programming-languages/struct/index',
+		'programming-languages/pointer-reference/index',
 		{
 			type: 'category',
 			label: 'Control Flow',
 			collapsed: false,
 			collapsible: false,
 			items: [
-				'programming-languages/control-flow/conditional/README',
-				'programming-languages/control-flow/loop/README',
+				'programming-languages/control-flow/conditional/index',
+				'programming-languages/control-flow/loop/index',
 			]
 		},
 		{
 			type: 'doc',
 			label: 'Collections & Containers',
-			id: 'programming-languages/collections/README'
+			id: 'programming-languages/collections/index'
 		},
-		'programming-languages/functions-methods/README',
-		'programming-languages/generic-functions/README',
-		'programming-languages/lambda-functions/README',
-		'programming-languages/static/README',
-		'programming-languages/exceptions/README',
-		'programming-languages/file/README',
+		'programming-languages/functions-methods/index',
+		'programming-languages/generic-functions/index',
+		'programming-languages/lambda-functions/index',
+		'programming-languages/static/index',
+		'programming-languages/exceptions/index',
+		'programming-languages/file/index',
 		{
 			type: 'category',
 			label: 'Class',
 			collapsed: false,
 			collapsible: false,
 			items: [
-				'programming-languages/class/basic-template/README',
-				'programming-languages/class/abstract-class/README',
-				'programming-languages/class/interface/README',
-				'programming-languages/class/generic-class/README',
-				'programming-languages/class/namespaces/README',
-				'programming-languages/class/constructors-destructors/README',
+				'programming-languages/class/basic-template/index',
+				'programming-languages/class/abstract-class/index',
+				'programming-languages/class/interface/index',
+				'programming-languages/class/generic-class/index',
+				'programming-languages/class/namespaces/index',
+				'programming-languages/class/constructors-destructors/index',
 			]
 		},
-		'programming-languages/attributes-annotations-decorators/README',
+		'programming-languages/attributes-annotations-decorators/index',
 	],
 };
 

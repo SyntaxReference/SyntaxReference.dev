@@ -1,0 +1,147 @@
+```Cpp
+// ------------------------------------
+// Definition
+// ------------------------------------
+[return type] functionName( [parameters] )
+{
+	// ...
+}
+
+// I C++, functions must be declared before its use.
+// It is also possible to use a declaration statement called a
+// "Function prototype"
+[return type] functionName( [parameters] ); // ; (Semicolon) here and without Body
+// And later, the proper declaration
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+
+void myFunction(float x)
+{
+	// ...
+}
+
+float myFunction()
+{
+	// ...
+}
+
+myStruct myFunction( float x, float y)
+{
+	// ...
+}
+
+
+myClass myFunction( float x, float y)
+{
+	// ...
+}
+
+// ------------------------------------
+// Named Parameters (Keyword Arguments)
+// ------------------------------------
+
+// No Native Support Yet.
+
+
+// ------------------------------------
+// Optional Parameters
+// ------------------------------------
+
+// All Parameters with default values are optional
+// All Optional Parameters must be at the end.
+
+
+// ------------------------------------
+// Default Argument for Parameters
+// ------------------------------------
+void myFunction(float x, float y=10) // 10 is the default argument. Y is now an Optional Parameter
+{
+	// ...
+}
+
+myFunction(20);
+myFunction(20, 30);
+
+// ------------------------------------
+// Variable Number of Arguments to a Function Parameters
+// ------------------------------------
+
+// Option 1 - Fold Expressions (Since C++ 17)
+template<typename ...Args>
+auto add_all(Args ...args)
+{
+	return (args + ...);
+}
+// add 2 ints: (2+4)
+add_all({2,4});
+
+// add 3 ints: (2+4+7)
+add_all({2,4,7});
+
+
+// Option 2 - Variadic Templates (Since C++ 11)
+#include <initializer_list>
+
+template <typename T>
+T add_all( std::initializer_list<T> list )
+{
+	T result = 0.0;
+	for( auto element : list )
+	{
+		result += element;
+	}
+
+	return result;
+}
+// add 2 ints: (2+4)
+add_all({2,4});
+
+// add 3 ints: (2+4+7)
+add_all({2.1,4.2,7.3});
+
+
+// Old Way
+#include <cstdarg> // For va_list, va_start(), va_args()
+
+// "count" - how many variables
+// "..." - the variables
+int add_all_int(const int count, ...) // "..." (ellipsis) can only occur at the end
+{
+	va_list arguments;
+	va_start(arguments, count); // Dynamic allocate "arguments" with "count" size
+
+	int result = 0;
+
+	for(int i = 0; i < count; i++)
+	{
+		// var_args(va_list_variable, count_type)
+		result += va_arg(arguments, int);
+	}
+
+	va_end(arguments); // Free the memory
+	return result;
+}
+// add 2 ints: (2+4)
+add_all_int(2 ,2,4);
+
+// add 3 ints: (2+4+7)
+add_all_int(3 ,2,4,7);
+```
+
+```Cpp
+// ------------------------------------
+// Generic/Template
+// ------------------------------------
+
+// TODO
+```
+
+```Cpp
+// ------------------------------------
+// Static
+// ------------------------------------
+
+// Check Static Section
+```

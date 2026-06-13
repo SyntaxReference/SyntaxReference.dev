@@ -1,0 +1,11 @@
+```Rust
+let value = 10;
+let reference = &value;
+
+let mut other = 20;
+let mutable_reference = &mut other;
+*mutable_reference = 30;
+
+// Raw pointers are available, but dereferencing them requires unsafe.
+let raw_pointer: *const i32 = &value;
+```

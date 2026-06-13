@@ -1,0 +1,70 @@
+```Cs
+// Classic Example
+public interface IMyInterface // In C#, Its a convention to start the name with an I
+{
+	// "Properties" can be declared but not initialized
+	string MyProperty { get; set; }
+
+	// Methods without body Must be overridden in the implemented class
+	string MyMethod();  // public by default
+	void MySecondMethod();
+}
+```
+
+```Cs
+// Since C# 8.0
+// Default Implementation
+// Access modifiers (private, protected, internal, public and virtual, abstract, sealed)
+// Static members (static methods, static fields, and static constructors)
+public interface IMyInterface // In C#, Its a convention to start the name with an I
+{
+	// public "Properties" can be declared but not initialized
+	public string MyProperty { get; set; }
+	// Private "property" not allowed
+
+	private static string MyStaticField = "Allowed"; // Doesnt need to be initialized
+
+	// Methods without body Must be overridden in the implemented class
+	public abstract string MyMethod();  // "public" and "abstract" by default
+
+	public virtual void MySecondMethod()
+	{
+		// Just add an implementation to make it a 'Default Method'
+		// Not mandatory to override
+		// By default, the default interface methods are virtual unless the sealed or private modifier is used
+	}
+
+	private void MyThirdMethod() // Private Members Must Have Default Implementation
+	{
+		// ...
+	}
+
+	// Static can be used directly Ex.: IMyInterface.myStaticMethod();
+	public static void myStaticMethod() // Static Members Must Have Default Implementation
+	{
+		// ...
+	}
+
+	private static void mySecondStaticMethod() // Static Members Must Have Default Implementation
+	{
+		// ...
+	}
+
+	// After C# 8.0, you should keep "public" in the declaration when public
+}
+```
+
+```Cs
+// Implementation Class Example
+
+class ImplementationClass : IMyInterface
+{
+	// ...
+}
+```
+
+> More Info:
+> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/interface-properties
+> - https://jeremybytes.blogspot.com/2019/09/a-closer-look-at-c-8-interfaces.html
+> - https://www.infoq.com/articles/default-interface-methods-cs8/
+> - https://www.youtube.com/watch?v=2lUZ58Zyu3w

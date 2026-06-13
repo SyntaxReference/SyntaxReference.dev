@@ -1,0 +1,8 @@
+```Go
+// Since Go 1.18
+type Box[T any] struct {
+	Value T
+}
+
+box := Box[int]{Value: 10}
+```

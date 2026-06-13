@@ -1,0 +1,10 @@
+```Rust
+// Type alias
+type UserId = u64;
+type Result<T> = std::result::Result<T, std::io::Error>;
+
+let id: UserId = 10;
+
+// Newtype pattern when a distinct type is required
+struct OrderId(u64);
+```

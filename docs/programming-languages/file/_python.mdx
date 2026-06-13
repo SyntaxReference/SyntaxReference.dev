@@ -1,0 +1,10 @@
+```Python
+from pathlib import Path
+
+text = Path("example.txt").read_text(encoding="utf-8")
+Path("output.txt").write_text(text, encoding="utf-8")
+
+with open("example.txt", encoding="utf-8") as file:
+	for line in file:
+		print(line, end="")
+```

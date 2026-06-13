@@ -1,0 +1,45 @@
+```Typescript
+// Since Typescript 3.7 we have:
+// "Optional Chaining Operator" (?)
+// "Nullish Coalescing Operator" (??)
+```
+
+```Typescript
+// ------------------------------------
+// Declaring nullable
+// ------------------------------------
+
+// TODO
+```
+
+```Typescript
+// ------------------------------------
+// Working with nullable types
+// ------------------------------------
+
+// Optional Chaining Operator (?)
+const dogName = adventurer.dog?.name; // if dog is null, it returns "undefined"
+let nestedProp = obj?.['prop' + 'Name'];
+let arrayItem = arr?.[42];
+let customerCity = customer.details?.address?.city
+function myFunction(myVariable?: string) => void //
+
+// Nullish Coalescing Operator (??)
+const example = null ?? "Hello"; 	// Hello
+const example = undefined ?? "Hi"; 	// Hi
+const example = 0 ?? "Hello"; 		// 0
+const example = false ?? "Hi"; 		// false
+
+// If the condition before ?? is null, then the value after ?? is returned
+// otherwise return the condition before ??
+
+// If you want to dismiss falsy values, you can use the logical or operator (||).
+// Null coalescing operator skips:	"null", "undefined"
+// Logical or operator skips:		"null", "undefined", "false"
+const example = false || "Hi";		// Hi
+
+// More Example
+const customerCity = customer?.city ?? "Unknown city";
+const example = null ?? undefined ?? false ?? "Hello";		// false
+const example = (null ?? undefined ?? false) || "Hello";	// Hello
+```

@@ -1,0 +1,53 @@
+```Typescript
+// ------------------------------------
+// While
+// ------------------------------------
+while (expression)
+{
+	// ...
+	// Dont forget the Increment or Decrement operation
+}
+
+// ------------------------------------
+// do while
+// ------------------------------------
+do
+{
+	// ...
+	// Dont forget the Increment or Decrement operation
+}
+while (expression); // Dont forget ; (semicolon)
+
+// ------------------------------------
+// For
+// ------------------------------------
+for ( element_declaration_initialization; condition; increment_or_decrement )
+{
+	// ...
+}
+
+// ------------------------------------
+// For-each (all variants)
+// ------------------------------------
+
+// For In (Cannot use Type Annotation)
+// Give you access to the index in the collection/container, not the actual element
+// Can also be used to iterate over the properties of an object (the object keys)
+// The order is not guaranteed to be index related nor alphabetical.
+for (let index in collection_container) { console.log(collection_container[index]); }
+for (let key in myObject) { console.log(myObject[key]); }
+
+// For Of (Cannot use Type Annotation)
+// Give you access to the element in the collection/container, not the index
+for (const element of collection_container) { /**/ }
+
+// ForEach
+// Is an array method, so it can only be used exclusively with arrays.
+// There is also no way to stop or break a forEach loop.
+myArray.forEach((element) => { /**/ }); // Check Collection Section for more related methods.
+```
+
+> More Info:
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+> - https://stackoverflow.com/questions/9329446/for-each-over-an-array-in-javascript/9329476#9329476
+> - http://blog.niftysnippets.org/2010/11/myths-and-realities-of-forin.html

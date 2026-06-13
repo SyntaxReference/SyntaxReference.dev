@@ -1,0 +1,30 @@
+```Typescript
+interface MyInterface
+{
+	// "Properties" can be declared but not initialized
+	myProperty: string; // Must be defined in the implemented class/object
+
+	mySecondProperty?: string; // "Optional Property" - Not mandatory do define in the implemented class/object
+
+	readonly myThirdProperty: number; // After its first assignement, it cannot be changed
+
+	// Methods without body Must be overridden in the implemented class/object
+	MyMethod(): string;
+	MySecondMethod(someParameter: number); // names of the parameters do not need to match
+
+	// "private" access modifier not possible in Typescript Intarfaces
+}
+```
+
+```Typescript
+// Implementation Class Example
+
+class ImplementationClass implements MyInterface
+{
+	// ...
+}
+```
+
+> More Info:
+> - https://www.typescriptlang.org/docs/handbook/interfaces.html
+> - https://www.tutorialsteacher.com/typescript/typescript-interface

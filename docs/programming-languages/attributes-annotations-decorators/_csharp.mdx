@@ -1,0 +1,38 @@
+```Cs
+// ------------------------------------
+// Obsolete Attribute
+// ------------------------------------
+
+//[Obsolete]
+[Obsolete]
+public void MyFunction()
+{
+	// ...
+}
+
+//[Obsolete(string message)]
+[Obsolete("Use another class. This one will be removed next version")]
+public class MyClass
+{
+	//...
+}
+
+//[Obsolete(string message, bool error)] (error == true means compilation error instead of warning)
+[Obsolete("Use another class. This one wont compile", true)]
+public class MyClass
+{
+	//...
+}
+```
+
+```Cs
+// TODO: Examples
+```
+
+```Cs
+// ------------------------------------
+// Custom Attributes
+// ------------------------------------
+
+// TODO: Examples
+```

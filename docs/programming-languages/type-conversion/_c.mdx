@@ -1,0 +1,65 @@
+```C
+// ------------------------------------
+// String to Number
+// ------------------------------------
+
+// AVOID atoi() and its counterparts (Check More Info)
+
+// Prefer strtol()
+// TODO: Examples
+
+```
+
+```C
+// ------------------------------------
+// Floating number to Integer
+// ------------------------------------
+
+#include <math.h> // For floor(), ceil(), round()
+
+// It returns a floating type, so you need a cast.
+int convertedValue = (int) floor(5.5); // Must include <math.h>
+int convertedValue = (int) ceil(5.5); // Must include <math.h>
+int convertedValue = (int) round(5.5); // Must include <math.h>
+```
+
+```C
+// ------------------------------------
+// Number to String
+// ------------------------------------
+
+// Example creating a function using snprintf()
+#include <stdio.h> // For snprintf()
+#include <stdlib.h> // For malloc(), free()
+
+char* IntToString(int value)
+{
+	int length = snprintf( NULL, 0, "%d", value );
+
+	char* converted = malloc( length + 1 ); // one character more for null-terminator
+	snprintf( converted, length + 1, "%d", value );
+
+	return converted;
+}
+
+// Another simple example
+char* FloatToString(float value)
+{
+	float length = snprintf( NULL, 0, "%f", value );
+
+	char* converted = malloc( length + 1 ); // one character more for null-terminator
+	snprintf( converted, length + 1, "%f", value );
+
+	return converted;
+}
+
+char* convertedValue = IntToString(100);
+// ...
+free(convertedValue); // You need to free the memory allocated by malloc()
+```
+
+> More Info:
+> - https://stackoverflow.com/questions/7021725/how-to-convert-a-string-to-integer-in-c
+> - https://ramblings.implicit.net/c/2014/04/27/c-functions-that-should-be-avoided.html
+> - https://en.cppreference.com/w/c/string/byte/strtol
+> - https://stackoverflow.com/questions/8257714/how-to-convert-an-int-to-string-in-c

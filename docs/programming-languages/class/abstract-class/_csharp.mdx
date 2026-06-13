@@ -1,0 +1,96 @@
+```Cs
+// An abstract class cannot be instantiated.
+public abstract class MyClass
+{
+	protected int protectedVariable;
+	public abstract int ProtectedVariable { get; set; }  // Abstract Property also possible
+
+	// Abstract Method (You can only declare abstract methods inside abstract classes)
+	public abstract int MyMethod();  // You must override abstract methods in the derived class.
+
+	// Virtual Method (Any class can have virtual methods)
+	// Virtual means it can be override
+	public virtual int MySecondMethod() // You can override virtual methods but its not mandatory
+	{
+		// Some default implementation.
+		// If you dont override it,
+		// default implementation will be used
+	}
+}
+```
+
+```Cs
+// Derived Class Example
+public class MyDerivedClass : MyClass
+{
+	public override int ProtectedVariable // We need the "override" keyword
+	{
+		get
+		{
+			return protectedVariable;
+		}
+		set
+		{
+			protectedVariable = value;
+		}
+	}
+
+	public override int MyMethod() // We need the "override" keyword
+	{
+		// Implementation
+	}
+
+	// Even if not overriding "MySecondMethod", I can still call it as from the derived class
+	// And it will work with the default implementation
+}
+```
+
+```Cs
+// Special Example - abstract override
+
+// If a virtual method is declared abstract, it is still virtual to any class inheriting from the abstract class.
+// A class inheriting an abstract method cannot access the original implementation of the method.
+// In this example, "DoSomething" on class "AnotherDerivedClass" cannot call "DoSomething" on class "BaseClass".
+// In this way, an abstract class can force derived classes to provide new method implementations for virtual methods.
+
+public class BaseClass
+{
+	public virtual void DoSomething(int value)
+	{
+		// Original implementation.
+	}
+}
+
+public abstract class AbstractClass : BaseClass
+{
+	public abstract override void DoSomething(int value);
+}
+
+public class AnotherDerivedClass : AbstractClass
+{
+	public override void DoSomething(int value)
+	{
+		// New implementation.
+	}
+}
+
+// Example use case: (By ghord - stackoverflow link in More Info)
+
+// Ensuring proper ToString() implementation in derived classes. Let's say you have abstract base class,
+// and you really want all derived classes to define meanigful ToString() implementation because you are
+// actively using it. You can do it very elegantly with abstract override:
+
+public abstract class Base
+{
+	public abstract override string ToString();
+}
+// It is a clear signal to implementers that ToString() will be used in base class in some way
+// (like writing output to user). Normally, they would not think about defining this override.
+```
+
+> More Info:
+> - https://www.geeksforgeeks.org/c-sharp-abstract-classes/
+> - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/abstract
+> - https://www.interviewsansar.com/can-abstract-class-have-constructor-in-csharp-if-yes-what-for/
+> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members
+> - https://stackoverflow.com/questions/8905432/what-is-the-use-of-abstract-override-in-c/17771436#17771436

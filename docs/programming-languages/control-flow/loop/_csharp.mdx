@@ -1,0 +1,56 @@
+```Cs
+// ------------------------------------
+// While
+// ------------------------------------
+while (expression)
+{
+	// ...
+	// Dont forget the Increment or Decrement operation
+}
+
+// ------------------------------------
+// do while
+// ------------------------------------
+do
+{
+	// ...
+	// Dont forget the Increment or Decrement operation
+}
+while (expression); // Dont forget ; (semicolon)
+
+// ------------------------------------
+// For
+// ------------------------------------
+for ( element_declaration_initialization; condition; increment_or_decrement )
+{
+	// ...
+}
+
+// ------------------------------------
+// For-each
+// ------------------------------------
+foreach (element_declaration_initialization in collection_container)
+{
+	// ...
+}
+
+// ------------------------------------
+// For-each Examples
+// ------------------------------------
+
+// element will be a copy of the current collection/container element
+foreach (var element in collection_container) { /**/ }
+
+// element will be a reference to the actual collection/container element,
+// preventing a copy from being made
+foreach (ref var element in collection_container) { /**/ }
+
+// element is a const (readonly) reference
+foreach (ref readonly var element in collection_container) { /**/ }
+
+// iterate a collection that generates each element asynchronously
+await foreach (var element in GenerateSequenceAsync() ) { /**/ }
+```
+
+> More Info:
+> - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/foreach-in

@@ -1,0 +1,9 @@
+```Typescript
+// No Native Pointer Support.
+// Objects and arrays are shared by reference-like values.
+
+type User = { name: string };
+const user: User = { name: "Ada" };
+const sameUser = user;
+sameUser.name = "Grace";
+```

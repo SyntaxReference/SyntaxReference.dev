@@ -1,0 +1,9 @@
+```Cs
+string text = File.ReadAllText("example.txt");
+File.WriteAllText("output.txt", text);
+
+foreach (string line in File.ReadLines("example.txt"))
+{
+	Console.WriteLine(line);
+}
+```

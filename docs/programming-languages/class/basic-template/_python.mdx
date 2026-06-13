@@ -1,0 +1,210 @@
+```Python
+# Example 1: Direct Access (More Commom)
+class MyClass:
+	# ------------------------------------
+	# Constructor
+	# ------------------------------------
+	def __init__(self, some_other_param): # All methods starts with "self" param (There are exceptions)
+		# You will find "declaration" inside the constructor or a function.
+		# The field would start to "exist" after its first declarion
+
+		# Calling Ex.: myClassInstance.my_field
+		self.my_field = "Hello" # "Self." is mandatory
+		self.my_second_field = some_other_param # "Self." is mandatory
+
+	# ------------------------------------
+	# Methods
+	# ------------------------------------
+
+	# Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
+	def myMethod (self, someVariable):
+		#...
+```
+
+```Python
+# Example 2: Accessors Convention (Direct Access Still possible)
+class MyClass:
+	# ------------------------------------
+	# Constructor
+	# ------------------------------------
+	def __init__(self, some_other_param): # All methods starts with "self" param (There are exceptions)
+		# You will find "declaration" inside the constructor or a function.
+		# The field would start to "exist" after its first declarion
+
+		self._my_field = "Hello" # "Self." is mandatory
+		self._my_second_field = some_other_param # "Self." is mandatory
+		# Underscore at the beggining indicates to be protected or private (convention). Direct Access Still possible
+		# _ 1 underscore = protected
+		# __ 2 underscore = private
+
+	# ------------------------------------
+	# Accessors (getter/setter)
+	# ------------------------------------
+
+	# Calling "get_my_field" Ex.: myClassInstance.get_my_field();
+	def get_my_field(self):
+		return self._my_field # "Self." is mandatory
+
+
+	# Calling "set_my_field" Ex.: myClassInstance.set_my_field("hi");
+	def set_my_field(self, value):
+		self._my_field = value; # "Self." is mandatory
+
+
+	# ------------------------------------
+	# Methods
+	# ------------------------------------
+
+	# Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
+	def myMethod (self, someVariable):
+		#...
+```
+
+```Python
+# Example 3: Property Registration
+class MyClass:
+	# ------------------------------------
+	# Constructor
+	# ------------------------------------
+	def __init__(self, some_other_param): # All methods starts with "self" param (There are exceptions)
+		# You will find "declaration" inside the constructor or a function.
+		# The field would start to "exist" after its first declarion
+
+		self._my_field = "Hello" # "Self." is mandatory
+		self._my_second_field = some_other_param # "Self." is mandatory
+		# Underscore at the beggining indicates to be protected or private (convention). Direct Access Still possible
+		# _ 1 underscore = protected
+		# __ 2 underscore = private
+
+	# ------------------------------------
+	# Accessors (getter/setter)
+	# ------------------------------------
+
+	def get_my_field(self):
+		return self._my_field # "Self." is mandatory
+
+	def set_my_field(self, value):
+		self._my_field = value; # "Self." is mandatory
+
+	# Property Registration
+	myField = property(get_my_field, set_my_field)
+	# Calling get "get_my_field" Ex.: myClassInstance.myField;
+	# Calling set "set_my_field" Ex.: myClassInstance.myField = "hi";
+
+	# ------------------------------------
+	# Methods
+	# ------------------------------------
+
+	# Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
+	def myMethod (self, someVariable):
+		#...
+```
+
+```Python
+# Example 4: Accessors using decorators
+class MyClass:
+	# ------------------------------------
+	# Constructor
+	# ------------------------------------
+	def __init__(self, some_other_param): # All methods starts with "self" param (There are exceptions)
+		# You will find "declaration" inside the constructor or a function.
+		# The field would start to "exist" after its first declarion
+
+		self._my_field = "Hello" # "Self." is mandatory
+		self._my_second_field = some_other_param # "Self." is mandatory
+		# Underscore at the beggining indicates to be protected or private (convention). Direct Access Still possible
+		# _ 1 underscore = protected
+		# __ 2 underscore = private
+
+	# ------------------------------------
+	# Accessors (getter/setter)
+	# ------------------------------------
+
+	# getter
+	@property
+	def my_field(self):
+		return self._my_field # "Self." is mandatory
+
+	# setter
+	@my_field.setter
+	def my_field(self, value):
+		self._my_field = value; # "Self." is mandatory
+
+	# Calling get "my_field" Ex.: myClassInstance.myField;
+	# Calling set "my_field" Ex.: myClassInstance.myField = "hi";
+
+	# ------------------------------------
+	# Methods
+	# ------------------------------------
+
+	# Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
+	def myMethod (self, someVariable):
+		#...
+```
+
+```Python
+# Example 5: A more complete "basic" example
+class MyClass:
+	# ------------------------------------
+	# Properties / Fields
+	# ------------------------------------
+	__privateProperty: int = 0 # Type Annotations (PEP 484 / Python 3.6+)
+	_protectedProperty: int = 10
+
+	# ------------------------------------
+	# Constructor
+	# ------------------------------------
+	def __init__(self) -> None:
+		pass
+		# Just an example.
+		# If you have nothing to add inside the constructor, you can omit it
+		# Or you can use the "pass" keyword inside.
+		# Since there are no { } in python, "pass" is the only way to "make it empty"
+
+	# ------------------------------------
+	# Accessors (getter/setter)
+	# ------------------------------------
+
+	# getter
+	@property
+	def my_private(self) -> int:
+		return self.__privateProperty
+
+	# setter
+	@my_private.setter
+	def my_private(self, value: int):
+		self.__privateProperty = value;
+
+
+	# Property Registration
+	def get_my_protected(self) -> int:
+		return self._protectedProperty
+
+	def set_my_protected(self, value: int):
+		self._protectedProperty = value;
+
+	myProtected = property(get_my_protected, set_my_protected)
+
+	# ------------------------------------
+	# Methods
+	# ------------------------------------
+
+	def myMethod (self, someVariable) -> None:
+		#...
+```
+
+```Python
+# ------------------------------------
+# Instantiating the class
+# ------------------------------------
+
+myClassInstanceName = MyClass()
+```
+
+> More Info:
+> - https://www.geeksforgeeks.org/getter-and-setter-in-python/
+> - https://www.programiz.com/python-programming/property
+> - https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+> - https://docs.python.org/3/library/typing.html
+> - https://realpython.com/python-type-checking/
+> - https://stackoverflow.com/questions/39817081/typing-any-vs-object

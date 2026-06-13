@@ -1,0 +1,8 @@
+```Go
+content, err := os.ReadFile("example.txt")
+if err != nil {
+	return err
+}
+
+err = os.WriteFile("output.txt", content, 0644)
+```

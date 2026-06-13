@@ -1,3 +1,0 @@
-# Generic Class (TODO)
-
-TODO

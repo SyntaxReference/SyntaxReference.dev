@@ -4,7 +4,14 @@
 // Exports
 // ------------------------------------
 
-// TODO
+// Go exports identifiers by capitalization.
+// Names that start with an upper-case letter are exported from the package.
+
+const PublicName = "visible"
+const privateName = "package only"
+
+func PublicFunction() {}
+func privateFunction() {}
 ```
 
 > More Info:

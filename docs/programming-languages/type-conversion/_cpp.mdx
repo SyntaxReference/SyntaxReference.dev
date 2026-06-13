@@ -1,0 +1,67 @@
+```Cpp
+// ------------------------------------
+// String to Number
+// ------------------------------------
+
+// Prefer
+// std::stoi() - Since C++ 11
+#include <string> // For std::stoi()
+#include <cstdint> // For std::int32_t  (Since C++11)
+
+std::int32_t convertedValue = std::stoi("45"); // 45
+std::int32_t convertedValue = std::stoi("3.14159"); // 3
+std::int32_t convertedValue = std::stoi("31337 with words"); // 31337
+
+// Exceptions
+// std::invalid_argument if no conversion could be performed
+// std::out_of_range if the converted value would fall out of the range of the
+// result type or if the underlying function (std::strtol or std::strtoll) sets errno to ERANGE.
+
+// Exception Example
+try
+{
+	// ...
+}
+catch(std::invalid_argument const &error)
+{
+	std::cout << "Conversion could be performed: " << error.what() << std::endl;
+}
+catch(std::out_of_range const &error)
+{
+	std::cout << "Integer overflow:: " << error.what() << std::endl;
+}
+```
+
+```Cpp
+// ------------------------------------
+// Floating number to Integer
+// ------------------------------------
+
+// Prefer
+#include <cstdint> // For std::int32_t  (Since C++11)
+
+std::int32_t convertedValue = static_cast<std::int32_t>(100.3); // 100
+
+
+// C Type Casting (Avoid)
+#include <cstdint> // For std::int32_t  (Since C++11)
+
+float myFloat = 100.3f;
+std::int32_t convertedValue = (int32_t) myFloat;
+```
+
+```Cpp
+// ------------------------------------
+// Number to String
+// ------------------------------------
+#include <string> // std::string, std::to_string
+
+std::string convertedValue = std::to_string(anyTypeNumber);
+auto convertedValue{std::to_string(anyTypeNumber)}; // Same as Above
+```
+
+> More Info:
+> - https://en.cppreference.com/w/cpp/string/basic_string/stol
+> - https://en.cppreference.com/w/cpp/string/byte/strtol
+> - https://stackoverflow.com/questions/194465/how-to-parse-a-string-to-an-int-in-c/6154614#6154614
+> - https://stackoverflow.com/questions/7663709/how-can-i-convert-a-stdstring-to-int

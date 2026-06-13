@@ -1,0 +1,46 @@
+```Cpp
+// ------------------------------------
+// Definition
+// ------------------------------------
+
+struct Struct_name
+{
+   some_type variable_name;
+   some_type variable_name;
+   ...
+   some_type variable_name;
+} struct_alias;
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+struct Person
+{
+	std::string name;
+	std::uint8_t age;
+};
+
+// ------------------------------------
+// Assignment
+// ------------------------------------
+
+Person some_person; // Just like a Class
+some_person.name = "my name";
+some_person.age = 30;
+
+// Since C++11 you can also do this way
+Person some_person{"my name", 30};
+
+// ------------------------------------
+// Others
+// ------------------------------------
+
+// You can also return a struct from a function
+Person getSomeone()
+{
+	return {"Someone", 35}
+}
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/47-structs/

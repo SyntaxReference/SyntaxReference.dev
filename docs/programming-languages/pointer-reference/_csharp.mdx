@@ -1,0 +1,13 @@
+```Cs
+// References are the default for class instances.
+// Pointers are available only in unsafe code.
+
+var user = new User();
+User sameUser = user;
+
+unsafe
+{
+	int value = 10;
+	int* pointer = &value;
+}
+```

@@ -1,0 +1,60 @@
+```Javascript
+// ------------------------------------
+// Definition
+// ------------------------------------
+
+// Javascript doesnt have Structs, but you can use "Object Literal" notation
+// Remember that in Javascript, objets are reference values
+const object_name = {
+   key_name: value_name,
+   key_name: value_name,
+   ...
+   key_name: value_name,
+};
+
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+
+// You can start without any value
+const some_person = {
+	name,
+	age,
+};
+
+// ------------------------------------
+// Assignment
+// ------------------------------------
+
+some_person.name = "my name";
+some_person.age = 30;
+
+// you can also use a bracket notation
+some_person["name"] = "my name";
+some_person["age"] = 30;
+
+
+
+// ------------------------------------
+// Others
+// ------------------------------------
+
+// You can also return a object from a function
+// Arrow Function Style
+const getSomeone = () => {
+	return {
+		name: "Someone",
+		age: 35,
+	}
+}
+
+
+// Old function style
+function getSomeone() {
+	return {
+		name: "Someone",
+		age: 35,
+	}
+}
+```

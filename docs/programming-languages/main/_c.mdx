@@ -1,0 +1,35 @@
+```C
+int main(int argc, const char **argv)
+{
+	// Code Here
+
+	return 0; // 0 (zero) means successful end of program
+}
+```
+
+```C
+int main(int argc, const char *argv[])
+{
+	// Code Here
+
+	return 0;
+}
+```
+
+```C
+#include <stdlib.h> // For exit(), EXIT_SUCCESS, EXIT_FAILURE
+
+int main(void)
+{
+	// Code Here
+
+	// In some codes, instead of "return 0", you might find One of the following:
+	return exit(0);
+	return EXIT_SUCCESS;
+	return exit(EXIT_SUCCESS);
+}
+```
+
+> More Info:
+> - https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+> - https://stackoverflow.com/questions/13667364/exit-failure-vs-exit1

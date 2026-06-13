@@ -1,0 +1,11 @@
+```Cs
+T Identity<T>(T value)
+{
+	return value;
+}
+
+T Max<T>(T left, T right) where T : IComparable<T>
+{
+	return left.CompareTo(right) >= 0 ? left : right;
+}
+```

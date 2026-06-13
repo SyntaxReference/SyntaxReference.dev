@@ -1,0 +1,34 @@
+```C
+// ------------------------------------
+// Definition
+// ------------------------------------
+enum myEnum {const1, const2, ..., constN};
+// By default, const1 is 0, const2 is 1 and so on.
+
+// Example
+// You can change default values of enum elements during definition (if necessary).
+enum ERROR_CODES {
+	NO_FILE = 314,
+	NO_MOUSE = 675,
+	NO_PC = 999
+}; // Dont forget the ; (semicolon)
+
+// ------------------------------------
+// Assignment
+// ------------------------------------
+
+enum myEnum my_variable = ENUM_CONSTANT; // Either use "enum myEnum" or a type alias
+int any_variable = ENUM_CONSTANT; // direct access
+
+// ATTENTION
+// In C, enum constants are NOT scoped to the flag (enum name). Use unique names.
+
+// Example
+enum day {DAY_SUNDAY, DAY_MONDAY, DAY_TUESDAY, DAY_WEDNESDAY, DAY_THURSDAY, DAY_FRIDAY, DAY_SATURDAY};
+
+enum day d = DAY_THURSDAY;
+```
+
+> More Info:
+> - https://www.geeksforgeeks.org/enumeration-enum-c/
+> - https://www.programiz.com/c-programming/c-enumeration

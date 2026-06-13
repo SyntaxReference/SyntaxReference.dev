@@ -1,0 +1,79 @@
+```Java
+// Classic Example
+public interface MyInterface
+{
+	// You can declare constants
+	String MY_CONSTANT = "Something"; // static and constant (final) by default
+
+	// Methods without body Must be overridden in the implemented class
+	public abstract String myMethod(); // "public" and "abstract" by default
+	void mySecondMethod(); // "public" and "abstract"
+
+	// After Java 8 and Java 9 changes, you should keep "public"
+	// and "abstract" in the declaration when public and/or abstract
+}
+```
+
+```Java
+// Since Java 8
+// Static and defaults methods
+public interface MyInterface
+{
+	// You can declare constants
+	String MY_CONSTANT = "Something"; // static and constant (final) by default
+
+	public abstract String myMethod(); // No Body
+
+	// You dont need to override default methods
+	public default void mySecondMethod()
+	{
+		System.out.println("default method");
+	}
+
+	// Static can be used directly Ex.: MyInterface.myThirdMethod();
+	public static void myThirdMethod()
+	{
+		System.out.println("static method");
+	}
+}
+```
+
+```Java
+// Since Java 9
+// Private methods
+public interface MyInterface
+{
+	// ...
+	// You can do all of the above examples plus:
+
+	// private methods can only be used inside the interface
+	// private static method can be used inside other static and non-static interface methods.
+	// private non-static methods cannot be used inside private static methods.
+	// "private abstract" not allowed
+	// "private default" not allowed
+
+	private void mySecondMethod() // private non-static method
+	{
+		System.out.println("private non-static method");
+	}
+
+	private static void myThirdMethod() // private static
+	{
+		System.out.println("private static method");
+	}
+}
+```
+
+```Java
+// Implementation Class Example
+
+class ImplementationClass implements MyInterface
+{
+	// ...
+}
+```
+
+> More Info:
+> - https://howtodoinjava.com/java9/java9-private-interface-methods/
+> - https://blog.joda.org/2016/09/private-methods-in-interfaces-in-java-9.html
+> - https://www.deadcoderising.com/java-9-cleaning-up-your-default-methods-using-private-interface-methods/

@@ -1,0 +1,97 @@
+```Python
+# ------------------------------------
+# Declaration & Initialization
+# ------------------------------------
+
+variable_name = "Some string"
+variable_name: str = 'Some string' # Type Annotations (PEP 484 / Python 3.6+)
+variable_name: any = 'Some string' # Type Annotations (PEP 484 / Python 3.6+)
+
+
+# Const Declaration
+MY_CONSTANT = 'Some string'
+MY_CONSTANT: str = 'Some string' # Type Annotations (PEP 484 / Python 3.6+)
+
+# In Python if you declare a variable in a block scope (if statement, for statement, ...)
+# the variable is hoisted to the outer function scope.
+
+
+# ------------------------------------
+# Direct Access (Array-Like)
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Size / Length
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Trim
+# ------------------------------------
+# TODO
+
+
+
+# ------------------------------------
+# Is Null Or Empty
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Transform
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Compare
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Copy / Clone
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# Concatenation
+# ------------------------------------
+# TODO
+
+
+# ------------------------------------
+# String Interpolation (3.6+) (Prefer)
+# ------------------------------------
+# Also known as f-Strings (3.6+)
+
+# Example 1
+name = "Eric"
+age = 74
+print(f"Hello, {name}. You are {age}.")
+
+# Example 2
+# TODO: Examples
+
+
+# ------------------------------------
+# Print / Output (Old Format)
+# ------------------------------------
+print('Hello World')
+print("Hello World\n", end='') # By default the print has '\n' appended after the last value, you can change it if you want.
+print(10)
+print("Printing Integer:", 10) # the ',' adds a space between the text and the value
+print("Printing Float:", 20.5)
+print("Printing Any Number:", 20.5)
+print("More Printing", 20.5, ",", "50.2")
+print([1, 2, 3, 4]) # array
+print({"a":1, "b":2, "c":3}); # object
+print({'a':1, 'b':2, 'c':3}); # object
+print("Printing a Object: ", {"a":1, "b":2, "c":3})
+```
+
+> More Info: https://docs.python.org/3/library/typing.html

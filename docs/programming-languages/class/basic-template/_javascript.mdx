@@ -1,0 +1,84 @@
+```Javascript
+class MyClass {
+	// ------------------------------------
+	// Properties / Fields
+	// ------------------------------------
+
+	myPublicField = 0;
+	#myPrivateField = 10;
+	#mySecondPrivateField;
+
+	// Public and Private declaration Syntax are new in Javascript
+	/* Since:
+		Babel 7.0+
+		Node 12
+		Public fields are enabled by default in Chrome 72 / V8 7.2
+		Private fields are enabled by default in Chrome 74 / V8 7.4
+		Public instance fields are enabled by default in Firefox 69
+		Public static fields are enabled in Firefox Nightly 75 as of February 22, 2020
+		Public instance fields are shipped behind a flag in Safari Technology Preview 101
+		TypeScript 3.8
+	*/
+
+	// In older code, you will find public "declaration" inside the constructor or a function
+	// The field would start to "exist" after its first declarion
+
+	// ------------------------------------
+	// Constructor
+	// ------------------------------------
+	constructor()
+	{
+		// As stated above, public and Private declaration Syntax are new in Javascript
+		// In older code, you will find public "declaration" inside the constructor or a function.
+		// The field would start to "exist" after its first declarion
+
+		this.myAnotherPublicField = "Hello";
+	}
+
+	// ------------------------------------
+	// Accessors (getter/setter)
+	// ------------------------------------
+
+	// Calling get "mySecondPrivateField" Ex.: myClassInstance.mySecondPrivateField;
+	get mySecondPrivateField()  {
+		return this.#mySecondPrivateField;
+	}
+
+	// Calling set "mySecondPrivateField" Ex.: myClassInstance.mySecondPrivateField = "hi";
+	set mySecondPrivateField(value) {
+		this.#mySecondPrivateField = value;
+	}
+
+	// ------------------------------------
+	// Methods
+	// ------------------------------------
+
+	// Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
+	myMethod(someVariable)
+	{
+		//...
+	}
+	// IF you can, avoid arrow functions as methods. They won't
+	// be in the prototype and can't be called with super().
+	// There are some workarounds, Check More Info if you need them.
+}
+```
+
+```Javascript
+// ------------------------------------
+// Instantiating the class
+// ------------------------------------
+
+let myClassInstanceName = new MyClass();
+```
+
+> More Info:
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_fields
+> - https://github.com/tc39/proposal-class-fields
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+> - https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
+> - https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
+> - https://stackoverflow.com/questions/31362292/how-to-use-arrow-functions-public-class-fields-as-class-methods
+> - https://stackoverflow.com/questions/51400605/javascript-child-class-method-not-overriding-parent-class-method
+> - https://stackoverflow.com/questions/45881670/should-i-write-methods-as-arrow-functions-in-angulars-class/45882417#45882417
+> - https://basarat.gitbook.io/typescript/future-javascript/arrow-functions#tip-arrow-functions-and-inheritance

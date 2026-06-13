@@ -1,0 +1,89 @@
+```Typescript
+class MyClass {
+	// ------------------------------------
+	// Properties / Fields
+	// ------------------------------------
+	public myPublicProperty: string; // Public by default
+	private myPrivateProperty: string;
+	protected myProtectedProperty: string;
+
+	// Javascript private Syntax also available
+	#mySecondPrivateProperty: string; // Since Typescript 3.8
+
+	// ------------------------------------
+	// Constructor
+	// ------------------------------------
+	public constructor() // Public by default
+	{
+		// ...
+	}
+
+	// ------------------------------------
+	// Accessors (getter/setter)
+	// ------------------------------------
+
+	// Calling get "myProperty" Ex.: myClassInstance.myProperty;
+	get myProperty() : string {
+		return this.myPrivateProperty;
+	}
+
+	// Calling set "myProperty" Ex.: myClassInstance.myProperty = "hi";
+	set myProperty(value: string) {
+		this.myPrivateProperty = value;
+	}
+
+	/*
+		There are 2 commom patterns for Field & Accessors in Typescript
+
+		- First Pattern: (camelCase Field and PascalCase get/set)
+
+		private myProperty;
+		get MyProperty() { ... }
+		set MyProperty(value) { ... }
+
+		- Second Pattern: (Underscore in Field name and both in camelCase)
+		private _myProperty;
+		get myProperty() { ... }
+		set myProperty(value) { ... }
+	*/
+
+	/*
+	TypeScript accessors (getter/setter) require to set the compiler to output
+	ECMAScript 5 or higher.
+
+	Accessor with a get and no set property are automatically assumed to be read-only no
+	need for manual work. This is helpful when we are generating a .d.ts file from our code.
+	*/
+
+	// ------------------------------------
+	// Methods
+	// ------------------------------------
+
+	// Calling "myMethod" Ex.: myClassInstance.myMethod("hello");
+	public myMethod (someVariable: String)
+	{
+		//...
+	}
+
+	// IF you can, avoid arrow functions as methods. They won't
+	// be in the prototype and can't be called with super().
+	// There are some workarounds, Check More Info if you need them.
+}
+```
+
+```Typescript
+// ------------------------------------
+// Instantiating the class
+// ------------------------------------
+
+let myClassInstanceName: MyClass = new MyClass();
+```
+
+> More Info:
+> - https://www.typescriptlang.org/docs/handbook/classes.html
+> - https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
+> - https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
+> - https://stackoverflow.com/questions/31362292/how-to-use-arrow-functions-public-class-fields-as-class-methods
+> - https://stackoverflow.com/questions/51400605/javascript-child-class-method-not-overriding-parent-class-method
+> - https://stackoverflow.com/questions/45881670/should-i-write-methods-as-arrow-functions-in-angulars-class/45882417#45882417
+> - https://basarat.gitbook.io/typescript/future-javascript/arrow-functions#tip-arrow-functions-and-inheritance

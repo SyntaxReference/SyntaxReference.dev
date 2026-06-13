@@ -1,0 +1,107 @@
+```C
+// ------------------------------------
+// Definition
+// ------------------------------------
+[return_type] functionName( [parameters] )
+{
+	// ...
+}
+
+// I C, functions must be declared before its use.
+// It is also possible to use a declaration statement called a
+// "Function prototype"
+[return_type] functionName( [parameters] ); // ; (Semicolon) here and without Body
+// And later, the proper declaration
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+
+void myFunction(float x)
+{
+	// ...
+}
+
+float myFunction()
+{
+	// ...
+}
+
+myStruct myFunction( float x, float y)
+{
+	// ...
+}
+
+
+myClass myFunction( float x, float y)
+{
+	// ...
+}
+
+// ------------------------------------
+// Named Parameters (Keyword Arguments)
+// ------------------------------------
+
+// No Native Support. There are Workarounds
+
+
+// ------------------------------------
+// Optional Parameters
+// ------------------------------------
+
+// No Native Support. There are Workarounds
+
+
+// ------------------------------------
+// Default Argument for Parameters
+// ------------------------------------
+
+// No Native Support. There are Workarounds
+
+
+// ------------------------------------
+// Variable Number of Arguments to a Function Parameters
+// ------------------------------------
+#include <stdarg.h> // For va_list, va_start(), va_args()
+
+// "count" - how many variables
+// "..." - the variables
+int add_all_int(int count, ...) // "..." (ellipsis) can only occur at the end
+{
+	va_list arguments;
+	va_start(arguments, count); // Dynamic allocate "arguments" with "count" size
+
+	int result = 0;
+
+	for(int i = 0; i < count; i++)
+	{
+		// var_args(va_list_variable, count_type)
+		result += va_arg(arguments, int);
+	}
+
+	va_end(arguments); // Free the memory
+	return result;
+}
+
+// add 2 ints: (2+4)
+add_all_int(2 ,2,4);
+
+// add 3 ints: (2+4+7)
+add_all_int(3 ,2,4,7);
+```
+
+```C
+// ------------------------------------
+// Generic/Template
+// ------------------------------------
+
+// TODO
+```
+
+```C
+// ------------------------------------
+// Static
+// ------------------------------------
+
+// Check Static Section
+```

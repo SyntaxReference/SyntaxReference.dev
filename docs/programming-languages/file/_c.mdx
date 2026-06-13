@@ -1,0 +1,14 @@
+```C
+#include <stdio.h>
+
+FILE *file = fopen("example.txt", "r");
+if (file != NULL)
+{
+	char line[256];
+	while (fgets(line, sizeof line, file) != NULL)
+	{
+		printf("%s", line);
+	}
+	fclose(file);
+}
+```

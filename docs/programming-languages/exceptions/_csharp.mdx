@@ -1,0 +1,39 @@
+```Cs
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
+try
+{
+	// ...
+}
+catch(your_specific_exception error)
+{
+	Console.WriteLine($"Specific excetion happened: {error}");
+}
+catch(your_specific_exception error) when (error.ParamName == "something") // Exception filter
+{
+	Console.WriteLine($"Specific excetion happened: {error}");
+}
+catch(Exception error)
+{
+	std::cout << "An Excetion happened: " << error.what() << std::endl;
+}
+finally // Optional
+{
+	// This block will run for success or catch
+	// Ex.: need to close connection to a server
+}
+```
+
+```Cs
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
+```
+
+> More Info:
+> - https://stackify.com/csharp-exception-handling-best-practices/
+> - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/try-catch

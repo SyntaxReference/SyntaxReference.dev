@@ -1,0 +1,73 @@
+```Typescript
+/* The let keyword was introduced to JavaScript in ES2015
+and is now considered the standard because it’s safer than var.
+Many common problems in JavaScript are alleviated by using let,
+so you should use it instead of var whenever possible.
+*/
+
+// https://www.typescriptlang.org/docs/handbook/basic-types.html#a-note-about-let
+```
+
+```Typescript
+// ------------------------------------
+// Numerical
+// ------------------------------------
+
+// In Javascript, all numbers are floating point values.
+
+let variableName: number = 10;
+let variableName: any = 10;
+const variableName: number = 10;
+const MY_CONSTANT: number = 10;
+
+let variableName: number = 10.2;
+let variableName: any = 10.2;
+const variableName: number = 10.2;
+const MY_CONSTANT: number = 10.2;
+
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
+
+/* The BigInt type is a numeric primitive in JavaScript
+ that can represent integers with arbitrary precision.
+ With BigInts, you can safely store and operate on large
+ integers even beyond the safe integer limit for Numbers.
+*/
+let variableName: bigint = 10n;
+let variableName: BigInt(10);
+```
+
+```Typescript
+// ------------------------------------
+// Character
+// ------------------------------------
+let variableName: string = 'a';
+let variableName: string = "a";
+let variableName: string = "\n";
+const variableName: string = "a";
+const MY_CONSTANT: string = "a";
+```
+
+```Typescript
+// ------------------------------------
+// Boolean
+// ------------------------------------
+let variableName: boolean = true;
+let variableName: boolean = false;
+
+// You can also do some conversion
+let variableName = Boolean(expression); // without the word "new"
+```
+
+```Typescript
+// ------------------------------------
+// Strings
+// ------------------------------------
+
+// For Strings, check the dedicated section
+```
+
+> More Info:
+> - https://www.typescriptlang.org/docs/handbook/basic-types.html#number
+> - https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-2.html#bigint

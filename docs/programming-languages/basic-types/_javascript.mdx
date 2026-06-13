@@ -1,0 +1,69 @@
+```Javascript
+/* The let keyword was introduced to JavaScript in ES2015
+and is now considered the standard because it’s safer than var.
+Many common problems in JavaScript are alleviated by using let,
+so you should use it instead of var whenever possible.
+*/
+
+// https://www.typescriptlang.org/docs/handbook/basic-types.html#a-note-about-let
+```
+
+```Javascript
+// ------------------------------------
+// Numerical
+// ------------------------------------
+
+// In Javascript, all numbers are floating point values.
+
+let variableName = 10;
+const variableName = 10;
+const MY_CONSTANT = 10;
+var variableName = 10; // Avoid "var"
+
+let variableName = 10.2;
+const variableName = 10.2;
+const MY_CONSTANT = 10.2;
+
+// A BigInt is created by appending n to the end of an integer
+// or by calling the constructor.
+let variableName = 10n;
+/* The BigInt type is a numeric primitive in JavaScript
+ that can represent integers with arbitrary precision.
+ With BigInts, you can safely store and operate on large
+ integers even beyond the safe integer limit for Numbers.
+*/
+```
+
+```Javascript
+// ------------------------------------
+// Character
+// ------------------------------------
+let variableName = 'a';
+let variableName = "a";
+let variableName = "\n";
+const variableName = "a";
+const MY_CONSTANT = "a";
+```
+
+```Javascript
+// ------------------------------------
+// Boolean
+// ------------------------------------
+let variableName = true;
+let variableName = false;
+
+// You can also do some conversion
+let variableName = Boolean(expression); // without the word "new"
+```
+
+```Javascript
+// ------------------------------------
+// Strings
+// ------------------------------------
+
+// For Strings, check the dedicated section
+```
+
+> More Info:
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean

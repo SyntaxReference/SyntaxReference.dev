@@ -1,0 +1,104 @@
+```Cs
+// Since C# 8.0, its easy to work with null type.
+
+// Option 1
+// Open the Project File (.csproj) and change the <Nullable> property to "enable"
+// <Nullable>enable</Nullable>
+
+// Option 2
+// Use the macro/directive "nullable" inside the file (For each file you want it changed)
+// Everything bellow the macro/directive will be affected, you can write at the
+// top of the file to affect all of it, or somewhere in the middle and so on
+
+// Enable nullable
+#nullable enable
+
+// Disable nullable
+#nullable disable
+
+// Disable only warnings (there are other options aswell)
+#nullable disable warnings
+```
+
+```Cs
+// ------------------------------------
+// Declaring nullable
+// ------------------------------------
+
+// Example from Official Announcement
+public class Person
+{
+	public string FirstName { get; set; } // Can not be null
+	public string? MiddleName { get; set; } // The "?" indicates that property can receive value null
+	public string LastName { get; set; }
+
+	public Person(string first, string last)
+	{
+		this.FirstName = first;
+		this.MiddleName = null; // Since its a "string?" (with a ?) it can be null
+		this.LastName = last;
+	}
+	// ...
+}
+```
+
+```Cs
+// ------------------------------------
+// Working with nullable types
+// ------------------------------------
+
+// Optional Chaining Operator (?)
+string dogName = adventurer.dog?.name; // Dog property can be null
+string customerCity = customer.details?.address?.city;
+
+// Nullish Coalescing Operator (??)
+int middleNameLength = personInstance.MiddleName?.Length ?? 0;
+// The code above is equivalent to:
+/*
+if (personInstance.MiddleName is null)
+{
+	return 0;
+}
+else
+{
+	return personInstance.MiddleName.Length;
+}
+*/
+string example = null ?? "Hello"; 	// Hello
+// If the condition before ?? is null, then the value after ?? is returned
+// otherwise return the condition before ??
+```
+
+```Cs
+// More Examples
+int GetMiddleNameLength(Person? person) // person can be null
+{
+	if (person?.MiddleName is { }) { /**/ } // Easy way to check if "is not null"
+	// The code above is equivalente to:
+	// if ( ! (person?.MiddleName is null) ) { /**/ }
+
+	// Also equivalent to the above example we have
+	// "string.IsNullOrEmpty()"
+	if(string.IsNullOfEmpty(person.MiddleName)) { /**/}
+
+	// We can also create an Alias inside the if condition
+	// Alias Example 1
+	if (person?.MiddleName is { } myAlias)
+	{
+		return myAlias.Length;
+	}
+
+	// Alias Example 2
+	if (person?.MiddleName is { Length: var myLengthAlias })
+	{
+		return myLengthAlias;
+	}
+
+	// All together with ternary operator
+	return person?.MiddleName is { Length: var myLengthAlias } ? myLengthAlias : 0;
+}
+```
+
+> More Info:
+> - https://www.youtube.com/watch?v=TJiLhRPgyq4
+> - https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references

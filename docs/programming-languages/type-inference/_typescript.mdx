@@ -1,0 +1,36 @@
+```Typescript
+// ------------------------------------
+// Variables
+// ------------------------------------
+
+// Since TypeScript 3.0
+// unknown
+let variable: unknown = 12.4;
+let variable: unknown = 4;
+let variable: unknown = "string"
+
+// any
+// Don't use any as a type unless you are in the process of migrating a
+// JavaScript project to TypeScript.
+let variable: any = 12.4;
+let variable: any = 4;
+let variable: any = "string"
+
+// unknown is the type-safe counterpart of any.
+// Anything is assignable to unknown, but unknown isn't assignable to anything but
+// itself and any without a type assertion or a control flow based narrowing.
+// Likewise, no operations are permitted on an unknown without first asserting or
+// narrowing to a more specific type.
+
+// ------------------------------------
+// Return Value of Functions
+// ------------------------------------
+
+// Just a normal function without return type annotation or with ": unknown"
+```
+
+> More Info:
+> - https://www.typescriptlang.org/docs/handbook/basic-types.html#any
+> - https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
+> - https://mariusschulz.com/blog/the-unknown-type-in-typescript
+> - https://stackoverflow.com/questions/51439843/unknown-vs-any

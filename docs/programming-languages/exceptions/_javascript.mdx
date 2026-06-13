@@ -1,0 +1,39 @@
+```Javascript
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
+// Javascript can only have 1 catch, so you need to use conditional inside
+
+try {
+	// ...
+}
+catch(error) {
+	if (error instanceof TypeError) {
+		// statements to handle TypeError exceptions
+	}
+	else if (error instanceof RangeError) {
+		// statements to handle RangeError exceptions
+	}
+	else if (error instanceof EvalError) {
+		// statements to handle EvalError exceptions
+	}
+	else {
+		// ...
+	}
+}
+finally {
+	// Block of code to be executed regardless of the try / catch result
+}
+```
+
+```Javascript
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
+```
+
+> More Info:
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch

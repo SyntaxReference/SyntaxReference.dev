@@ -1,0 +1,12 @@
+```Python
+from typing import TypeVar
+
+T = TypeVar("T")
+
+def identity(value: T) -> T:
+	return value
+
+# Since Python 3.12, type parameters can also be declared inline:
+def first[T](values: list[T]) -> T | None:
+	return values[0] if values else None
+```

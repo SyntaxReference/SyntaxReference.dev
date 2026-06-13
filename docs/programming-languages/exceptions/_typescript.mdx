@@ -1,0 +1,39 @@
+```Typescript
+// ------------------------------------
+// Handling Exceptions
+// ------------------------------------
+
+// Typescipt does NOT allow type annotation on catch.
+// https://github.com/Microsoft/TypeScript/issues/20024
+
+try {
+	// ...
+}
+catch(error) {
+	if (error instanceof TypeError) {
+		// statements to handle TypeError exceptions
+	}
+	else if (error instanceof RangeError) {
+		// statements to handle RangeError exceptions
+	}
+	else if (error instanceof EvalError) {
+		// statements to handle EvalError exceptions
+	}
+	else {
+		// ...
+	}
+}
+finally {
+	// Block of code to be executed regardless of the try / catch result
+}
+```
+
+```Typescript
+// ------------------------------------
+// Custom Exception
+// ------------------------------------
+
+// TODO
+```
+> More Info:
+> - https://github.com/Microsoft/TypeScript/issues/20024

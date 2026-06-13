@@ -1,0 +1,80 @@
+```Typescript
+// ------------------------------------
+// If-Else
+// ------------------------------------
+if ( /* condition */ )
+{
+	// ...
+}
+else if ( /* condition */ )
+{
+	// ...
+}
+else if ( /* condition */ && /* condition */) // "and" operator
+{
+	// ...
+}
+else if ( /* condition */ || /* condition */) // "or" operator
+{
+	// ...
+}
+else if ( !/* condition */) // "not" operator
+{
+	// ...
+}
+else
+{
+	// ...
+}
+```
+
+```Typescript
+// ------------------------------------
+// Ternary
+// ------------------------------------
+
+condition ? response_if_true : response_if_false;
+```
+
+```Typescript
+// ------------------------------------
+// Switch Case Statement
+// ------------------------------------
+
+switch ( expression )
+{
+	case value1:
+		// ...
+		break; // Optional - If we do not use break, all statements after the matching label are executed.
+
+	case value2: // { } are optional but should be used
+	{
+		/* A case block is not a new scope by itself, "cases" are labels, just like
+		"goto" labels.
+		Any variable you declare within one is visible for the rest of the switch
+		statement. (But in the other case blocks, it's uninitialized.)
+		By adding the braces, you create a new scope so the other blocks can't see it.
+		*/
+
+		// ...
+		break;
+	}
+	case value3:
+		//  no break here - It will "Fall-Through" the next case
+	case value4:
+	{
+		// ... - Both "value3" and "value4" will be handled here
+		break;
+	}
+	// ...
+	default: // Optional. Default code if nothing matches the cases/conditions above
+	{
+		// ...
+		break;
+	}
+}
+```
+
+> More Info:
+> - https://medium.com/@bartobri/5-secrets-of-the-switch-statement-633953b2e
+> - https://stackoverflow.com/questions/7374486/break-statement-when-using-curly-braces-in-switch-case/7903308

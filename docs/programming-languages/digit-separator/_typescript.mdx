@@ -1,0 +1,16 @@
+```Typescript
+// Since TypeScript 2.7
+// You can use Underscore ( _ ) as a numeric separator.
+
+const decimal = 1_000_000_000_000; // grouped per thousand
+const decimal = 1_000_000.220_720; // grouped per thousand
+const binary = 0b01010110_00111000; // grouped per octet
+const binary = 0b0101_0110_0011_1000; // grouped per nibble
+const hexadecimal = 0x40_76_38_6A_73; // grouped per byte
+const bigInt = 4_642_473_943_484_686_707n; // grouped per thousand
+const octal = 0o123_456;
+```
+
+> More Info:
+> - https://mariusschulz.com/blog/numeric-separators-in-typescript
+> - https://github.com/Microsoft/TypeScript/pull/20324

@@ -1,0 +1,85 @@
+```Cs
+public class MyClass
+{
+	// ------------------------------------
+	// Fields
+	// ------------------------------------
+	public int myPublicField; // public field (Generally not recommended.)
+	protected int myProtectedField; // Fields should be protected or private for internal use
+	private int myPrivateField; // Fields should be camelCase
+
+	// ------------------------------------
+	// Properties (Fields with Accessors)
+	// ------------------------------------
+	public int MyPublicProperty { get; set; } // Properties should be PascalCase
+	protected int MyProtectedProperty { set; }
+	private int MyPrivateProperty { get; }
+
+	// Calling get "MyPublicProperty" Ex.: myClassInstance.MyPublicProperty;
+	// Calling set "MyPublicProperty" Ex.: myClassInstance.MyPublicProperty = 10;
+
+	// ------------------------------------
+	// Constructor
+	// ------------------------------------
+
+	// The constructor has the same name as the class
+	// Can be omited if you have no code to put here.
+	public MyClass()
+	{
+		// ...
+	}
+
+	// ------------------------------------
+	// Accessors (getter/setter)
+	// ------------------------------------
+
+	// You dont need a dedicated getter/setter if
+	// you declared either/both { get; set; }
+
+	// But you can add custom rules to your get/sets
+
+	// Example
+	private string name; // field definition
+	public string Name   // property definition
+	{
+		// You dont need both get and set
+		get
+		{
+			return name;
+		}
+		set // set has implicit "value" parameter
+		{
+			if (value.Trim().Length < 3 )
+			{
+				throw new MyCustomException($"{nameof(value)} must have more than 3 characters.");
+			}
+
+			name = value;
+		}
+	}
+	// Calling get "Name" Ex.: myClassInstance.Name;
+	// Calling set "Name" Ex.: myClassInstance.Name = "hello";
+
+	// ------------------------------------
+	// Methods
+	// ------------------------------------
+
+	// Calling "myMethod" Ex.: myClassInstance.myMethod(20);
+	public void myMethod (int someVariable)
+	{
+		//...
+	}
+}
+```
+
+```Cs
+// ------------------------------------
+// Instantiating the class
+// ------------------------------------
+
+MyClass myClassInstanceName = new MyClass();
+```
+
+> More Info:
+> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/properties
+> - https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties

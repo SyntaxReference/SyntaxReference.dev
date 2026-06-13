@@ -1,0 +1,54 @@
+```Java
+// Also Known as "Packages" and MUST reflect directory architecture
+
+// Name of the package must be same as the directory
+// under which this file is saved
+
+package myPackage;
+
+public class MyClass
+{
+	// ...
+}
+// ...
+
+// Calling from package Ex.:
+// We use . as a separator
+
+myPackage.MyClass();
+
+// Its also posible to import the specific member
+import myPackage.MyClass;
+
+MyClass(); // With the import, you dont need the full identifier
+```
+
+```Java
+// Also Known as "Packages" and MUST reflect directory architecture
+
+// Nested Packages
+// package cannot be "nested".
+// But you can have a sub package architecture
+
+package myPackage.mySubPackage;
+
+public class MyClass
+{
+	// ...
+}
+// ...
+
+// Calling from package Ex.:
+// We use . as a separator
+
+myPackage.mySubPackage.MyClass();
+
+// Its also posible to import the specific member
+import myPackage.mySubPackage.MyClass;
+
+MyClass(); // With the import, you dont need the full identifier
+```
+
+> More Info:
+> - https://www.geeksforgeeks.org/packages-in-java/
+> - https://beginnersbook.com/2013/03/packages-in-java/

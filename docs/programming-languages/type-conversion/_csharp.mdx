@@ -1,0 +1,59 @@
+```Cs
+// ------------------------------------
+// String to Number
+// ------------------------------------
+
+// Prefer
+// TryParse - returns a bool and the value converted by reference
+Int16 convertedValueByReference;
+Int16.TryParse("100", out convertedValueByReference);
+
+Int32 convertedValueByReference;
+Int32.TryParse("100", out convertedValueByReference);
+
+Int64 convertedValueByReference;
+Int64.TryParse("100", out convertedValueByReference);
+
+float convertedValueByReference;
+float.TryParse("100", out convertedValueByReference);
+
+double convertedValueByReference;
+double.TryParse("100", out convertedValueByReference);
+
+decimal convertedValueByReference;
+decimal.TryParse("100", out convertedValueByReference);
+
+// Parse - returns the value or throws an exception on error
+Int16 convertedValue = Int16.Parse("100");
+Int32 convertedValue = Int32.Parse("100");
+Int64 convertedValue = Int64.Parse("100");
+float convertedValue = float.Parse("100");
+double convertedValue = double.Parse("100");
+decimal convertedValue = decimal.Parse("100");
+```
+
+```Cs
+// ------------------------------------
+// Floating number to Integer
+// ------------------------------------
+
+// Avoid using only the Convert class (Check More Info)
+// Prefer "Math.Floor", "Math.Ceiling" or "Math.Round"
+// It returns a floating type, so you need a cast.
+
+Int32 convertedValue = (Int32) Math.Floor(5.5); // Casting + Math Example
+Int32 convertedValue = Convert.ToInt32(Math.Ceiling(5.5)); // Convert + Math Example
+Int32 convertedValue = (Int32) Math.Round(5.5);
+```
+
+```Cs
+// ------------------------------------
+// Number to String
+// ------------------------------------
+
+// ToString - Returns the string
+string convertedValue = anyTypeNumber.ToString();
+```
+
+> More Info:
+> - https://web.archive.org/web/20161026160911/http://www.dev102.com/2008/03/19/converttoint32-vs-cast/

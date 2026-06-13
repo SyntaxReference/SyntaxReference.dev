@@ -1,0 +1,45 @@
+```Python
+# Instead of null, Python has the "None" type
+```
+
+```Python
+# ------------------------------------
+# Declaring nullable
+# ------------------------------------
+
+# Since Python doesnt have types, you dont need special declaration
+```
+
+```Python
+# ------------------------------------
+# Working with nullable types
+# ------------------------------------
+
+# Optional Chaining Operator (?)
+# Not available, you need to use a condition
+
+# Example 1
+my_variable = None
+
+if my_variable is None:
+	# ...
+else:
+	# ...
+
+# Example 2
+try:
+	if my_variable is None: # The variable
+		print('It is None')
+except NameError:
+	print ("This variable is not defined")
+else:
+	print ("It is defined and has a value")
+
+# Nullish Coalescing Operator (??)
+# Not available, you need to use a condition
+```
+
+> More Info:
+> - https://realpython.com/null-in-python/
+> - https://appdividend.com/2019/08/16/null-object-in-python-example-python-null-value-tutorial/
+> - https://stackoverflow.com/questions/43934304/how-to-test-a-variable-is-null-in-python

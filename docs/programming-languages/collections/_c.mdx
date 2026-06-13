@@ -1,0 +1,175 @@
+```C
+// Arrays (Fixed Size)
+
+#include <stdint.h> // Since C99
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+
+// Arrays must be initialized with a concrete size.
+int32_t integer_array_name[20];
+
+// You can skip the size declaration if you initialize the array on the same line.
+int32_t integer_array_name[] = {0, 1, 2, 3, 4};
+char char_array[] = {'a', 'b', 'c'};
+
+// In C, strings are an array of characters
+// This is a string with lenght = 20. In C you have to account for the '\0' character.
+char variable_name[21];
+char variable_name[] = "Some string";
+// More about this on the String Section
+
+// Const Declaration
+const int32_t integer_array_name[] = {0, 1, 2, 3, 4};
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+my_array[0] = something;
+
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+
+// Not Available
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+
+// Not Available
+// You must have another variable to keep track of the current size.
+// You usually would encapsulate all this logic in a specific header/C file.
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+
+// Not Available
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+
+// Not Available
+// You need to create your own logic
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+
+// Not Available
+// You need to create your own logic
+// You usually would encapsulate all this logic in a specific header/C file.
+int find(int element, int size, int my_array[]) // Just an example
+{
+	for(int i = 0; i < size; i++)
+	{
+		if (element == my_array[i]) // String comparison is diferent in C. Check string section.
+		{
+			return i;
+		}
+	}
+	return -1; // Not found
+}
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+
+// Not Available
+// You need to create your own logic
+
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+
+// Not Available
+// You need to create your own logic
+
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// Not Available
+// You need to create your own logic
+
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+
+// Not Available
+// You need to create your own logic
+
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+
+// You usually would encapsulate all this logic in a specific header/C file.
+void print_members(int size, int my_array[]) // Just an example
+{
+	for(int i = 0; i < size; i++)
+	{
+		printf("%d ", my_array[i]);
+	}
+}
+
+// ------------------------------------
+// Multi Dimensional Array
+// ------------------------------------
+
+int32_t multi_dimensional_array[20][30];
+```
+
+```C
+// Dynamic Size Arrays
+
+// TODO
+```
+
+```C
+// No Native List
+
+// You can code your own or use a 3rd lib
+```
+
+```C
+// No Native Vectors
+
+// You can code your own or use a 3rd lib
+```
+
+```C
+// No Native Tuples
+
+// You can code your own or use a 3rd lib
+```
+
+```C
+// No Native Stack
+
+// You can code your own or use a 3rd lib
+```
+
+```C
+// No Native Queue
+
+// You can code your own or use a 3rd lib
+```
+
+```C
+// No Native Dictionary
+
+// You can code your own or use a 3rd lib
+```

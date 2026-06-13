@@ -1,0 +1,45 @@
+```C
+// ------------------------------------
+// Definition
+// ------------------------------------
+
+struct Struct_name {
+   some_type variable_name;
+   some_type variable_name;
+   ...
+   some_type variable_name;
+} struct_alias;
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+struct Person
+{
+	char name[50];
+	int age;
+};
+
+// ------------------------------------
+// Assignment
+// ------------------------------------
+
+struct Person some_person; // Either use "struct myStruct" or a type alias
+
+strcpy(some_person.name, "my name"); // strcpy() from <string.h>
+some_person.age = 30;
+
+// ------------------------------------
+// Others
+// ------------------------------------
+
+// You can also return a struct from a function
+struct Person getSomeone(void)
+{
+	// ...
+}
+```
+
+> More Info:
+> - https://en.wikipedia.org/wiki/Struct_(C_programming_language)
+> - https://www.tutorialspoint.com/cprogramming/c_structures.htm
+> - https://www.geeksforgeeks.org/structures-c/

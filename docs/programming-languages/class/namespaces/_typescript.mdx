@@ -1,0 +1,46 @@
+```Typescript
+namespace MyNamespace
+{
+	// Add "export" to be visible outside the namespace
+	// Defaults to not be visible outside the namespace.
+	export class MyClass
+	{
+		// ...
+	}
+
+	// ...
+}
+
+// Calling from namespace Ex.:
+// We use . as a separator
+
+MyNamespace.MyClass();
+```
+
+```Typescript
+// Nested namespaces
+
+namespace MyFirstNamespace
+{
+	export namespace MySecondNamespace // The nested namespace need to be exported (if you want it public)
+	{
+		export class MyClass
+		{
+			// ...
+		}
+
+		// ...
+	}
+
+	// ...
+}
+
+// Calling from namespace Ex.:
+// We use . as a separator
+
+MyFirstNamespace.MySecondNamespace.MyClass();
+```
+
+> More Info:
+> - https://www.typescriptlang.org/docs/handbook/namespaces.html
+> - https://www.tutorialsteacher.com/typescript/typescript-namespace

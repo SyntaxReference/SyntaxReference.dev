@@ -1,0 +1,209 @@
+```Python
+# Array / List / Vector / Stack
+
+# ------------------------------------
+# Declaration & Initialization
+# ------------------------------------
+my_list = []
+my_list = [1, 2, 3]
+my_list = [1, "Hello", 3.4] # list with mixed datatypes
+my_list = ["mouse", [8, 4, 6], ['a']] # nested list
+
+# Type Hint List
+from typing import List # For collections, the name of the type is capitalized (List)
+
+my_list = List[int] = [1, 2, 3] # type inside brackets
+
+# Const Declaration
+MY_CONSTANT = [1, 2, 3] # Just a convention. Still Mutable
+
+# ------------------------------------
+# Direct Access
+# ------------------------------------
+my_list[0] = 14
+my_list[-1] = 14 # Last Element
+my_list[-2] = 14 # Second last and so on
+
+# ------------------------------------
+# Push & Pop
+# ------------------------------------
+my_list.append() # Add to the end of the list
+my_list.insert(index, element) # Add the element at specified index location
+my_list.pop() # Remove the last element of the list
+my_list.pop(index) # Removes the element at the specified index
+
+# ------------------------------------
+# Size / Length
+# ------------------------------------
+len(my_list)
+
+# ------------------------------------
+# Count (How many of)
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Filter
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Find (return Index)
+# ------------------------------------
+my_list.index(element) # Returns the index of the FIRST element with the specified value
+
+# ------------------------------------
+# Accumulate (sum all values)
+# ------------------------------------
+sum(my_list)
+
+# ------------------------------------
+# Sort
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Comparing
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Copy / Clone
+# ------------------------------------
+
+
+# Real Copy -  Using copy() method
+my_real_copy = my_list.copy()
+
+# Real Copy -  Using list() constructor
+my_real_copy = list(my_list)
+
+# WONT WORK
+my_fake_copy = my_list
+# Arrays are reference types in Python!!!
+# Thats like creating a pointer (Be careful) It WONT create a copy
+
+
+# ------------------------------------
+# Slice
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Printing Members
+# ------------------------------------
+
+# You can just output the array
+print(my_list);
+
+# or
+for element in my_list:
+	print(f"{element} ")
+
+# ------------------------------------
+# As a function Parameter
+# ------------------------------------
+# TODO
+```
+
+```Python
+# Tuples
+
+# ------------------------------------
+# Declaration & Initialization
+# ------------------------------------
+my_tuple = (1, 2, 3)
+# In Python tuples are written with round brackets.
+# A tuple is a collection which is ordered and unchangeable.
+
+# For tuples of fixed size, we specify the types of all the elements
+x: Tuple[int, str, float] = (3, "yes", 7.5)
+
+# For tuples of variable size, we use one type and ellipsis
+x: Tuple[int, ...] = (1, 2, 3)
+
+# Const Declaration
+# TODO
+
+# ------------------------------------
+# Direct Access
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Push & Pop
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Size / Length
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Count (How many of)
+# ------------------------------------
+
+# ------------------------------------
+# Filter
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Find (return Index)
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Accumulate (sum all values)
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Sort
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Comparing
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Copy / Clone
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Slice
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# Printing Members
+# ------------------------------------
+# TODO
+
+# ------------------------------------
+# As a function Parameter
+# ------------------------------------
+# TODO
+
+```
+
+```Python
+# Queue
+# TODO
+```
+
+```Python
+# Dictionary
+# TODO
+```
+
+> More Info:
+> - https://realpython.com/python-lists-tuples
+> - https://www.programiz.com/python-programming/tuple
+> - https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+> - https://stackoverflow.com/questions/39817081/typing-any-vs-object
+> - https://docs.python.org/3.8/tutorial/datastructures.html

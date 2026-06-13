@@ -1,0 +1,7 @@
+```Typescript
+// Node.js
+import { readFile, writeFile } from 'node:fs/promises';
+
+const text: string = await readFile('example.txt', 'utf8');
+await writeFile('output.txt', text);
+```

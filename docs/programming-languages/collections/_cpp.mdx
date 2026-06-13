@@ -1,0 +1,502 @@
+```Cpp
+// Arrays
+
+// std::array will clean up after itself when it goes out of scope,
+// so there's no need to do any kind of manual cleanup.
+
+#include <array>  // Since (C++11)
+#include <cstdint> // std::int32_t Type (Since C++11)
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+
+// Fixed Type and Size
+std::array<std::int32_t, 5> myArray;
+
+// Uniform Initialization (since C++11)
+std::array<std::int32_t, 5> myArray { 9, 7, 5, 3, 1 };
+
+// It is allowed to omit the type and size.
+// They can only be omitted together, but not one or the other,
+// and only if the array is explicitly initialized. (Since C++17)
+std::array myArray { 9, 7, 5, 3, 1 };
+
+// Const Declaration
+const std::array<std::int32_t, 5> myArray { 9, 7, 5, 3, 1 };
+std::array<std::int32_t, 5> const myArray { 9, 7, 5, 3, 1 };
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+myArray[0] = 14; // No bounds-checking
+myArray.at(0) = 14; // with bounds-checking
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+// Not Available
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+std::int32_t mySize = myArray.size();
+std::int32_t myMaxSize = myArray.max_size();
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+#include <algorithm> // For std::count, std::count_if
+
+// Ex. 1
+std::int32_t const target = 2;
+std::int32_t howMany = std::count(std::begin(my_collection), std::end(my_collection), target); // Prefer. Works on C-style arrays too
+std::int32_t howMany = std::count(my_collection.begin(), my_collection.end(), target);
+
+// Ex. 2
+std::int32_t howManyOdd = std::count_if(std::begin(my_collection), std::end(my_collection), /* Lambda Function */);
+std::int32_t howManyOdd = std::count_if(std::begin(my_collection), std::end(my_collection), [](auto element) { return element % 2 != 0; } );
+// Check Lambda Section for more about Lambda.
+// Check Type Inference Section for more about "auto"
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+std::int32_t total = std::accumulate(std::begin(my_collection), std::end(my_collection), 0); // 0 (zero) is the starting value
+
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+#include <algorithm> // For std::sort, std::partial_sort
+
+// Ex. 1
+std::sort(std::begin(my_collection), std::end(my_collection));
+
+// Ex. 2
+std::sort(std::begin(my_collection), std::end(my_collection), /* Lambda Function for custom sort */ );
+std::sort(std::begin(my_collection), std::end(my_collection), [](auto firstElement, auto secondElement) { return abs(firstElement) > abs(secondElement); } );
+
+// Ex. 3
+// You can use "std::partial_sort()" for more performance if you
+// dont need to show everything sorted at the same time. (Like a pagination)
+std::partial_sort(std::begin(my_collection), /* Last element to be sorted */ ,end(my_collection));
+std::partial_sort(std::begin(my_collection), ( std::begin(my_collection) + 10 ) ,end(my_collection)); // First 10 will be sorted
+
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+#include <algorithm> // For std::equal
+
+bool isEqual = std::equal(std::begin(my_collection), std::end(my_collection), std::begin(my_other_collection), std::end(my_other_collection));
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+#include <algorithm> // For std::copy
+
+// Example 1
+// C++ operator "=" actually creates a real copy
+auto myCopyArray = myArray; // Check Type Inference Section for more about "auto"
+
+// Example 2
+std::array<std::int32_t, 5> myCopyArray;
+
+// Example 3
+std::copy(std::begin(myArray), std::end(myArray), std::begin(myCopyArray));
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+
+// For-each (Ranged For) (Since C++ 11)
+
+// element will be a copy of the current array element
+for (auto element : myArray)		{ std::cout << element << " "; }
+
+// The ampersand makes element a reference to the actual array element,
+// preventing a copy from being made
+for (auto &element : myArray)		{ std::cout << element << " "; }
+
+// element is a const reference to the currently iterated array element
+for (const auto &element : myArray) { std::cout << element << " "; }
+for (auto const &element : myArray) { std::cout << element << " "; }
+
+// In for-each loops element declarations, for performance reasons,
+// if your elements are non-fundamental types, use references or const references
+// else (your elements are basic types) use the copy element syntax
+
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+void my_function(const std::array<std::int32_t, 5> &myArray)
+{
+	// non-mutable code
+}
+
+void my_function(std::array<std::int32_t, 5> const &myArray)
+{
+	// non-mutable code
+}
+
+// ------------------------------------
+// Multi Dimensional Array
+// ------------------------------------
+std::array<std::array<std::int32_t, 3>, 3> my_multi_array;
+std::array<std::array<std::int32_t, 3>, 3> my_multi_array {{{1,2,3},{4,5,6},{7,8,9}}};
+
+// Legacy (Avoid)
+int integer_array_name[5];
+int integer_array_name[] = {0, 1, 2, 3, 4};
+int multi_dimensional_array[3][3];
+```
+
+```Cpp
+// List
+
+// std::list will clean up after itself when it goes out of scope,
+// so there’s no need to do any kind of manual cleanup.
+#include <list>
+#include <cstdint> // std::int32_t Type (Since C++11)
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+
+// Fixed Type but NOT size/length
+std::list<std::int32_t> myList;
+
+// Uniform Initialization (since C++11)
+std::list<std::int32_t> myList { 9, 7, 5, 3, 1 };
+
+// Const Declaration
+const std::list<std::int32_t> myList { 9, 7, 5, 3, 1 };
+std::list<std::int32_t> const myList { 9, 7, 5, 3, 1 };
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+
+// Not Available
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+myList.push_front(30); // Add at the beginning
+myList.push_back(30); // Add at the end
+myList.pop_front(); // Removes the first element of the list, and reduces size of the list by 1.
+myList.pop_back(); // Removes the last element of the list, and reduces size of the list by 1.
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+myList.size();
+myList.max_size();
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+
+// For-each (Ranged For) (Since C++ 11)
+
+// element will be a copy of the current array element
+for (auto element : myArray)		{ std::cout << element << " "; }
+
+// The ampersand makes element a reference to the actual array element,
+// preventing a copy from being made
+for (auto &element : myArray)		{ std::cout << element << " "; }
+
+// element is a const reference to the currently iterated array element
+for (const auto &element : myArray) { std::cout << element << " "; }
+for (auto const &element : myArray) { std::cout << element << " "; }
+
+// In for-each loops element declarations, for performance reasons,
+// if your elements are non-fundamental types, use references or const references
+// else (your elements are basic types) use the copy element syntax
+
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+void my_function(const std::list<std::int32_t> &myList)
+{
+	// non-mutable code
+}
+
+void my_function(std::list<std::int32_t> const &myList)
+{
+	// non-mutable code
+}
+```
+
+```Cpp
+// Vectors
+
+// std::vector will clean up after itself when it goes out of scope,
+// so there’s no need to do any kind of manual cleanup.
+
+#include <vector> // Since C++03
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+
+// Fixed Type but NOT size/length
+std::vector<std::int32_t> myVector;
+
+// Uniform Initialization (since C++11)
+std::vector<std::int32_t> myVector { 9, 7, 5, 3, 1 };
+
+// Const Declaration
+const std::vector<std::int32_t> myVector { 9, 7, 5, 3, 1 };
+std::vector<std::int32_t> const myVector { 9, 7, 5, 3, 1 };
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+myVector[0] = 14; // No bounds-checking
+myVector.at(0) = 14; // with bounds-checking
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+myVector.push_front(30); // Add at the beginning
+myVector.push_back(30); // Add at the end
+myVector.pop_front(); // Removes the first element of the list, and reduces size of the list by 1.
+myVector.pop_back(); // Removes the last element of the list, and reduces size of the list by 1.
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+myVector.size();
+myVector.max_size();
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+
+// For-each (Ranged For) (Since C++ 11)
+
+// element will be a copy of the current array element
+for (auto element : myArray)		{ std::cout << element << " "; }
+
+// The ampersand makes element a reference to the actual array element,
+// preventing a copy from being made
+for (auto &element : myArray)		{ std::cout << element << " "; }
+
+// element is a const reference to the currently iterated array element
+for (const auto &element : myArray) { std::cout << element << " "; }
+for (auto const &element : myArray) { std::cout << element << " "; }
+
+// In for-each loops element declarations, for performance reasons,
+// if your elements are non-fundamental types, use references or const references
+// else (your elements are basic types) use the copy element syntax
+
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+void my_function(const std::vector<std::int32_t> &myVector)
+{
+	// non-mutable code
+}
+
+void my_function(std::vector<std::int32_t> const &myVector)
+{
+	// non-mutable code
+}
+
+// ------------------------------------
+// Multi Dimensional Vector
+// ------------------------------------
+std::vector<std::vector<std::int32_t> > my_multi_vector;
+std::vector<std::vector<std::int32_t> > my_multi_vector {{{1,2,3},{4,5,6},{7,8,9}}};
+
+// Legacy (Avoid)
+// TODO: Examples
+```
+
+```Cpp
+// Tuples
+
+#include <tuple>
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+
+// Uniform Initialization (since C++11)
+// TODO
+
+// Const Declaration
+// TODO
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+// TODO
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/variable-assignment-and-initialization/
+> - https://www.learncpp.com/cpp-tutorial/6-15-an-introduction-to-stdarray/
+> - https://www.learncpp.com/cpp-tutorial/6-16-an-introduction-to-stdvector/
+> - https://www.geeksforgeeks.org/list-cpp-stl/
+> - https://en.cppreference.com/w/cpp/container/list
+> - https://en.cppreference.com/w/cpp/algorithm

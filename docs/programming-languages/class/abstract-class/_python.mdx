@@ -1,0 +1,66 @@
+```Python
+# Python on its own doesn't provide abstract classes. Yet, Python comes with a module
+# which provides the infrastructure for defining Abstract Base Classes (ABCs). This module
+# is called, for obvious reasons, abc.
+from abc import ABC, abstractmethod
+
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
+
+# An abstract class cannot be instantiated.
+class MyClass(ABC):
+
+	_someRandomProtectedProperty = 10 # It will be visible from the derived class
+
+	@property # Abstract Property also possible
+	@abstractmethod  # You need this annotation
+	def my_protected_property(self):
+		pass
+
+	@my_protected_property.setter # Abstract Property also possible
+	@abstractmethod  # You need this annotation
+	def my_protected_property(self, value):
+		pass
+
+	@abstractmethod # You need this annotation for abstract method
+	def MyMethod(self): # You must override abstract methods in the derived class.
+		pass # Keyword so python can "skip" this implementation
+
+	def MySecondMethod(self): # Concrete Method. Not Abstract. Not mandatory to override
+		print('Some default implementation.')
+		print('If you dont override it,')
+		print('default implementation will be used.')
+```
+
+```Python
+# Derived Class Example
+class MyDerivedClass(MyClass):
+
+	@property
+	def my_protected_property(self):
+		return self._my_property
+
+	@my_protected_property.setter
+	def my_protected_property(self, value):
+		self._my_property = value
+
+	def MyMethod(self):
+		print('new Implementation')
+
+	# (Optional) Property Registration for "_someRandomProtectedProperty"
+	def get_my_random_protected(self):
+		return self._someRandomProtectedProperty
+
+	def set_my_random_protected(self, value):
+		self._someRandomProtectedProperty = value;
+
+	my_random_protected = property(get_my_random_protected, set_my_random_protected)
+
+	# Even if not overriding "MySecondMethod", I can still call it as from the derived class
+	# And it will work with the default implementation
+```
+
+> More Info:
+> - https://www.python-course.eu/python3_abstract_classes.php
+> - https://www.geeksforgeeks.org/abstract-classes-in-python/
+> - https://docs.python.org/3/library/abc.html

@@ -1,0 +1,72 @@
+```Cpp
+namespace myNamespace
+{
+	float myFunction()
+	{
+		// ...
+	}
+
+	class MyClass
+	{
+		// ...
+	};
+
+	// ...
+}
+
+// Calling from namespace Ex.:
+// We use :: as a separator
+
+myNamespace::myFunction();
+myNamespace::MyClass();
+```
+
+
+```Cpp
+// Nested namespaces
+
+// Example 1 - Since C++17
+namespace myFirstNamespace::mySecondNamespace
+{
+	float myFunction()
+	{
+		// ...
+	}
+
+	class MyClass
+	{
+		// ...
+	};
+
+	// ...
+}
+
+// Example 2 - Prior to C++17
+namespace myFirstNamespace
+{
+	namespace mySecondNamespace
+	{
+		float myFunction()
+		{
+			// ...
+		}
+
+		class MyClass
+		{
+			// ...
+		};
+	}
+	// ...
+}
+
+
+// Calling from namespace Ex.:
+// We use :: as a separator
+
+myFirstNamespace::mySecondNamespace::myFunction();
+myFirstNamespace::mySecondNamespace::MyClass();
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/user-defined-namespaces/
+> - https://www.learncpp.com/cpp-tutorial/unnamed-and-inline-namespaces/

@@ -1,0 +1,60 @@
+```Cpp
+// An abstract class cannot be instantiated.
+// Any class with one or more "pure virtual" functions becomes an abstract class
+
+// Header File (MyClass.h or MyClass.hpp)
+#pragma once
+
+class MyClass
+{
+protected:
+	float protectedVariable;
+
+public:
+	// "Pure Virtual" (Abstract) Method (To create a pure virtual function, we simply assign the function the value 0)
+	virtual float MyMethod() = 0;  // You must override "Pure Virtual" (Abstract) methods in the derived class.
+
+	// Virtual Method (Any class can have virtual methods)
+	// Virtual means it can be override
+	virtual float MySecondMethod() // You can override virtual methods but its not mandatory
+	{
+		// Some default implementation.
+		// If you dont override it,
+		// default implementation will be used
+	}
+};
+```
+
+```Cpp
+// Derived Class Example
+// Header File (MyDerivedClass.h or MyDerivedClass.hpp)
+
+#pragma once
+
+class MyDerivedClass : public MyClass
+{
+public:
+	// Both "virtual" and "override" identifiers are optional (But should be used)
+	virtual float MyMethod() override; // Implementation should be in the .cpp file
+	/*
+	override identifier was added in C++11 and it helps to check if:
+	- There is a method with the same name in the parent class.
+	- The method in the parent class is declared as "virtual"
+	- The method in the parent class has the same signature.
+	*/
+	/*
+	If a function is marked as virtual, all matching overrides are also considered virtual,
+	even if they are not explicitly marked as such. However, having the keyword virtual on
+	the derived functions does not hurt, and it serves as a useful reminder that the function
+	is a virtual function rather than a normal one. Consequently, it’s generally a good idea
+	to use the virtual keyword for virtualized functions in derived classes even though it’s
+	not strictly necessary.
+	*/
+};
+```
+
+> More Info:
+> - https://www.learncpp.com/cpp-tutorial/122-virtual-functions/
+> - https://www.learncpp.com/cpp-tutorial/12-2a-the-override-and-final-specifiers-and-covariant-return-types/
+> - https://www.learncpp.com/cpp-tutorial/126-pure-virtual-functions-abstract-base-classes-and-interface-classes/
+> - https://www.geeksforgeeks.org/override-keyword-c/

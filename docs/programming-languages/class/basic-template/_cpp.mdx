@@ -1,0 +1,240 @@
+```Cpp
+// Header File (MyClass.h or MyClass.hpp) (Only declaration. No Implementation)
+
+// You could also use the "pragma"
+#ifndef MY_CLASS_H
+#define MY_CLASS_H
+
+class MyClass
+{
+	float some_random_variable; // private by default (if not inside a access specifiers)
+
+private: // Private access specifiers
+	// ------------------------------------
+	// Private Properties / Fields
+	// ------------------------------------
+	float my_private_property;
+
+	// ------------------------------------
+	// Private Methods
+	// ------------------------------------
+
+	// Since its a private method, It can only be called inside this class
+	void myPrivateMethod (float someVariable);
+
+protected: // Protected access specifiers
+// In this example I wont use "protected"
+// If not in use, you can ommit an access specifiers
+
+public: // Public access specifiers
+	// ------------------------------------
+	// Public Properties / Fields
+	// ------------------------------------
+	float my_public_property;
+
+	// ------------------------------------
+	// Constructor
+	// ------------------------------------
+
+	// The constructor has the same name as the class
+	// Can be omited if you have no code to put here.
+	MyClass();
+
+	// ------------------------------------
+	// Accessors (getter/setter)
+	// ------------------------------------
+
+	// Calling "getMyPrivateProperty" Ex.: myClassInstance.getMyPrivateProperty();
+	float getMyPrivateProperty();
+
+	// Calling "setMyPrivateProperty" Ex.: myClassInstance.setMyPrivateProperty(10.2);
+	void setMyPrivateProperty(float value);
+
+	// ------------------------------------
+	// Public Methods
+	// ------------------------------------
+
+	// Calling "myPublicMethod" Ex.: myClassInstance.myPublicMethod(20.0);
+	void myPublicMethod (float someVariable);
+
+};	// Dont forgete the ; (semicolon) here
+
+#endif // MY_CLASS_H
+```
+
+```Cpp
+// Code file (MyClass.cpp)
+
+#include "MyClass.h"
+
+// We dont need to wrap all methods inside class {} for the Implementation
+// But we need to prefix them with the class name and ::
+
+// ------------------------------------
+// Constructor
+// ------------------------------------
+MyClass::MyClass()
+{
+	// ...
+}
+
+// ------------------------------------
+// Private Methods
+// ------------------------------------
+void MyClass::myPrivateMethod (float someVariable)
+{
+	//...
+}
+
+// ------------------------------------
+// Accessors (getter/setter)
+// ------------------------------------
+
+// Calling "getMyPrivateProperty" Ex.: myClassInstance.getMyPrivateProperty();
+float MyClass::getMyPrivateProperty()
+{
+	return this->my_private_property; // "this->" instead of "this."
+}
+
+// Calling "setMyPrivateProperty" Ex.: myClassInstance.setMyPrivateProperty(10.2);
+void MyClass::setMyPrivateProperty(float value)
+{
+	this->my_private_property = value; // "this->" instead of "this."
+}
+
+// ------------------------------------
+// Public Methods
+// ------------------------------------
+
+// Calling "myPublicMethod" Ex.: myClassInstance.myPublicMethod(20.0);
+void MyClass::myPublicMethod (float someVariable)
+{
+	//...
+}
+```
+
+```Cpp
+// TODO
+// const & Ref example
+```
+
+```Cpp
+// In some cases, like building a library, you might have everything inside the header file
+
+// Everything Inside a Header File (MyClass.h or MyClass.hpp)
+
+#pragma once // When using pragma, no need to use anything at the end (like #endif)
+
+class MyClass
+{
+private:
+	float my_private_property;
+
+	void myPrivateMethod (float someVariable);
+
+public:
+	float my_public_property;
+
+	MyClass();
+
+	float getMyPrivateProperty();
+	void setMyPrivateProperty(float value);
+
+	void myPublicMethod (float someVariable);
+
+};	// Dont forgete the ; (semicolon) here
+
+
+// We dont need to wrap all methods inside class {} for the Implementation
+// But we need to prefix them with the class name and ::
+MyClass::MyClass()
+{
+	// ...
+}
+
+void MyClass::myPrivateMethod (float someVariable)
+{
+	//...
+}
+
+float MyClass::getMyPrivateProperty()
+{
+	return this->my_private_property;
+}
+
+void MyClass::setMyPrivateProperty(float value)
+{
+	this->my_private_property = value;
+}
+
+void MyClass::myPublicMethod (float someVariable)
+{
+	//...
+}
+```
+
+```Cpp
+// ------------------------------------
+// Instantiating the class
+// ------------------------------------
+
+// Option 1 - No need to free the memory
+MyClass myClassInstanceName;
+MyClass myClassInstanceName{};
+// OBS: Members will be accessible via "." operator
+// Ex.: myClassInstanceName.MyMethod();
+
+
+// Option 2 - Smart Pointer - No need to free the memory
+#include <memory>
+
+// OBS: Using Smart Pointers, Members will be accessible via "->" operator
+// Ex.: myClassInstanceName->MyMethod();
+
+// Smart Pointer - std::unique_ptr
+// Dynamically allocated object that is not shared by multiple objects
+std::unique_ptr<MyClass> myClassInstanceName {std::make_unique<MyClass>()}; // Since C++ 14 (std::make_unique)
+
+auto myClassInstanceName {std::make_unique<MyClass>()};
+auto myClassInstanceName = std::make_unique<MyClass>(); // Same as Above
+
+std::unique_ptr<MyClass> myClassInstanceName {}; // Start as nullptr
+std::unique_ptr<MyClass> myClassInstanceName; // Start as nullptr
+myClassInstanceName = std::make_unique<MyClass>();
+
+// Before C++ 14
+std::unique_ptr<MyClass> myClassInstanceName (new MyClass());
+std::unique_ptr<MyClass> myClassInstanceName {new MyClass{}}; // Using { }
+
+
+// Smart Pointer - std::shared_ptr
+// Dynamically allocated object that is shared by multiple objects
+std::shared_ptr<MyClass> myClassInstanceName {std::make_shared<MyClass>()}; // Since C++ 14 (std::make_unique)
+
+auto myClassInstanceName {std::make_shared<MyClass>()};
+auto myClassInstanceName = std::make_shared<MyClass>(); // Same as Above
+
+std::shared_ptr<MyClass> myClassInstanceName {}; // Start as nullptr
+std::shared_ptr<MyClass> myClassInstanceName; // Start as nullptr
+myClassInstanceName = std::make_shared<MyClass>();
+
+// More about Pointers in the "Pointer & Reference" Section
+
+
+// Option 3 - Legacy (Avoid)
+MyClass* myClassInstanceName = new MyClass();
+// ...
+delete(myClassInstanceName); // You have to delete (free the memory) after you're done
+```
+
+> More Info:
+> - https://stackoverflow.com/questions/8020113/c-include-guards/8020211#8020211
+> - https://www.learncpp.com/cpp-tutorial/82-classes-and-class-members/
+> - https://www.learncpp.com/cpp-tutorial/89-class-code-and-header-files/
+> - https://www.learncpp.com/cpp-tutorial/8-8-the-hidden-this-pointer/
+> - https://docs.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=vs-2019
+> - http://www.cplusplus.com/doc/tutorial/classes/
+> - https://www.learncpp.com/cpp-tutorial/69-dynamic-memory-allocation-with-new-and-delete/
+> - https://stackoverflow.com/questions/10836591/class-members-and-explicit-stack-heap-allocation
+> - https://en.cppreference.com/w/cpp/memory/unique_ptr
+> - https://en.cppreference.com/w/cpp/memory/shared_ptr

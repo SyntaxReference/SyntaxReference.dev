@@ -1,0 +1,226 @@
+```C
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+
+// No native string type
+// In C, strings are an array of characters
+// This is a string with lenght = 20. In C you have to account for the '\0' character.
+char variable_name[21]; // 20 + 1 from the '\0' character.
+char variable_name[81] = "Hi"; // Doesnt need to fill it all at once
+char variable_name[81] = {'H','i'};
+
+
+// No need to include '\0' here. The compiler inserts it at the end of the array for us.
+char variable_name[] = "Some string";
+char *variable_name = "Some string";
+
+// Const Declaration
+const char MY_CONSTANT[] = "Something";
+const char *MY_CONSTANT = "Something";
+
+
+// ------------------------------------
+// Direct Access (Array-Like)
+// ------------------------------------
+char myString[] = "Hi";
+myString[1] = 'o';
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+#include<string.h> // For strlen(), strnlen_s(), strnlen()
+
+int length = strlen(myString); // Not safe. Undefined Behavior if "myString" is missing null-terminated byte
+
+// strnlen_s() - Since C11
+// strnlen_s takes a parameter for the maximum number of characters to scan.
+// This way, it won't overflow the buffer you provide it if there's no trailing null byte
+
+int length = strnlen_s(myString, sizeof myString); // Yet, Might not work in every compiler
+
+// strnlen()
+int length = strnlen(myString, sizeof myString);
+
+
+// ------------------------------------
+// Trim
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Is Null Or Empty
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Transform
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Compare
+// ------------------------------------
+#include<string.h> // For strcmp(), strncmp()
+
+int result = strcmp(string1, string2); // Beware, Undefined Behavior if any string is missing null-terminated byte
+// result == 0, indicates string1 is equal to string2.
+// result < 0, indicates string1 is less than string2.
+// result > 0, indicates string2 is less than string1.
+
+int result = strncmp(string1, string2, count); // count = maximum number of characters to compare.
+
+// From StackOverflow:
+// Using strncmp you can limit the search, so that it doesn't reach non-accessible memory.
+// But, from that it should not be concluded that strcmp is insecure to use. Both the
+// functions works well in the way they are intended to work.
+//
+// strncmp does not have "advantages over strcmp"; rather they solve different problems.
+// strcmp is for determining if two strings are equal (and if not, possibly how to
+// order/sort them with respect to each other). strncmp is (mainly) for determining
+// whether a string begins with a particular prefix. For example:
+if (strncmp(str, "--option=", 9)==0) { /**/ }
+
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+#include<string.h> // For strcpy(), strncpy(), strncpy_s()
+
+char* originalSring = "Hi";
+char* copyString[10];
+
+strcpy(copyString, originalSring); // Not safe. Does not specify the size of the destination array, so buffer overrun is often a risk
+
+strncpy(copyString, originalSring, count);  // Not safe. "strncpy()" does not guarantee that the destination string will be NULL terminated.
+// count = maximum number of characters to copy. count Could also be "sizeof copyString"
+
+// strncpy_s - Since C11
+strncpy_s(copyString, sizeof copyString, originalSring, (sizeof copyString)-1); // strncpy_s unlike strncpy is a null terminated string function
+
+
+
+// ------------------------------------
+// Concatenation
+// ------------------------------------
+#include<string.h> // For strcat(), strcat_s(), strncat_s()
+
+strcat(mainString, addString); // Not Safe
+// The behavior is undefined if the destination array is not large enough for the contents
+// of both src and dest and the terminating null character.
+// The behavior is undefined if the strings overlap.
+// The behavior is undefined if either dest or src is not a pointer to a null-terminated
+// byte string.
+
+
+// strcat_s - Since C11
+// TODO
+
+
+//strncat_s - Since C11
+// TODO
+```
+
+```C
+// ------------------------------------
+// String Interpolation
+// ------------------------------------
+// Not Available
+
+
+// ------------------------------------
+// Print / Output
+// ------------------------------------
+#include <stdio.h> // For printf
+
+// Main structure omitted
+printf("Hello World\n"); // '\n' is the new line character
+printf("Printing Integer: %d\n", 10);
+printf("Printing Float: %f\n", 10.5);
+printf("Printing Double: %lf\n", 20.5);
+printf("Printing Character: %c\n", 'a'); // Single quote
+printf("Printing String: %s\n", "my string");
+printf("Printing Memory Address: %p\n", &variable_name);
+printf("Printing Memory Address: %p\n", pointer_to_variable);
+printf("Printing Octal: %o\n", 2567);
+printf("Printing Hexadecimal (Letter in small letters): %x\n", 2567);
+printf("Printing Hexadecimal (Letter in capital letters): %X\n", 2567);
+printf("%s: %d %f", "More Printing", 30, 50.2);
+```
+
+```C
+// ------------------------------------
+// Advanced Formating
+// ------------------------------------
+
+// The syntax template for easy reference:
+// %[flags][width][.precision][type_character]
+
+// Both "width" and/or "precision" numbers can be replaced by "*" then,
+// an additional integer value argument must be placed preceding the argument that has to be formatted.
+
+
+/*
+Flags:
+-		Left justify.
+0		Field is padded with 0's instead of blanks.
++		Sign of number always O/P.
+blank		Positive values begin with a blank.
+#		 	  Various uses:
+	%#o (Octal) 0 prefix inserted.
+	%#x (Hex)   0x prefix added to non-zero values.
+	%#X (Hex)   0X prefix added to non-zero values.
+	%#e         Always show the decimal point.
+	%#E         Always show the decimal point.
+	%#f         Always show the decimal point.
+	%#g         Always show the decimal point trailing zeros not removed.
+	%#G         Always show the decimal point trailing zeros not removed.
+*/
+
+
+// Width & Right Align
+// %[width][type_character]
+printf("%5d", 7); // length of 5 digits Ex.: "    7"
+printf("%20s !\n", "hello World"); //"         hello World !"
+
+
+// Floating Point Precision
+// %[.precision][type_character]
+printf("%.2f\n", 7.0000); // 7.00
+
+// Can also be combined with Width
+// %[width][.precision][type_character]
+printf("%8.2f\n", 7.0); // Ex.: "    7.00"
+printf("%*.*f\n", 8, 2, 7.0); // same
+
+
+// Left-justifying
+// You can use the "-" flag
+printf("%-5d", 7); // length of 5 digits Ex.: "7    "
+printf("%-20s !\n", "hello World"); // "hello World          !"
+
+
+// Integer leading zero-fill
+// You can use the "0" flag to force the number to be padded with 0s
+// %[flags][width][type_character]
+printf("%05d", 7); // Ex.: "00007"
+printf("%0*d", 5, 7); // same
+
+
+// Positional Arguments (Re-Ordering the Arguments)
+// Using %[[order]$][type_character]
+printf("%2$s , %1$s\n", "First Argument", "Second  Argument"); // Will print: "Second  Argument , First Argument"
+```
+
+> More Info:
+> - https://codeforwin.org/2015/05/list-of-all-format-specifiers-in-c-programming.html
+> - https://en.cppreference.com/w/c/string/byte/strlen
+> - https://en.cppreference.com/w/c/string/byte/strncpy
+> - https://stackoverflow.com/questions/30190460/advantages-of-strncmp-over-strcmp
+> - https://en.cppreference.com/w/c/string/byte/strcat
+> - https://en.cppreference.com/w/c/string/byte/strncat
+> - https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/format.html
+> - http://www.cplusplus.com/reference/cstdio/printf/
+> - https://stackoverflow.com/questions/6322540/how-do-positional-arguments-like-1-work-with-printf

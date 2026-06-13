@@ -1,0 +1,138 @@
+```Javascript
+// Array / Lists / Vector
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+var myArray = []; // avoid var
+let myArray = [];
+let myArray = [1, 2, 3];
+let myArray = new Array(3); // Size
+
+// An array can store elements of any type.
+let myArray = [1, "hi", function(){}, { key: 'value' }];
+
+// Const Declaration
+// Const here means that you cant change the type (from array to something else)
+// You can still change its members
+const myArray = [1, 2, 3];
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+myArray[0] = 14;
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+myArray.push(10); // Add at the end
+myArray.unshift(10); // Add at the beggining
+myArray.pop(); // Removes and Returns the element at the end
+myArray.shift() // Removes and Returns the element at the beggining
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+myArray.length();
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Find
+// ------------------------------------
+myArray.indexOf(element);
+myArray.lastIndexOf(element);
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+// TODO
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+
+// Real Copy - Using Spread Operator (Since ES6)
+const myRealCopy = [...myArray];
+
+// Old Way
+const myRealCopy = myArray.slice();
+const myRealCopy = myArray.splice(0);
+const myRealCopy = myArray.concat();
+
+// WONT WORK
+const myFakeCopy = myArray;
+// Arrays are reference types in JavaScript!!!
+// Thats like creating a pointer (Be careful) It WONT create a copy
+
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+// TODO
+
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+
+// You can just output the array
+console.log(myArray);
+
+// or
+for (element of myArray) {
+	console.log(`${element} `);
+}
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+// TODO
+```
+
+```Javascript
+// No Native Tuple
+
+// But you can workaround with arrays. See More Info bellow
+```
+
+```Javascript
+// No Native Stack
+
+// But you can workaround with arrays.
+```
+
+```Javascript
+// No Native Queue
+
+// But you can workaround with arrays.
+```
+
+```Javascript
+// Dictionary
+
+// TODO
+```
+
+> More Info:
+> - https://medium.com/@ntgard/tuples-in-javascript-cd33321e5277
+> - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+> - https://www.dyn-web.com/javascript/arrays/value-vs-reference.php

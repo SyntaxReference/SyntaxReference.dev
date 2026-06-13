@@ -1,0 +1,146 @@
+```Python
+# ------------------------------------
+# Definition
+# ------------------------------------
+
+# There are no "{ }", you need to use ":" and indentation
+# You can have either spaces or tabs but not both mixed
+
+# In Python if you declare a variable in a block scope (if statement, for statement, ...)
+# the variable is hoisted to the outer function scope.
+
+def function_name ( [parameters] ):
+	# ...
+
+def function_name ( [parameters] ) -> [return_type]: # Optional Type Annotations (PEP 484 / Python 3.6+)
+	# ...
+
+
+# Python Methods might have the first Parameter as
+# "self" or "cls".
+
+# "self" points to an instance (object) of the class when the method is called.
+# Through the self parameter, instance methods can freely access attributes and
+# other methods on the same object.
+def method_name(self):
+	# ...
+
+# "cls" points to the class (not the object instance) when the method is called.
+@classmethod
+def method_name(cls):
+	# ...
+
+
+# ------------------------------------
+# Declaration Example
+# ------------------------------------
+
+def my_function ():
+	# ...
+
+def my_function ( x: str ) -> str: # Type Annotations (PEP 484 / Python 3.6+)
+	# ...
+
+def my_function ( x: int, y: int ) -> None:
+	# ...
+
+# ------------------------------------
+# Named Parameters (Keyword Arguments)
+# ------------------------------------
+
+def my_function (parameter1, parameter2, parameter3):
+	# ...
+
+# Using Keyword Arguments, order doesnt matter
+# The passed keyword name should match with the actual keyword name.
+my_function(parameter3 = '!', parameter1 = 'Hello', parameter2 = 'World')
+
+# ------------------------------------
+# Optional Parameters
+# ------------------------------------
+
+# All Parameters with default values are optional
+# All Optional Parameters must be at the end.
+
+
+# ------------------------------------
+# Default Argument for Parameters
+# ------------------------------------
+
+def my_function (parameter1, parameter2, parameter3='Default String'):
+	# ...
+
+
+my_function('Hello', 'World', '!')
+my_function('Hello', 'World')
+my_function(parameter3 = '!', parameter1 = 'Hello', parameter2 = 'World')
+my_function(parameter1 = 'Hello', parameter2 = 'World')
+
+# ------------------------------------
+# Variable Number of Arguments to a Function Parameters
+# ------------------------------------
+
+# *args allows you to pass a varying number of positional arguments.
+def add_all(*args): # Unpacking Operator (*)
+	result = 0
+
+	for element in args:
+		result += element
+
+	return result
+
+print(add_all(1, 2, 3))
+
+
+# **kwargs works just like *args, but instead of accepting positional arguments
+# it accepts keyword (or named) arguments.
+# Example 1
+def add_all(**kwargs):
+	result = 0
+
+	for key, value in kwargs.items():
+		print ("%s: %s" %(key, value))
+		result += value
+
+	return result
+
+print(add_all(energy_bill = 1, car_bill = 2, school_bill = 3))
+
+# Example 2
+def concatenate(**kwargs):
+	result = ''
+
+	for element in kwargs.values():
+	 	result += element
+
+	return result
+
+print(concatenate(first = 'Hello ', second = 'World', third = '!'))
+
+
+# Everything Together
+def my_function(parameter1, parameter2, *args, **kwargs):
+	# ...
+```
+
+```Python
+# ------------------------------------
+# Generic/Template
+# ------------------------------------
+
+# TODO
+```
+
+```Python
+# ------------------------------------
+# Static
+# ------------------------------------
+
+# Check Static Section
+```
+
+> More Info:
+> - https://realpython.com/instance-class-and-static-methods-demystified/
+> - https://docs.python.org/3/library/typing.html
+> - https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+> - https://realpython.com/python-type-checking/
