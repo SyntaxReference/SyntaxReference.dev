@@ -1,3 +1,20 @@
 ```Rust
-// TODO
+// ------------------------------------
+// String to Number
+// ------------------------------------
+let converted_value: i32 = "100".parse().unwrap();
+let converted_value = "100".parse::<i32>().unwrap();
+
+// ------------------------------------
+// Floating number to Integer
+// ------------------------------------
+let converted_value = 5.5_f64.floor() as i32;
+let converted_value = 5.5_f64.ceil() as i32;
+let converted_value = 5.5_f64.round() as i32;
+
+// ------------------------------------
+// Number to String
+// ------------------------------------
+let converted_value = 100.to_string();
+let converted_value = format!("{}", 100);
 ```

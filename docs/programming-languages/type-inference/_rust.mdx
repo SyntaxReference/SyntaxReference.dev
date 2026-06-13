@@ -1,3 +1,12 @@
 ```Rust
-// TODO
+// Rust infers local variable types from initialization and usage.
+let variable_name = 10;		// i32 by default
+let variable_name = 10.5;	// f64 by default
+let variable_name = "text";	// &str
+
+// Explicit type annotation is still available.
+let variable_name: u64 = 10;
+
+// Turbofish can guide generic inference.
+let numbers = Vec::<i32>::new();
 ```

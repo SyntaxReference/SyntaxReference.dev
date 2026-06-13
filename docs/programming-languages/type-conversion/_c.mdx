@@ -6,7 +6,19 @@
 // AVOID atoi() and its counterparts (Check More Info)
 
 // Prefer strtol()
-// TODO: Examples
+char *endPointer;
+long convertedValue = strtol("123", &endPointer, 10);
+
+if (*endPointer != '\0')
+{
+	// Conversion did not consume the full string
+}
+
+// Base 10
+long convertedValue = strtol("123", NULL, 10);
+
+// Base 16
+long convertedValue = strtol("FF", NULL, 16);
 
 ```
 

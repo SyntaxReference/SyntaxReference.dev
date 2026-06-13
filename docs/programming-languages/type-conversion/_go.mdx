@@ -1,3 +1,22 @@
 ```Go
-// TODO
+// ------------------------------------
+// String to Number
+// ------------------------------------
+convertedValue, err := strconv.Atoi("100")
+convertedValue, err := strconv.ParseInt("100", 10, 64)
+convertedValue, err := strconv.ParseFloat("10.5", 64)
+
+// ------------------------------------
+// Floating number to Integer
+// ------------------------------------
+convertedValue := int(math.Floor(5.5))
+convertedValue := int(math.Ceil(5.5))
+convertedValue := int(math.Round(5.5))
+
+// ------------------------------------
+// Number to String
+// ------------------------------------
+convertedValue := strconv.Itoa(100)
+convertedValue := strconv.FormatInt(100, 10)
+convertedValue := strconv.FormatFloat(10.5, 'f', -1, 64)
 ```
