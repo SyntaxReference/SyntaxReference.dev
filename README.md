@@ -27,7 +27,7 @@ If you wanna help, see [Contributing](CONTRIBUTING.md).
 
 This website is built using [Docusaurus](https://docusaurus.io/).
 
-- [Node.js](https://nodejs.org/en) version 18.0 or above (which can be checked by running `node -v`).
+- [Node.js](https://nodejs.org/en) version 20.0 or above (which can be checked by running `node -v`).
 
 ## Installing Project Dependencies
 
@@ -52,6 +52,7 @@ npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+It also disables the Docusaurus update notifier for the build command, so local permission issues in the update-check config store do not pollute build output.
 
 ## Deployment
 
@@ -70,8 +71,8 @@ There are many ways to update your Docusaurus version. One guaranteed way is to 
 ```
 {
   "dependencies": {
-    "@docusaurus/core": "3.1.0",
-    "@docusaurus/preset-classic": "3.1.0",
+    "@docusaurus/core": "3.10.1",
+    "@docusaurus/preset-classic": "3.10.1",
     // ...
   }
 }
@@ -90,3 +91,11 @@ npx docusaurus --version
 ```
 
 You should see the correct version as output.
+
+## Docusaurus v4 Readiness
+
+Docusaurus 3.10 is the last v3 line and includes opt-in behavior that prepares sites for v4. Keep these as separate, deliberate follow-up tasks:
+
+- `future.v4.siteStorageNamespacing`: test `storage: { type: 'localStorage', namespace: true }` in a browser before enabling it, because it changes localStorage keys used by color mode and language tabs.
+- `future.v4.fasterByDefault`: do not enable this in the regular upgrade path yet. `future.faster` currently requires an additional v4 future flag in this project, so test it in a dedicated v4-prep branch.
+- `future.v4.mdx1CompatDisabledByDefault`: keep `markdown.mdx1Compat` enabled until docs are audited for strict MDX syntax.
