@@ -1,3 +1,14 @@
 ```Go
-// TODO
+// Go uses nil for pointers, slices, maps, channels, functions, and interfaces.
+
+var pointer *int = nil
+var values []int = nil
+var users map[string]int = nil
+
+if pointer == nil {
+	// ...
+}
+
+// Basic value types do not use nil.
+var value int = 0
 ```

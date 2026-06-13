@@ -1,3 +1,16 @@
 ```Rust
-// TODO
+// Rust does not have null.
+// Use Option<T> when a value can be absent.
+
+let variable_name: Option<String> = None;
+let variable_name: Option<String> = Some(String::from("value"));
+
+if let Some(value) = variable_name {
+	println!("{}", value);
+}
+
+match variable_name {
+	Some(value) => println!("{}", value),
+	None => println!("No value"),
+}
 ```

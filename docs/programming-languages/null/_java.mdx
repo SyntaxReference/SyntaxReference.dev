@@ -1,3 +1,15 @@
 ```Java
-// TODO
+String variableName = null;
+
+if (variableName == null) {
+	// ...
+}
+
+if (variableName != null) {
+	System.out.println(variableName.length());
+}
+
+// Optional can be used when absence is part of the API contract.
+Optional<String> optionalValue = Optional.empty();
+Optional<String> optionalValue = Optional.of("value");
 ```
