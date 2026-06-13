@@ -25,21 +25,35 @@ const functionName = () => { /*...*/ } // no parameter
 // Named Parameters (Keyword Arguments)
 // ------------------------------------
 
-// TODO
+// No Native Support.
+// Use object destructuring.
+const printUser = ({ name, age }) => {
+	console.log(`${name}: ${age}`);
+}
+
+printUser({ name: "Ada", age: 36 });
 
 
 // ------------------------------------
 // Optional Parameters
 // ------------------------------------
 
-// TODO
+// No Native Support as syntax.
+// Check for undefined or use a default value.
+const printUser = (name, age) => {
+	if (age === undefined) {
+		// ...
+	}
+}
 
 
 // ------------------------------------
 // Default Argument for Parameters
 // ------------------------------------
 
-// TODO
+const connect = (host, port = 443) => {
+	// ...
+}
 
 
 // ------------------------------------

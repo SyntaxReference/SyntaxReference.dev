@@ -1,3 +1,21 @@
 ```Cs
-// TODO
+// ------------------------------------
+// Definition
+// ------------------------------------
+Func<int, int, int> functionName = ([parameters]) => {
+	// ...
+};
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+Func<int, int, int> add = (first, second) => first + second;
+Func<int, int, int> addBlock = (first, second) =>
+{
+	return first + second;
+};
+
+Action<string> print = message => Console.WriteLine(message);
+
+int result = add(10, 20);
 ```

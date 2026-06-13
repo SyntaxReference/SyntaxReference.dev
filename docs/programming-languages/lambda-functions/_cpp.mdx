@@ -1,3 +1,30 @@
 ```Cpp
-// TODO
+// Since C++11
+
+// ------------------------------------
+// Definition
+// ------------------------------------
+auto functionName = []([parameters]) {
+	// ...
+};
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+auto add = [](int first, int second) {
+	return first + second;
+};
+
+int result = add(10, 20);
+
+// Capture by value
+int factor {2};
+auto multiply = [factor](int value) {
+	return value * factor;
+};
+
+// Capture by reference
+auto increment = [&factor]() {
+	factor++;
+};
 ```

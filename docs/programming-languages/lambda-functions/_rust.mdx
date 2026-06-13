@@ -1,3 +1,24 @@
 ```Rust
-// TODO
+// Also Known as Closures
+
+// ------------------------------------
+// Definition
+// ------------------------------------
+let function_name = |[parameters]| {
+	// ...
+};
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+let add = |first: i32, second: i32| first + second;
+let add_block = |first: i32, second: i32| {
+	return first + second;
+};
+
+let result = add(10, 20);
+
+// Closures can capture values from their environment.
+let factor = 2;
+let multiply = |value: i32| value * factor;
 ```

@@ -1,3 +1,22 @@
 ```Java
-// TODO
+// Since Java 8
+
+// ------------------------------------
+// Definition
+// ------------------------------------
+([parameters]) -> {
+	// ...
+}
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+BinaryOperator<Integer> add = (first, second) -> first + second;
+Consumer<String> print = message -> System.out.println(message);
+Supplier<Integer> getNumber = () -> 10;
+
+int result = add.apply(10, 20);
+
+List<String> names = List.of("Ada", "Grace");
+names.forEach(name -> System.out.println(name));
 ```

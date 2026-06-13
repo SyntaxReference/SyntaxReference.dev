@@ -1,3 +1,25 @@
 ```Go
-// TODO
+// Go has function literals.
+
+// ------------------------------------
+// Definition
+// ------------------------------------
+functionName := func([parameters]) [returnType] {
+	// ...
+}
+
+// ------------------------------------
+// Declaration Example
+// ------------------------------------
+add := func(first int, second int) int {
+	return first + second
+}
+
+result := add(10, 20)
+
+// Function literals can capture values from their environment.
+factor := 2
+multiply := func(value int) int {
+	return value * factor
+}
 ```
