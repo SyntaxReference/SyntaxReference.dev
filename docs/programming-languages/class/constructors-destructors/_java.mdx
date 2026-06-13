@@ -1,3 +1,20 @@
 ```Java
-// TODO
+class MyClass {
+	public MyClass() {
+		// Default Constructor
+	}
+
+	public MyClass(int value) {
+		// Constructor With Parameters
+	}
+}
+
+// Destructors are Not Available.
+// Use try-with-resources and AutoCloseable for deterministic cleanup.
+class MyResource implements AutoCloseable {
+	@Override
+	public void close() {
+		// cleanup
+	}
+}
 ```

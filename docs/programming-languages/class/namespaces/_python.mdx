@@ -1,5 +1,22 @@
 ```Python
-# TODO
+# Python uses modules and packages as namespaces.
+
+# my_module.py
+def my_function():
+	pass
+
+# main.py
+import my_module
+
+my_module.my_function()
+
+# Classes can also group related names.
+class MyNamespace:
+	value = 10
+
+	@staticmethod
+	def my_function():
+		pass
 ```
 
 > More Info:

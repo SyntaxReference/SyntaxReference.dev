@@ -1,3 +1,19 @@
 ```Rust
-// TODO
+struct MyStruct {
+	value: i32,
+}
+
+impl MyStruct {
+	fn new(value: i32) -> Self {
+		Self { value }
+	}
+}
+
+impl Drop for MyStruct {
+	fn drop(&mut self) {
+		// cleanup
+	}
+}
+
+let value = MyStruct::new(10);
 ```

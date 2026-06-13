@@ -1,3 +1,19 @@
 ```Typescript
-// TODO
+abstract class Shape {
+	public abstract area(): number;
+
+	public describe(): string {
+		return `Area: ${this.area()}`;
+	}
+}
+
+class Circle extends Shape {
+	public constructor(private readonly radius: number) {
+		super();
+	}
+
+	public area(): number {
+		return Math.PI * this.radius * this.radius;
+	}
+}
 ```

@@ -1,3 +1,16 @@
 ```Go
-// TODO
+// No Native Abstract Class Support.
+// Use interfaces to define required behavior.
+
+type Shape interface {
+	Area() float64
+}
+
+type Circle struct {
+	Radius float64
+}
+
+func (circle Circle) Area() float64 {
+	return math.Pi * circle.Radius * circle.Radius
+}
 ```

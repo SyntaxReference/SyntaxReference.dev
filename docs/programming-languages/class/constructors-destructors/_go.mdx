@@ -1,3 +1,18 @@
 ```Go
-// TODO
+type MyStruct struct {
+	Value int
+}
+
+// Go has no constructor syntax.
+// Use factory functions by convention.
+func NewMyStruct(value int) MyStruct {
+	return MyStruct{Value: value}
+}
+
+// Destructors are Not Available.
+// Use explicit Close/Cleanup methods when needed.
+func (value MyStruct) Close() error {
+	// cleanup
+	return nil
+}
 ```

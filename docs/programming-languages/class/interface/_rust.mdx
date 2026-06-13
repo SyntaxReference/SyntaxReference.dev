@@ -1,3 +1,18 @@
 ```Rust
-// TODO
+// Rust uses traits for interface-like behavior.
+trait Drawable {
+	fn draw(&self);
+}
+
+struct Button;
+
+impl Drawable for Button {
+	fn draw(&self) {
+		// ...
+	}
+}
+
+fn render(value: &impl Drawable) {
+	value.draw();
+}
 ```

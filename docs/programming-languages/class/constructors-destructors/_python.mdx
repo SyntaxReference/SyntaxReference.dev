@@ -1,3 +1,20 @@
 ```Python
-# TODO
+class MyClass:
+	def __init__(self, value):
+		self.value = value
+
+	def __del__(self):
+		# Finalizer. Avoid relying on it for important cleanup.
+		pass
+
+my_class = MyClass(10)
+
+# Prefer context managers for deterministic cleanup.
+class Resource:
+	def __enter__(self):
+		return self
+
+	def __exit__(self, exc_type, exc_value, traceback):
+		# cleanup
+		pass
 ```

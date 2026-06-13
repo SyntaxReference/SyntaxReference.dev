@@ -1,3 +1,26 @@
 ```Rust
-// TODO
+struct MyClass {
+	my_public_property: f32,
+	my_private_property: f32,
+}
+
+impl MyClass {
+	fn new(value: f32) -> Self {
+		Self {
+			my_public_property: value,
+			my_private_property: value,
+		}
+	}
+
+	fn get_my_private_property(&self) -> f32 {
+		self.my_private_property
+	}
+
+	fn set_my_private_property(&mut self, value: f32) {
+		self.my_private_property = value;
+	}
+}
+
+let mut my_class = MyClass::new(10.0);
+my_class.set_my_private_property(20.0);
 ```

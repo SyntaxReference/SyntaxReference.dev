@@ -114,8 +114,25 @@ void MyClass::myPublicMethod (float someVariable)
 ```
 
 ```Cpp
-// TODO
-// const & Ref example
+// Passing and returning by const reference
+// Prefer this for non-fundamental types when the function should not mutate the value.
+
+class MyClass
+{
+private:
+	std::string my_private_property;
+
+public:
+	std::string const &getMyPrivateProperty() const
+	{
+		return this->my_private_property;
+	}
+
+	void setMyPrivateProperty(std::string const &value)
+	{
+		this->my_private_property = value;
+	}
+};
 ```
 
 ```Cpp

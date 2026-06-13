@@ -1,3 +1,15 @@
 ```Go
-// TODO
+type Drawable interface {
+	Draw()
+}
+
+type Button struct{}
+
+func (button Button) Draw() {
+	// ...
+}
+
+func Render(value Drawable) {
+	value.Draw()
+}
 ```

@@ -1,3 +1,17 @@
 ```Typescript
-// TODO
+class MyClass {
+	public constructor(private readonly value: number) {
+		// ...
+	}
+}
+
+const myClass = new MyClass(10);
+
+// Destructors are Not Available.
+// Use explicit cleanup methods when needed.
+class Resource {
+	public close(): void {
+		// cleanup
+	}
+}
 ```

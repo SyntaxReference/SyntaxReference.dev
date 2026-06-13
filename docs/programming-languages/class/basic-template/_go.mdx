@@ -1,3 +1,24 @@
 ```Go
-// TODO
+type MyClass struct {
+	MyPublicProperty  float64
+	myPrivateProperty float64
+}
+
+func NewMyClass(value float64) MyClass {
+	return MyClass{
+		MyPublicProperty:  value,
+		myPrivateProperty: value,
+	}
+}
+
+func (value MyClass) GetMyPrivateProperty() float64 {
+	return value.myPrivateProperty
+}
+
+func (value *MyClass) SetMyPrivateProperty(newValue float64) {
+	value.myPrivateProperty = newValue
+}
+
+myClass := NewMyClass(10.0)
+myClass.SetMyPrivateProperty(20.0)
 ```
