@@ -15,7 +15,19 @@ const config: Config = {
 
 	onBrokenLinks: 'throw',
 	onBrokenAnchors: 'throw',
-	onBrokenMarkdownLinks: 'throw',
+
+	markdown: {
+		format: 'mdx',
+		mdx1Compat: {
+			comments: true,
+			admonitions: true,
+			headingIds: true,
+		},
+		hooks: {
+			onBrokenMarkdownLinks: 'throw',
+			onBrokenMarkdownImages: 'throw',
+		},
+	},
 
 	i18n: {
 		defaultLocale: 'en-US',

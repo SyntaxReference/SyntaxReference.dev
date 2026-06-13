@@ -57,12 +57,6 @@ export default function Home(): JSX.Element {
 							</ul>
 						</div>
 					</section>
-
-					<section className=' padding-top--xl text--center'>
-						<div>
-							<p>🚧 This project is a work in progress in early stages 🚧</p>
-						</div>
-					</section>
 				</div>
 			</main>
 		</Layout>
