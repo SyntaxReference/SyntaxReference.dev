@@ -62,12 +62,14 @@ std::int32_t howManyOdd = std::count_if(std::begin(my_collection), std::end(my_c
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+std::vector<std::int32_t> filtered;
+std::copy_if(std::begin(myArray), std::end(myArray), std::back_inserter(filtered), [](auto element) { return element > 10; });
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+auto iterator = std::find(std::begin(myArray), std::end(myArray), target);
+auto index = iterator == std::end(myArray) ? -1 : std::distance(std::begin(myArray), iterator);
 
 // ------------------------------------
 // Accumulate (sum all values)
@@ -119,7 +121,7 @@ std::copy(std::begin(myArray), std::end(myArray), std::begin(myCopyArray));
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+std::vector<std::int32_t> slice(std::begin(myArray) + 1, std::begin(myArray) + 3);
 
 // ------------------------------------
 // Printing Members
@@ -213,42 +215,49 @@ myList.max_size();
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
-// TODO
+auto howMany = std::count(myList.begin(), myList.end(), target);
+auto howManyOdd = std::count_if(myList.begin(), myList.end(), [](auto element) { return element % 2 != 0; });
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+std::list<std::int32_t> filtered;
+std::copy_if(myList.begin(), myList.end(), std::back_inserter(filtered), [](auto element) { return element > 10; });
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+auto iterator = std::find(myList.begin(), myList.end(), target);
+auto index = iterator == myList.end() ? -1 : std::distance(myList.begin(), iterator);
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+auto total = std::accumulate(myList.begin(), myList.end(), 0);
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+myList.sort();
+myList.sort([](auto firstElement, auto secondElement) { return firstElement > secondElement; });
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+bool isEqual = myList == myOtherList;
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+auto myCopyList = myList;
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+std::list<std::int32_t> slice;
+auto first = std::next(myList.begin(), 1);
+auto last = std::next(myList.begin(), 3);
+std::copy(first, last, std::back_inserter(slice));
 
 // ------------------------------------
 // Printing Members
@@ -317,10 +326,10 @@ myVector.at(0) = 14; // with bounds-checking
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
-myVector.push_front(30); // Add at the beginning
+myVector.insert(myVector.begin(), 30); // Add at the beginning
 myVector.push_back(30); // Add at the end
-myVector.pop_front(); // Removes the first element of the list, and reduces size of the list by 1.
-myVector.pop_back(); // Removes the last element of the list, and reduces size of the list by 1.
+myVector.erase(myVector.begin()); // Removes the first element of the vector, and reduces size of the vector by 1.
+myVector.pop_back(); // Removes the last element of the vector, and reduces size of the vector by 1.
 
 // ------------------------------------
 // Size / Length
@@ -331,42 +340,46 @@ myVector.max_size();
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
-// TODO
+auto howMany = std::count(myVector.begin(), myVector.end(), target);
+auto howManyOdd = std::count_if(myVector.begin(), myVector.end(), [](auto element) { return element % 2 != 0; });
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+std::vector<std::int32_t> filtered;
+std::copy_if(myVector.begin(), myVector.end(), std::back_inserter(filtered), [](auto element) { return element > 10; });
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+auto iterator = std::find(myVector.begin(), myVector.end(), target);
+auto index = iterator == myVector.end() ? -1 : std::distance(myVector.begin(), iterator);
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+auto total = std::accumulate(myVector.begin(), myVector.end(), 0);
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+std::sort(myVector.begin(), myVector.end());
+std::sort(myVector.begin(), myVector.end(), [](auto firstElement, auto secondElement) { return firstElement > secondElement; });
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+bool isEqual = myVector == myOtherVector;
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+auto myCopyVector = myVector;
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+std::vector<std::int32_t> slice(myVector.begin() + 1, myVector.begin() + 3);
 
 // ------------------------------------
 // Printing Members
@@ -409,8 +422,9 @@ void my_function(std::vector<std::int32_t> const &myVector)
 std::vector<std::vector<std::int32_t> > my_multi_vector;
 std::vector<std::vector<std::int32_t> > my_multi_vector {{{1,2,3},{4,5,6},{7,8,9}}};
 
-// Legacy (Avoid)
-// TODO: Examples
+// Alternative modern syntax
+std::vector<std::vector<std::int32_t>> my_multi_vector;
+std::vector<std::vector<std::int32_t>> my_multi_vector {{1,2,3},{4,5,6},{7,8,9}};
 ```
 
 ```Cpp
@@ -423,25 +437,28 @@ std::vector<std::vector<std::int32_t> > my_multi_vector {{{1,2,3},{4,5,6},{7,8,9
 // ------------------------------------
 
 // Uniform Initialization (since C++11)
-// TODO
+std::tuple<std::string, std::int32_t, bool> myTuple { "hello", 10, true };
 
 // Const Declaration
-// TODO
+const std::tuple<std::string, std::int32_t, bool> myTuple { "hello", 10, true };
+std::tuple<std::string, std::int32_t, bool> const myTuple { "hello", 10, true };
 
 // ------------------------------------
 // Direct Access
 // ------------------------------------
-// TODO
+auto text = std::get<0>(myTuple);
+auto number = std::get<1>(myTuple);
 
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
-// TODO
+// Not Available
+// Tuples have fixed size and fixed element positions.
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+auto tupleSize = std::tuple_size<decltype(myTuple)>::value;
 
 // ------------------------------------
 // Count (How many of)
@@ -450,47 +467,56 @@ std::vector<std::vector<std::int32_t> > my_multi_vector {{{1,2,3},{4,5,6},{7,8,9
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+// Not Available
+// Tuples are fixed heterogeneous values, not runtime-filterable collections.
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+// Not Available
+// Access tuple members by known compile-time index or structured binding.
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+// Not Available for general heterogeneous tuples.
+// Use std::apply with custom logic when the tuple values are compatible.
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+// Not Available
+// Tuples represent fixed positions, not sortable collections.
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+bool isEqual = myTuple == myOtherTuple;
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+auto myCopyTuple = myTuple;
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+// Not Available
+// Use a new tuple with the wanted fields.
+auto slice = std::make_tuple(std::get<0>(myTuple), std::get<1>(myTuple));
 
 // ------------------------------------
 // Printing Members
 // ------------------------------------
-// TODO
+std::cout << std::get<0>(myTuple) << " " << std::get<1>(myTuple) << " " << std::get<2>(myTuple);
 
 // ------------------------------------
 // As a function Parameter
 // ------------------------------------
-// TODO
+void my_function(const std::tuple<std::string, std::int32_t, bool> &myTuple)
+{
+	// non-mutable code
+}
 ```
 
 > More Info:
