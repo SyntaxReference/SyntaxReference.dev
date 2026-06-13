@@ -1,3 +1,18 @@
 ```Go
-// TODO
+type Point struct {
+	X int
+	Y int
+}
+
+point := Point{X: 10, Y: 20}
+point.X = 30
+
+// Anonymous struct
+user := struct {
+	Name string
+	Age  int
+}{
+	Name: "Ada",
+	Age:  36,
+}
 ```

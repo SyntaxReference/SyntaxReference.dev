@@ -1,3 +1,17 @@
 ```Python
-# TODO
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+	x: int
+	y: int
+
+point = Point(10, 20)
+
+# Alternative lightweight immutable tuple-like type
+from typing import NamedTuple
+
+class Size(NamedTuple):
+	width: int
+	height: int
 ```

@@ -1,3 +1,16 @@
 ```Typescript
-// TODO
+// No Native Struct Support.
+// Use type aliases or interfaces for object shapes.
+
+type Point = {
+	x: number;
+	y: number;
+};
+
+const point: Point = { x: 10, y: 20 };
+
+interface Size {
+	width: number;
+	height: number;
+}
 ```

@@ -1,3 +1,9 @@
 ```Java
-// TODO
+// No Native Struct Support.
+// Use a class or record. Records are available since Java 16.
+
+record Point(int x, int y) {}
+
+Point point = new Point(10, 20);
+int x = point.x();
 ```

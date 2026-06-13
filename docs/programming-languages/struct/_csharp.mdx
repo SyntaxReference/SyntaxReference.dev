@@ -1,3 +1,18 @@
 ```Cs
-// TODO
+struct Point
+{
+	public int X { get; set; }
+	public int Y { get; set; }
+
+	public Point(int x, int y)
+	{
+		X = x;
+		Y = y;
+	}
+}
+
+Point point = new Point(10, 20);
+
+// Since C# 10
+readonly record struct Size(int Width, int Height);
 ```
