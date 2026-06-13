@@ -1,3 +1,15 @@
 ```Go
-// TODO
+// Go has no general attribute/annotation syntax.
+// Struct tags are metadata strings used by packages such as encoding/json.
+
+type User struct {
+	Name string `json:"name"`
+	Age  int    `json:"age,omitempty"`
+}
+
+// Compiler directives exist as comments for specific toolchain behavior.
+//go:noinline
+func myFunction() {
+	// ...
+}
 ```

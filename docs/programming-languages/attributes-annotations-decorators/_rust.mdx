@@ -1,3 +1,16 @@
 ```Rust
-// TODO
+#[derive(Debug, Clone)]
+struct User {
+	name: String,
+}
+
+#[deprecated(note = "Use new_function instead")]
+fn old_function() {
+	// ...
+}
+
+#[allow(dead_code)]
+fn helper() {
+	// ...
+}
 ```

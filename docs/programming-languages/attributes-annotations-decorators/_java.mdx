@@ -16,7 +16,27 @@ public void MyMethod()
 ```
 
 ```Java
-// TODO: Examples
+// ------------------------------------
+// Other Standard Annotations
+// ------------------------------------
+
+@Override
+public String toString()
+{
+	return "MyClass";
+}
+
+@SuppressWarnings("unchecked")
+public void myMethod()
+{
+	// ...
+}
+
+@FunctionalInterface
+public interface Operation
+{
+	int apply(int first, int second);
+}
 ```
 
 ```Java
@@ -24,7 +44,18 @@ public void MyMethod()
 // Custom Annotation
 // ------------------------------------
 
-// TODO: Examples
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ ElementType.TYPE, ElementType.METHOD })
+public @interface Documentation
+{
+	String value();
+}
+
+@Documentation("Used by the syntax reference examples")
+public class MyClass
+{
+	// ...
+}
 ```
 
 > More Info:

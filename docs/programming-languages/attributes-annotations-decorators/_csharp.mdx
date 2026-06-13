@@ -26,7 +26,29 @@ public class MyClass
 ```
 
 ```Cs
-// TODO: Examples
+// ------------------------------------
+// Other Standard Attributes
+// ------------------------------------
+
+[Serializable]
+public class User
+{
+	// ...
+}
+
+[Flags]
+public enum FileAccess
+{
+	Read = 1,
+	Write = 2,
+	Execute = 4
+}
+
+[Conditional("DEBUG")]
+public void LogDebug(string message)
+{
+	// ...
+}
 ```
 
 ```Cs
@@ -34,5 +56,20 @@ public class MyClass
 // Custom Attributes
 // ------------------------------------
 
-// TODO: Examples
+[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+public class DocumentationAttribute : Attribute
+{
+	public string Message { get; }
+
+	public DocumentationAttribute(string message)
+	{
+		Message = message;
+	}
+}
+
+[Documentation("Used by the syntax reference examples")]
+public class MyClass
+{
+	// ...
+}
 ```

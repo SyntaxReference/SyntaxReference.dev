@@ -1,5 +1,15 @@
 ```C
-// TODO
+// No Standard Attribute System before C23.
+// Compilers commonly provide extensions such as GCC attributes.
+
+__attribute__((deprecated))
+void old_function()
+{
+	// ...
+}
+
+__attribute__((unused))
+static int my_variable;
 ```
 > More Info:
 > - http://unixwiz.net/techtips/gnu-c-attributes.html
