@@ -154,7 +154,14 @@ return (first, second) switch
 };
 
 
-// TODO: Examples
+// Switch Expression Example 4 - Property patterns
+return user switch
+{
+	{ IsActive: true, Role: "Admin" } => "Active Admin",
+	{ IsActive: true } => "Active User",
+	null => "No User",
+	_ => "Inactive User"
+};
 ```
 
 > More Info:
