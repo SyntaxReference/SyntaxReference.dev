@@ -1,74 +1,150 @@
 ```Cs
+// Array
+
 // ------------------------------------
 // Declaration & Initialization
 // ------------------------------------
-
-// TODO
+int[] myArray = new int[5];
+int[] myArray = { 1, 2, 3 };
+var myArray = new[] { 1, 2, 3 };
 
 // Const Declaration
-// TODO
+// Arrays are mutable. Use readonly fields or immutable collections when needed.
+readonly int[] myArray = { 1, 2, 3 };
 
 // ------------------------------------
 // Direct Access
 // ------------------------------------
-// TODO
+myArray[0] = 14;
+int value = myArray[0];
 
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
-// TODO
+// Not Available for fixed-size arrays.
+// Use List<T> for dynamic collections.
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+int length = myArray.Length;
 
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
+int howMany = myArray.Count(element => element == target);
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+int[] filtered = myArray.Where(element => element > 10).ToArray();
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+int index = Array.IndexOf(myArray, target);
+int index = Array.FindIndex(myArray, element => element > 10);
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+int total = myArray.Sum();
+int total = myArray.Aggregate(0, (result, element) => result + element);
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+Array.Sort(myArray);
+Array.Sort(myArray, (first, second) => second.CompareTo(first));
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+bool isEqual = myArray.SequenceEqual(otherArray);
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+int[] copy = myArray.ToArray();
+int[] copy = (int[])myArray.Clone();
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+int[] slice = myArray[1..3]; // Since C# 8.0
 
 // ------------------------------------
 // Printing Members
 // ------------------------------------
-// TODO
+Console.WriteLine(string.Join(", ", myArray));
+
+foreach (int element in myArray)
+{
+	Console.WriteLine(element);
+}
 
 // ------------------------------------
 // As a function Parameter
 // ------------------------------------
-// TODO
+void MyFunction(int[] values)
+{
+	// ...
+}
+```
+
+```Cs
+// List
+
+List<int> myList = new List<int>();
+List<int> myList = new() { 1, 2, 3 };
+
+myList[0] = 14;
+myList.Add(10);
+myList.Insert(0, 10);
+myList.RemoveAt(0);
+myList.Remove(10);
+
+int length = myList.Count;
+int howMany = myList.Count(element => element == target);
+List<int> filtered = myList.Where(element => element > 10).ToList();
+int index = myList.FindIndex(element => element > 10);
+int total = myList.Sum();
+
+myList.Sort();
+myList.Sort((first, second) => second.CompareTo(first));
+
+bool isEqual = myList.SequenceEqual(otherList);
+List<int> copy = new List<int>(myList);
+List<int> slice = myList.GetRange(1, 2);
+
+Console.WriteLine(string.Join(", ", myList));
+
+void MyFunction(List<int> values)
+{
+	// ...
+}
+```
+
+```Cs
+// Dictionary
+
+Dictionary<string, int> myDictionary = new Dictionary<string, int>();
+Dictionary<string, int> myDictionary = new()
+{
+	["first"] = 1,
+	["second"] = 2,
+};
+
+myDictionary["third"] = 3;
+int value = myDictionary["first"];
+bool hasKey = myDictionary.ContainsKey("first");
+bool found = myDictionary.TryGetValue("first", out int value);
+
+myDictionary.Remove("first");
+int length = myDictionary.Count;
+
+foreach (KeyValuePair<string, int> item in myDictionary)
+{
+	Console.WriteLine($"{item.Key}: {item.Value}");
+}
 ```

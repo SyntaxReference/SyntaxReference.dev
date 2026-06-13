@@ -12,7 +12,8 @@ my_list = ["mouse", [8, 4, 6], ['a']] # nested list
 # Type Hint List
 from typing import List # For collections, the name of the type is capitalized (List)
 
-my_list = List[int] = [1, 2, 3] # type inside brackets
+my_list: List[int] = [1, 2, 3]
+my_list: list[int] = [1, 2, 3] # Since Python 3.9
 
 # Const Declaration
 MY_CONSTANT = [1, 2, 3] # Just a convention. Still Mutable
@@ -27,7 +28,7 @@ my_list[-2] = 14 # Second last and so on
 # ------------------------------------
 # Push & Pop
 # ------------------------------------
-my_list.append() # Add to the end of the list
+my_list.append(element) # Add to the end of the list
 my_list.insert(index, element) # Add the element at specified index location
 my_list.pop() # Remove the last element of the list
 my_list.pop(index) # Removes the element at the specified index
@@ -40,43 +41,48 @@ len(my_list)
 # ------------------------------------
 # Count (How many of)
 # ------------------------------------
-# TODO
+how_many = my_list.count(target)
+how_many = sum(1 for element in my_list if element == target)
 
 # ------------------------------------
 # Filter
 # ------------------------------------
-# TODO
+filtered = [element for element in my_list if element > 10]
+filtered = list(filter(lambda element: element > 10, my_list))
 
 # ------------------------------------
 # Find (return Index)
 # ------------------------------------
-my_list.index(element) # Returns the index of the FIRST element with the specified value
+index = my_list.index(element) # Returns the index of the FIRST element with the specified value
 
 # ------------------------------------
 # Accumulate (sum all values)
 # ------------------------------------
-sum(my_list)
+total = sum(my_list)
 
 # ------------------------------------
 # Sort
 # ------------------------------------
-# TODO
+my_list.sort()
+my_list.sort(reverse=True)
+sorted_list = sorted(my_list)
 
 # ------------------------------------
 # Comparing
 # ------------------------------------
-# TODO
+is_equal = my_list == other_list
 
 # ------------------------------------
 # Copy / Clone
 # ------------------------------------
-
-
 # Real Copy -  Using copy() method
 my_real_copy = my_list.copy()
 
 # Real Copy -  Using list() constructor
 my_real_copy = list(my_list)
+
+# Real Copy -  Using slice
+my_real_copy = my_list[:]
 
 # WONT WORK
 my_fake_copy = my_list
@@ -87,23 +93,23 @@ my_fake_copy = my_list
 # ------------------------------------
 # Slice
 # ------------------------------------
-# TODO
+slice = my_list[1:3]
+slice = my_list[:3]
+slice = my_list[1:]
 
 # ------------------------------------
 # Printing Members
 # ------------------------------------
+print(my_list)
 
-# You can just output the array
-print(my_list);
-
-# or
 for element in my_list:
 	print(f"{element} ")
 
 # ------------------------------------
 # As a function Parameter
 # ------------------------------------
-# TODO
+def my_function(values: list[int]) -> None:
+	# ...
 ```
 
 ```Python
@@ -116,6 +122,8 @@ my_tuple = (1, 2, 3)
 # In Python tuples are written with round brackets.
 # A tuple is a collection which is ordered and unchangeable.
 
+from typing import Tuple
+
 # For tuples of fixed size, we specify the types of all the elements
 x: Tuple[int, str, float] = (3, "yes", 7.5)
 
@@ -123,82 +131,106 @@ x: Tuple[int, str, float] = (3, "yes", 7.5)
 x: Tuple[int, ...] = (1, 2, 3)
 
 # Const Declaration
-# TODO
+MY_CONSTANT = (1, 2, 3)
 
 # ------------------------------------
 # Direct Access
 # ------------------------------------
-# TODO
+value = my_tuple[0]
+value = my_tuple[-1]
 
 # ------------------------------------
 # Push & Pop
 # ------------------------------------
-# TODO
+# Not Available.
+# Tuples are immutable.
 
 # ------------------------------------
 # Size / Length
 # ------------------------------------
-# TODO
+length = len(my_tuple)
 
 # ------------------------------------
 # Count (How many of)
 # ------------------------------------
+how_many = my_tuple.count(target)
 
 # ------------------------------------
 # Filter
 # ------------------------------------
-# TODO
+filtered = tuple(element for element in my_tuple if element > 10)
 
 # ------------------------------------
 # Find (return Index)
 # ------------------------------------
-# TODO
+index = my_tuple.index(target)
 
 # ------------------------------------
 # Accumulate (sum all values)
 # ------------------------------------
-# TODO
+total = sum(my_tuple)
 
 # ------------------------------------
 # Sort
 # ------------------------------------
-# TODO
+sorted_tuple = tuple(sorted(my_tuple))
 
 # ------------------------------------
 # Comparing
 # ------------------------------------
-# TODO
+is_equal = my_tuple == other_tuple
 
 # ------------------------------------
 # Copy / Clone
 # ------------------------------------
-# TODO
+copy = tuple(my_tuple)
 
 # ------------------------------------
 # Slice
 # ------------------------------------
-# TODO
+slice = my_tuple[1:3]
 
 # ------------------------------------
 # Printing Members
 # ------------------------------------
-# TODO
+print(my_tuple)
+
+for element in my_tuple:
+	print(element)
 
 # ------------------------------------
 # As a function Parameter
 # ------------------------------------
-# TODO
+def my_function(value: tuple[int, int, int]) -> None:
+	# ...
 
 ```
 
 ```Python
 # Queue
-# TODO
+from collections import deque
+
+queue = deque()
+queue.append(10)
+queue.append(20)
+value = queue.popleft()
+length = len(queue)
 ```
 
 ```Python
 # Dictionary
-# TODO
+my_dictionary = {}
+my_dictionary = {"first": 1, "second": 2}
+
+my_dictionary["third"] = 3
+value = my_dictionary["first"]
+value = my_dictionary.get("first")
+has_key = "first" in my_dictionary
+del my_dictionary["first"]
+length = len(my_dictionary)
+
+for key, value in my_dictionary.items():
+	print(f"{key}: {value}")
 ```
 
 > More Info:

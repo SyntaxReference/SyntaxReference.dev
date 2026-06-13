@@ -15,66 +15,81 @@ const variableName: Array<number> = [1, 2, 3];
 // ------------------------------------
 // Direct Access
 // ------------------------------------
-// TODO
+variableName[0] = 14;
+let value: number = variableName[0];
 
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
-// TODO
+variableName.push(10);
+variableName.unshift(10);
+let last = variableName.pop();
+let first = variableName.shift();
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+let length: number = variableName.length;
 
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
+let howMany: number = variableName.filter(element => element === target).length;
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+let filtered: number[] = variableName.filter(element => element > 10);
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+let index: number = variableName.indexOf(target);
+let index: number = variableName.findIndex(element => element > 10);
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+let total: number = variableName.reduce((result, element) => result + element, 0);
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+variableName.sort((first, second) => first - second);
+variableName.sort((first, second) => second - first);
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+let isEqual: boolean = variableName.length === otherArray.length
+	&& variableName.every((element, index) => element === otherArray[index]);
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+let copy: number[] = [...variableName];
+let copy: number[] = variableName.slice();
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+let slice: number[] = variableName.slice(1, 3);
 
 // ------------------------------------
 // Printing Members
 // ------------------------------------
-// TODO
+console.log(variableName);
+
+for (const element of variableName) {
+	console.log(element);
+}
 
 // ------------------------------------
 // As a function Parameter
 // ------------------------------------
-// TODO
+function myFunction(values: number[]): void {
+	// ...
+}
 ```
 
 ```Typescript
@@ -87,71 +102,79 @@ let myTuple: [string, number];
 myTuple = ["hello", 10];
 
 // Const Declaration
-// TODO
+const myTuple: readonly [string, number] = ["hello", 10];
 
 // ------------------------------------
 // Direct Access
 // ------------------------------------
-// TODO
+let text: string = myTuple[0];
+let numberValue: number = myTuple[1];
 
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
-// TODO
+// Avoid mutating tuples.
+// Use readonly tuples when you want fixed shape.
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+let length: number = myTuple.length;
 
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
+let howMany: number = myTuple.filter(element => element === target).length;
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+let filtered = myTuple.filter(element => element !== undefined);
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+let index: number = myTuple.findIndex(element => element === target);
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+// Usually Not Available for mixed-type tuples.
+// Use arrays for repeated values of one type.
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+// Usually Not Available.
+// Tuples represent fixed positions, not sortable collections.
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+let isEqual: boolean = myTuple.length === otherTuple.length
+	&& myTuple.every((element, index) => element === otherTuple[index]);
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+let copy = [...myTuple] as [string, number];
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+let slice = myTuple.slice(0, 1);
 
 // ------------------------------------
 // Printing Members
 // ------------------------------------
-// TODO
+console.log(myTuple);
 
 // ------------------------------------
 // As a function Parameter
 // ------------------------------------
-// TODO
+function myFunction(value: [string, number]): void {
+	// ...
+}
 ```
 
 > More Info:

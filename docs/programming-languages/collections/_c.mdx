@@ -94,7 +94,20 @@ int find(int element, int size, int my_array[]) // Just an example
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+// Not Available
+// You need to create your own logic
+bool is_equal(int size, int first_array[], int second_array[])
+{
+	for(int i = 0; i < size; i++)
+	{
+		if (first_array[i] != second_array[i])
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
 
 
 // ------------------------------------
@@ -135,7 +148,27 @@ int32_t multi_dimensional_array[20][30];
 ```C
 // Dynamic Size Arrays
 
-// TODO
+// No Native Support.
+// Use malloc(), realloc(), and free(), or wrap this logic in a struct.
+
+typedef struct IntArray
+{
+	int *items;
+	int size;
+	int capacity;
+} IntArray;
+
+void push(IntArray *array, int value)
+{
+	if (array->size == array->capacity)
+	{
+		array->capacity = array->capacity == 0 ? 4 : array->capacity * 2;
+		array->items = realloc(array->items, array->capacity * sizeof(int));
+	}
+
+	array->items[array->size] = value;
+	array->size++;
+}
 ```
 
 ```C

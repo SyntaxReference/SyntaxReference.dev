@@ -1,3 +1,156 @@
 ```Rust
-// TODO
+// Array
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+let my_array: [i32; 3] = [1, 2, 3];
+let my_array = [0; 5];
+
+// Const Declaration
+const MY_ARRAY: [i32; 3] = [1, 2, 3];
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+let value = my_array[0];
+let value = my_array.get(0);
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+// Not Available for fixed-size arrays.
+// Use Vec<T> for dynamic collections.
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+let length = my_array.len();
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+let how_many = my_array.iter().filter(|&&element| element == target).count();
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+let filtered: Vec<i32> = my_array.iter().copied().filter(|element| *element > 10).collect();
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+let index = my_array.iter().position(|element| *element == target);
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+let total: i32 = my_array.iter().sum();
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+let mut values = my_array;
+values.sort();
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+let is_equal = my_array == other_array;
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+let copy = my_array;
+let copy = my_array.clone();
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+let slice = &my_array[1..3];
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+println!("{:?}", my_array);
+
+for element in my_array {
+	println!("{}", element);
+}
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+fn my_function(values: &[i32]) {
+	// ...
+}
+```
+
+```Rust
+// Vec
+
+let mut my_vector: Vec<i32> = Vec::new();
+let mut my_vector = vec![1, 2, 3];
+
+my_vector[0] = 14;
+let value = my_vector[0];
+let value = my_vector.get(0);
+
+my_vector.push(10);
+let last = my_vector.pop();
+my_vector.insert(0, 10);
+my_vector.remove(0);
+
+let length = my_vector.len();
+let how_many = my_vector.iter().filter(|&&element| element == target).count();
+let filtered: Vec<i32> = my_vector.iter().copied().filter(|element| *element > 10).collect();
+let index = my_vector.iter().position(|element| *element == target);
+let total: i32 = my_vector.iter().sum();
+
+my_vector.sort();
+my_vector.sort_by(|first, second| second.cmp(first));
+
+let is_equal = my_vector == other_vector;
+let copy = my_vector.clone();
+let slice = &my_vector[1..3];
+
+println!("{:?}", my_vector);
+
+fn my_function(values: &[i32]) {
+	// ...
+}
+```
+
+```Rust
+// Tuple
+
+let my_tuple = ("hello", 10, true);
+let text = my_tuple.0;
+let number = my_tuple.1;
+
+// Tuples have fixed size and fixed types.
+// Push, pop, filter, and sort are Not Available.
+
+fn my_function(value: (&str, i32, bool)) {
+	// ...
+}
+```
+
+```Rust
+// HashMap
+
+use std::collections::HashMap;
+
+let mut my_map = HashMap::new();
+my_map.insert("first", 1);
+my_map.insert("second", 2);
+
+let value = my_map.get("first");
+let has_key = my_map.contains_key("first");
+my_map.remove("first");
+let length = my_map.len();
+
+for (key, value) in &my_map {
+	println!("{}: {}", key, value);
+}
 ```

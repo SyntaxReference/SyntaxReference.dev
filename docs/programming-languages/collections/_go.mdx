@@ -1,3 +1,183 @@
 ```Go
-// TODO
+// Array
+
+// ------------------------------------
+// Declaration & Initialization
+// ------------------------------------
+var myArray [3]int
+myArray := [3]int{1, 2, 3}
+myArray := [...]int{1, 2, 3}
+
+// Const Declaration
+// Not Available for arrays. const only works with primitive constant values.
+
+// ------------------------------------
+// Direct Access
+// ------------------------------------
+myArray[0] = 14
+value := myArray[0]
+
+// ------------------------------------
+// Push & Pop
+// ------------------------------------
+// Not Available for fixed-size arrays.
+// Use slices for dynamic collections.
+
+// ------------------------------------
+// Size / Length
+// ------------------------------------
+length := len(myArray)
+
+// ------------------------------------
+// Count (How many of)
+// ------------------------------------
+howMany := 0
+for _, element := range myArray {
+	if element == target {
+		howMany++
+	}
+}
+
+// ------------------------------------
+// Filter
+// ------------------------------------
+filtered := []int{}
+for _, element := range myArray {
+	if element > 10 {
+		filtered = append(filtered, element)
+	}
+}
+
+// ------------------------------------
+// Find (return Index)
+// ------------------------------------
+index := -1
+for i, element := range myArray {
+	if element == target {
+		index = i
+		break
+	}
+}
+
+// ------------------------------------
+// Accumulate (sum all values)
+// ------------------------------------
+total := 0
+for _, element := range myArray {
+	total += element
+}
+
+// ------------------------------------
+// Sort
+// ------------------------------------
+sort.Ints(myArray[:])
+
+// ------------------------------------
+// Comparing
+// ------------------------------------
+isEqual := myArray == otherArray
+
+// ------------------------------------
+// Copy / Clone
+// ------------------------------------
+copyArray := myArray
+
+// ------------------------------------
+// Slice
+// ------------------------------------
+slice := myArray[1:3]
+
+// ------------------------------------
+// Printing Members
+// ------------------------------------
+fmt.Println(myArray)
+
+for _, element := range myArray {
+	fmt.Println(element)
+}
+
+// ------------------------------------
+// As a function Parameter
+// ------------------------------------
+func myFunction(values [3]int) {
+	// ...
+}
+```
+
+```Go
+// Slice
+
+mySlice := []int{}
+mySlice := []int{1, 2, 3}
+mySlice := make([]int, 0, 10)
+
+mySlice[0] = 14
+value := mySlice[0]
+
+mySlice = append(mySlice, 10)
+last := mySlice[len(mySlice)-1]
+mySlice = mySlice[:len(mySlice)-1]
+
+length := len(mySlice)
+capacity := cap(mySlice)
+
+howMany := 0
+for _, element := range mySlice {
+	if element == target {
+		howMany++
+	}
+}
+
+filtered := []int{}
+for _, element := range mySlice {
+	if element > 10 {
+		filtered = append(filtered, element)
+	}
+}
+
+index := -1
+for i, element := range mySlice {
+	if element == target {
+		index = i
+		break
+	}
+}
+
+total := 0
+for _, element := range mySlice {
+	total += element
+}
+
+sort.Ints(mySlice)
+isEqual := slices.Equal(mySlice, otherSlice) // Since Go 1.21
+
+copySlice := make([]int, len(mySlice))
+copy(copySlice, mySlice)
+
+slice := mySlice[1:3]
+fmt.Println(mySlice)
+
+func myFunction(values []int) {
+	// ...
+}
+```
+
+```Go
+// Map
+
+myMap := map[string]int{}
+myMap := map[string]int{
+	"first": 1,
+	"second": 2,
+}
+
+myMap["third"] = 3
+value := myMap["first"]
+value, ok := myMap["first"]
+delete(myMap, "first")
+length := len(myMap)
+
+for key, value := range myMap {
+	fmt.Println(key, value)
+}
 ```

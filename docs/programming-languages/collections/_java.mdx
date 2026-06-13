@@ -1,75 +1,144 @@
 ```Java
+// Array
+
 // ------------------------------------
 // Declaration & Initialization
 // ------------------------------------
-
-// TODO
+int[] myArray = new int[5];
+int[] myArray = { 1, 2, 3 };
 
 // Const Declaration
-// TODO
+// final prevents reassignment, but the array contents are still mutable.
+final int[] MY_ARRAY = { 1, 2, 3 };
 
 // ------------------------------------
 // Direct Access
 // ------------------------------------
-// TODO
+myArray[0] = 14;
+int value = myArray[0];
 
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
-// TODO
+// Not Available for fixed-size arrays.
+// Use ArrayList<T> for dynamic collections.
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-// TODO
+int length = myArray.length;
 
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
-// TODO
+long howMany = Arrays.stream(myArray).filter(element -> element == target).count();
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+int[] filtered = Arrays.stream(myArray).filter(element -> element > 10).toArray();
 
 // ------------------------------------
 // Find (return Index)
 // ------------------------------------
-// TODO
+int index = -1;
+for (int i = 0; i < myArray.length; i++) {
+	if (myArray[i] == target) {
+		index = i;
+		break;
+	}
+}
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+int total = Arrays.stream(myArray).sum();
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+Arrays.sort(myArray);
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+boolean isEqual = Arrays.equals(myArray, otherArray);
 
 // ------------------------------------
 // Copy / Clone
 // ------------------------------------
-// TODO
+int[] copy = Arrays.copyOf(myArray, myArray.length);
+int[] copy = myArray.clone();
 
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+int[] slice = Arrays.copyOfRange(myArray, 1, 3);
 
 // ------------------------------------
 // Printing Members
 // ------------------------------------
-// TODO
+System.out.println(Arrays.toString(myArray));
+
+for (int element : myArray) {
+	System.out.println(element);
+}
 
 // ------------------------------------
 // As a function Parameter
 // ------------------------------------
-// TODO
+void myFunction(int[] values) {
+	// ...
+}
+```
+
+```Java
+// ArrayList
+
+ArrayList<Integer> myList = new ArrayList<>();
+ArrayList<Integer> myList = new ArrayList<>(List.of(1, 2, 3));
+
+myList.set(0, 14);
+int value = myList.get(0);
+
+myList.add(10);
+myList.add(0, 10);
+myList.remove(0);
+myList.remove(Integer.valueOf(10));
+
+int length = myList.size();
+long howMany = myList.stream().filter(element -> element == target).count();
+List<Integer> filtered = myList.stream().filter(element -> element > 10).toList(); // Since Java 16
+int index = myList.indexOf(target);
+int total = myList.stream().mapToInt(Integer::intValue).sum();
+
+Collections.sort(myList);
+myList.sort(Comparator.reverseOrder());
+
+boolean isEqual = myList.equals(otherList);
+ArrayList<Integer> copy = new ArrayList<>(myList);
+List<Integer> slice = myList.subList(1, 3);
+
+System.out.println(myList);
+
+void myFunction(List<Integer> values) {
+	// ...
+}
+```
+
+```Java
+// HashMap
+
+HashMap<String, Integer> myMap = new HashMap<>();
+myMap.put("first", 1);
+myMap.put("second", 2);
+
+int value = myMap.get("first");
+boolean hasKey = myMap.containsKey("first");
+myMap.remove("first");
+int length = myMap.size();
+
+for (Map.Entry<String, Integer> item : myMap.entrySet()) {
+	System.out.println(item.getKey() + ": " + item.getValue());
+}
 ```

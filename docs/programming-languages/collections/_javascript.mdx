@@ -21,50 +21,55 @@ const myArray = [1, 2, 3];
 // Direct Access
 // ------------------------------------
 myArray[0] = 14;
+let value = myArray[0];
 
 // ------------------------------------
 // Push & Pop
 // ------------------------------------
 myArray.push(10); // Add at the end
-myArray.unshift(10); // Add at the beggining
+myArray.unshift(10); // Add at the beginning
 myArray.pop(); // Removes and Returns the element at the end
-myArray.shift() // Removes and Returns the element at the beggining
+myArray.shift(); // Removes and Returns the element at the beginning
 
 // ------------------------------------
 // Size / Length
 // ------------------------------------
-myArray.length();
+let length = myArray.length;
 
 // ------------------------------------
 // Filter
 // ------------------------------------
-// TODO
+let filtered = myArray.filter(element => element > 10);
 
 // ------------------------------------
 // Count (How many of)
 // ------------------------------------
-// TODO
+let howMany = myArray.filter(element => element === target).length;
 
 // ------------------------------------
 // Find
 // ------------------------------------
 myArray.indexOf(element);
 myArray.lastIndexOf(element);
+myArray.findIndex(element => element > 10);
 
 // ------------------------------------
 // Accumulate (sum all values)
 // ------------------------------------
-// TODO
+let total = myArray.reduce((result, element) => result + element, 0);
 
 // ------------------------------------
 // Sort
 // ------------------------------------
-// TODO
+myArray.sort(); // Sorts as strings by default
+myArray.sort((first, second) => first - second);
+myArray.sort((first, second) => second - first);
 
 // ------------------------------------
 // Comparing
 // ------------------------------------
-// TODO
+let isEqual = myArray.length === otherArray.length
+	&& myArray.every((element, index) => element === otherArray[index]);
 
 // ------------------------------------
 // Copy / Clone
@@ -75,7 +80,7 @@ const myRealCopy = [...myArray];
 
 // Old Way
 const myRealCopy = myArray.slice();
-const myRealCopy = myArray.splice(0);
+const myRealCopy = myArray.splice(0); // Real copy, but mutates the original array
 const myRealCopy = myArray.concat();
 
 // WONT WORK
@@ -87,7 +92,7 @@ const myFakeCopy = myArray;
 // ------------------------------------
 // Slice
 // ------------------------------------
-// TODO
+let slice = myArray.slice(1, 3);
 
 
 // ------------------------------------
@@ -98,38 +103,63 @@ const myFakeCopy = myArray;
 console.log(myArray);
 
 // or
-for (element of myArray) {
+for (const element of myArray) {
 	console.log(`${element} `);
 }
 
 // ------------------------------------
 // As a function Parameter
 // ------------------------------------
-// TODO
+function myFunction(values) {
+	// ...
+}
 ```
 
 ```Javascript
 // No Native Tuple
 
 // But you can workaround with arrays. See More Info bellow
+const myTuple = ["hello", 10];
+const first = myTuple[0];
+const second = myTuple[1];
 ```
 
 ```Javascript
 // No Native Stack
 
 // But you can workaround with arrays.
+const stack = [];
+stack.push(10);
+const value = stack.pop();
 ```
 
 ```Javascript
 // No Native Queue
 
 // But you can workaround with arrays.
+const queue = [];
+queue.push(10);
+const value = queue.shift();
 ```
 
 ```Javascript
 // Dictionary
 
-// TODO
+const myObject = {};
+myObject["first"] = 1;
+myObject.second = 2;
+
+const value = myObject["first"];
+delete myObject["first"];
+
+const myMap = new Map();
+myMap.set("first", 1);
+myMap.set("second", 2);
+
+const value = myMap.get("first");
+const hasKey = myMap.has("first");
+myMap.delete("first");
+const length = myMap.size;
 ```
 
 > More Info:
